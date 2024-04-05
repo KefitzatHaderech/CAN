@@ -1,42 +1,42 @@
-## 3. CAN-Framing
+# 3. CAN-Framing
 
-### 3.1. Frametypen
+## 3.1. Frametypen
 
 Für die Übertragung von Nutzdaten sieht die ISO 11898-1 den sogenannten Data Frame vor. Ein Data Frame kann höchstens acht Nutzbytes übertragen. Dafür steht das sogenannte Data Field zur Verfügung, das von verschiedenen Feldern umgeben ist, die für die Abwicklung des CAN-Kommunikationsprotokolls notwendig sind. Dazu gehören unter anderem die Botschaftsadresse (Identifier - ID), der Data Length Code (DLC), die Prüfsumme (Cyclic Redundancy Check Sequence - CRC Sequence) und die Empfangsbestätigung im Acknowledgement Field.
 
-<imgsrc="image/1705585540408.png"alt="drawing"width="800"/>
+<img src="image/README/1712276187445.png" alt="drawing" style="max-width:50%;" />
 
 Während bei der Übertragung von Data Frames die entsprechenden Informationsquellen die Initiative ergreifen, gibt es mit dem Remote Frame einen Frametyp, mit dem Nutzdaten (also Data Frames) von beliebigen CAN-Knoten angefordert werden können. Abgesehen vom fehlenden Data Field hat ein Remote Frame den gleichen Aufbau wie ein Data Frame.
 
-<imgsrc="image/1705585556189.png"alt="drawing"width="800"/>
+<img src="image/README/1712276204782.png" alt="drawing" style="max-width:50%;" />
 
 Der Error Frame steht zur Verfügung, um während des Kommunikationsbetriebs entdeckte Fehler zu signalisieren. Beim Übertragen eines Error Frames wird die laufende Botschaftsübertragung abgebrochen. Der Aufbau eines Error Frames unterscheidet sich wesentlich vom Aufbau eines Data oder Remote Frames. Es gibt lediglich zwei Felder zu unterscheiden: das Error Flag und den Error Delimiter.
 
-<imgsrc="image/1705585573394.png"alt="drawing"width="600"/>
+<img src="image/README/1712276232272.png" alt="drawing" style="max-width:40%;" />
 
-### 3.2. Data Frame
+## 3.2. Data Frame
 
 Innerhalb eines CAN-Netzwerks spielen Data Frames eine entscheidende Rolle, indem sie für die Übertragung von Nutzdaten verantwortlich sind. Ein Data Frame setzt sich aus verschiedenen Komponenten zusammen, von denen jede während der Übertragung eine wichtige Funktion erfüllt. Diese umfassen die Initiierung und Aufrechterhaltung der Synchronisation zwischen den Kommunikationspartnern, die Herstellung der in der Kommunikationsmatrix definierten Kommunikationsbeziehungen sowie die Übertragung und Sicherung der Nutzdaten.
 
-<imgsrc="image/1705585611419.png"alt="drawing"width="800"/>
+<img src="image/README/1712276346227.png" alt="drawing" style="max-width:40%;" />
 
 Die Übertragung eines Data Frames beginnt mit dem Startbit, auch als Start Of Frame (SOF) bezeichnet. Der Sender überträgt dieses Bit dominant und sorgt durch einen Flankenwechsel von rezessiv (Bus Idle) zu dominant für eine netzwerkweite Synchronisation. Um während der Übertragung die Synchronität zum Sender aufrechtzuerhalten, vergleichen die Empfänger alle Signalflanken, die von rezessiv zu dominant wechseln, mit ihrem eingestellten Bittiming. Bei Abweichungen synchronisieren sich die Empfänger entsprechend, um etwaige Phasenfehler auszugleichen (Nachsynchronisation).
 
+<img src="image/README/1712276365231.png" alt="drawing" style="max-width:40%;" />
+
 Dem SOF folgt der Identifier (ID), der die Priorität des Data Frames festlegt und in Kombination mit der Akzeptanzfilterung die im CAN-Netzwerk definierten Sender-Empfänger-Relationen gewährleistet. Durch das RTR-Bit (Remote Transmission Request) informiert der Sender die Empfänger über den Frametyp (Data Frame oder Remote Frame). Ein dominantes RTR-Bit zeigt dabei an, dass es sich um einen Data Frame handelt.
+
+<img src="image/README/1712276396634.png" alt="drawing" style="max-width:50%;" />
 
 Das anschließende IDE-Bit (Identifier Extension) dient dazu, zwischen Standard-Format und Extended-Format zu unterscheiden. Im Standard-Format beträgt der Identifier 11 Bit, während er im Extended-Format 29 Bit umfasst. Eine detaillierte Darstellung beider Formate finden Sie in der Grafik „Data Frame im Standard- und Extended-Format“.
 
 Der DLC (Data Length Code) informiert die Empfänger über die Anzahl der Nutzbytes. Die eigentlichen Nutzbytes werden im Data Field transportiert, wobei maximal acht Nutzbytes pro Data Frame übertragen werden können.
 
-<imgsrc="image/1705585624169.png"alt="drawing"width="800"/>
-
 Die Sicherung der Nutzbytes erfolgt durch eine Prüfsumme, die mittels des Cyclic Redundancy Checks (CRC) berechnet wird. Basierend auf dem Ergebnis des CRC bestätigen die Empfänger im ACK-Slot positiv oder negativ (Acknowledgement).
 
 Die Übertragung eines Data Frames wird durch sieben rezessive Bits (EOF - End Of Frame) abgeschlossen.
 
-<imgsrc="image/1705585638157.png"alt="drawing"width="800"/>
-
-### 3.3. Remote Frame
+## 3.3. Remote Frame
 
 Anforderung von Daten und Remote Frames:
 
@@ -56,9 +56,7 @@ Bei einem CAN-Controller mit Objektespeicherung erfolgt die Beantwortung eines R
 
 Im Idealfall erfolgt die Antwort auf die Anfrage mittels Remote Frame sofort durch das entsprechende Data Frame. Allerdings können sich unter Umständen CAN-Botschaften mit höherer Priorität zwischen Anfrage und Antwort schieben.
 
-<imgsrc="image/1705585788414.png"alt="drawing"width="800"/>
-
-### 3.4. Adressierung
+## 3.4. Adressierung
 
 Botschafts-Adressierung im CAN-Netzwerk:
 
@@ -72,9 +70,7 @@ Im Extended-Format setzt sich der ID im Gegensatz zum Standard-Format aus zwei K
 
 Ein dominantes IDE-Bit kennzeichnet eine CAN-Botschaft im Standard-Format, während ein rezessives IDE-Bit eine CAN-Botschaft im Extended-Format identifiziert. Im Extended-Format ersetzt das stets rezessiv übertragene SRR-Bit das RTR-Bit im Standard-Format. Die beiden ersten Bits des Control-Fields (r0 und r1) im Extended-Format haben keine Bedeutung und werden beide dominant übertragen.
 
-![1705586406077](image/1705586406077.png)
-
-### 3.5. CRC und Acknowledgement
+## 3.5. CRC und Acknowledgement
 
 Übertragungssicherheit im CAN-Netzwerk:
 
@@ -96,21 +92,7 @@ ACK-Fehler und Error Flag:
 
 Durch das knotenneutrale positive Acknowledgement werden negativ quittierende CAN-Knoten überschrieben und bleiben vorerst unbeachtet. Um netzweite Datenkonsistenz zu gewährleisten, senden diese Knoten nach dem ACK-Delimiter ein Error Flag. Fehlt jegliche positive Quittung und bleibt der ACK-Slot unüberschrieben, erkennt der Sender einen ACK-Fehler und bricht die laufende Nachrichtenübertragung durch das Aufschalten eines Error Flags sofort ab. Ein ACK-Fehler weist auf einen Fehler seitens des Senders oder das Fehlen von Empfängern hin.
 
-![1705593671519](image/1705593671519.png)
-
-![1705593697148](image/1705593697148.png)
-
-![1705593711405](image/1705593711405.png)
-
-![1705593721996](image/1705593721996.png)
-
-![1705593732727](image/1705593732727.png)
-
-![1705593745875](image/1705593745875.png)
-
-![1705593759668](image/1705593759668.png)
-
-### 3.6. Bitstuffing
+## 3.6. Bitstuffing
 
 Synchronisation und Resynchronisation in CAN-Kommunikation:
 
@@ -123,9 +105,3 @@ Bitstuffing-Bereich und Data Frame:
 Der Bitstuffing-Bereich erstreckt sich von der Übertragung des SOF bis zum letzten Bit der CRC-Sequenz. Im Standard-Format eines Data Frames, insbesondere im Worst-Case-Szenario, wenn das Data Field acht Nutzbytes umfasst, können theoretisch bis zu 24 Stuffbits auftreten. Somit setzt sich der längstmögliche Data Frame im Standard-Format theoretisch aus 132 Bit zusammen.
 
 Um den Bitstuffingmechanismus besser zu verstehen, bietet die interaktive Grafik "Bitstuffing" eine anschauliche Darstellung.
-
-![1705593839026](image/1705593839026.png)
-
-![1705593849998](image/1705593849998.png)
-
-![1705593863236](image/1705593863236.png)

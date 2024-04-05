@@ -1,14 +1,13 @@
 # Controller Area Network (CAN) 🚗
 
-Dieses Repository enthält Informationen und Erklärungen zum Controller Area Network und dessen Erweiterung, dem CAN FD.
-Es bietet Einblicke in die Funktionsweise, die Protokolle und die Technologien hinter diesen Netzwerken.
+Dieses Repository enthält Informationen und Erklärungen zum Controller Area Network und dessen Erweiterung, dem CAN FD. Es bietet Einblicke in die Funktionsweise, die Protokolle und die Technologien hinter diesen Netzwerken. CAN steht für "Controller Area Network". Es handelt sich um ein serielles Bussystem, das vor allem in der Automobilindustrie für die Kommunikation zwischen verschiedenen Steuergeräten in Fahrzeugen verwendet wird. CAN wurde in den 1980er Jahren von Bosch entwickelt und hat sich seitdem als Standard für die Fahrzeugkommunikation etabliert. Es ermöglicht eine zuverlässige und robuste Datenübertragung auch unter extremen Bedingungen, wie sie in Fahrzeugen auftreten können.
 
 ## 📚 Inhaltsverzeichnis
 
-1. Einführung
+1. [Einführung 🚀](./01_Einführung/README.md)
    * 1.1. Motivation für CAN
    * 1.2. Standardisierung
-2. CAN-Kommunikation 💬
+2. [CAN-Kommunikation 💬](./02_CAN-Kommunikation/README.md)
    * 2.1. CAN-Netzwerk
    * 2.2. CAN-Knoten
    * 2.3. CAN-Controller
@@ -17,18 +16,18 @@ Es bietet Einblicke in die Funktionsweise, die Protokolle und die Technologien h
    * 2.6. CAN-Buspegel
    * 2.7. CAN-Buslogik
    * 2.8. Kommunikationsprinzip
-3. CAN-Framing 🔄
+3. [CAN-Framing 🔄](./03_CAN-Framing/README.md)
    * 3.1. Frametypen
    * 3.2. Data Frame
    * 3.3. Remote Frame
    * 3.4. Adressierung
    * 3.5. CRC und Acknowledgement
    * 3.6. Bitstuffing
-4. CAN-Buszugriff 📡
+4. [CAN-Buszugriff 📡](./04_CAN-Buszugriff/README.md)
    * 4.1. Prinzip des Buszugriffs
    * 4.2. Bitweise Arbitrierung
    * 4.3. Priorisierung
-5. CAN-Datensicherung 🔒
+5. [CAN-Datensicherung 🔒](./05_CAN-Datensicherung/README.md)
    * 5.1. Prinzip der Datensicherung
    * 5.2. NRZ-Codierung
    * 5.3. Twisted Pair
@@ -36,7 +35,7 @@ Es bietet Einblicke in die Funktionsweise, die Protokolle und die Technologien h
    * 5.5. Logische Fehlererkennung
    * 5.6. Logische Fehlerbehandlung
    * 5.7. Fehlerverfolgung
-6. CAN FD 🚀
+6. [CAN FD 🚀](./06_CAN-FD/README.md)
    * 6.1. Motivation für CAN FD
    * 6.2. Vorteile und Konsequenzen
    * 6.3. Neue Botschaftsformate

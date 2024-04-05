@@ -1,16 +1,16 @@
-## 2. CAN-Kommunikation
+# 2. CAN-Kommunikation
 
-### 2.1. CAN-Netzwerk
+## 2.1. CAN-Netzwerk
 
 Ein CAN-Netzwerk besteht aus mehreren CAN-Knoten, die über einen physischen Übertragungskanal, den sogenannten CAN-Bus, miteinander verbunden sind. In der Praxis wird oft eine Linientopologie verwendet, bei der mehrere elektronische Steuergeräte mit einer CAN-Schnittstelle passiv an einen linearen Bus angeschlossen werden. Alternativ kommt auch die passive Sterntopologie zum Einsatz.
 
-<imgsrc="image/1705581798124.png"alt="drawing"width="600"/>
+<img src="image/README/1712017258157.png" alt="drawing" style="max-width:40%;" />
 
 Das physische Übertragungsmedium besteht in den meisten Fällen aus einer verdrillten, ungeschirmten Zweidrahtleitung (Unshielded Twisted Pair - UTP), über die eine symmetrische Signalübertragung erfolgt. Typischerweise werden UTP-Kabel mit einem Leitungsquerschnitt zwischen 0,34 mm² und 0,6 mm² verwendet. Der Widerstandsbelag der Leitung sollte kleiner als 60 mΩ/m sein.
 
 Die maximale Datenrate beträgt 1 MBit/s, und die zulässige Netzwerkausdehnung liegt bei etwa 40 Metern. An den Enden des CAN-Netzwerks sind Busabschlusswiderstände erforderlich, um Ausgleichsvorgänge (Reflexionen) zu vermeiden. Die ISO 11898 gibt die maximale Anzahl der CAN-Knoten mit 32 an.
 
-### 2.2. CAN-Knoten
+## 2.2. CAN-Knoten
 
 Mit dem fortschreitenden Trend zur Elektrifizierung von Fahrzeugen steigt die Anzahl und Komplexität der Software rapide an. Fahrzeuge der Oberklasse sind bereits mit über 1000 Software-Funktionen ausgestattet. In verschiedenen Bussystemen verrichten mehr als 70 elektronische Steuergeräte (Electronic Control Units - ECU) ihre Aufgaben. Ein elektronisches Steuergerät, das seine Funktionen in einem CAN-Netzwerk ausführt, wird als CAN-Knoten bezeichnet.
 
@@ -20,41 +20,45 @@ Eine einheitliche Software verringert den Entwicklungsaufwand und erleichtert di
 
 Mit AUTOSAR (AUTomotive Open System ARchitecture) steht eine Referenzarchitektur für die Steuergerätesoftware zur Verfügung. Im Mittelpunkt dieser Referenzarchitektur steht das AUTOSAR Runtime Environment (RTE), das das Netzwerk vollständig von den Software-Komponenten der Applikation entkoppelt. Das Runtime Environment bietet den Software-Komponenten einheitliche Dienste in Form der Basis-Software an. Diese setzt sich von unten nach oben aus drei Ebenen zusammen: Microcontroller Abstraction Layer, ECU Abstraction Layer, Service Layer.
 
-<imgsrc="image/1705584223952.png"alt="drawing"width="600"/>
+<img src="image/README/1712017613322.png" alt="drawing" style="max-width:40%;" />
 
-Die Abbildung "CAN-Knoten" veranschaulicht den Aufbau eines modernen CAN-Knotens. Besonders interessant ist der Bereich "Communication Services". AUTOSAR COM (Communication) stellt Standardkommunikationsdienste, Diagnosedienste (Diagnostic COM Manager) und Netzwerkmanagementdienste (Generic NM/CAN NM) bereit. Der PDU Router (PDU: Protocol Data Unit) kümmert sich um die interne Kommunikation zwischen den verschiedenen Kommunikationsschichten und koordiniert die Kommunikation zwischen AUTOSAR COM, Diagnostic COM Manager und CAN TP (Transportprotokoll).
+Die Abbildung oben veranschaulicht den Aufbau eines modernen CAN-Knotens. Besonders interessant ist der Bereich "Communication Services". Besonders interessant ist der Bereich "Communication Services", der die verschiedenen Kommunikationsdienste und -protokolle des Knotens darstellt. AUTOSAR COM stellt standardisierte Kommunikationsdienste bereit, die für den Datenaustausch zwischen den Komponenten des CAN-Knotens verwendet werden. Dazu gehören:
 
-### 2.3. CAN-Controller
+- **Standardkommunikationsdienste**: Ermöglichen den Austausch von Nachrichten zwischen den Steuergeräten über das CAN-Netzwerk.
+- **Diagnosedienste (Diagnostic COM Manager)**: Stellen Dienste für die Fahrzeugdiagnose zur Verfügung, z.B. für das Auslesen von Fehlercodes.
+- **Netzwerkmanagementdienste (Generic NM/CAN NM)**: Verwalten und koordinieren die Kommunikation im CAN-Netzwerk, z.B. das Ein- und Ausschalten von Steuergeräten.
 
-Für die Teilnahme an der CAN-Kommunikation benötigt ein elektronisches Steuergerät eine CAN-Schnittstelle. Diese setzt sich aus einem CAN-Controller und einem CAN-Transceiver zusammen. Der CAN-Controller übernimmt die vorgeschriebenen Kommunikationsfunktionen des CAN-Protokolls und entlastet dabei den Host erheblich.
+Der PDU (Protocol Data Unit) Router ist für die interne Kommunikation zwischen den einzelnen Kommunikationsschichten des CAN-Knotens verantwortlich. Er koordiniert den Datenaustausch zwischen AUTOSAR COM, dem Diagnostic COM Manager und dem CAN TP (Transportprotokoll). Dabei sorgt er dafür, dass die Kommunikation zwischen den Komponenten reibungslos abläuft.
 
-<imgsrc="image/1705584351782.png"alt="drawing"width="600"/>
+## 2.3. CAN-Controller
 
-Der CAN-Transceiver ermöglicht die Verbindung des CAN-Controllers mit dem physikalischen Übertragungsmedium. In der Regel werden beide Komponenten galvanisch durch Optokoppler getrennt, um sicherzustellen, dass Überspannungen auf dem CAN-Bus den CAN-Transceiver zwar beeinträchtigen können, jedoch nicht den CAN-Controller und den dahinterliegenden Host.
+Für die Teilnahme an der CAN-Kommunikation benötigt ein elektronisches Steuergerät eine CAN-Schnittstelle. Diese setzt sich aus einem **CAN-Controller** und einem **CAN-Transceiver** zusammen. Der CAN-Controller übernimmt die vorgeschriebenen Kommunikationsfunktionen des CAN-Protokolls und entlastet dabei den Host erheblich.
+
+<img src="image/README/1712018663985.png" alt="drawing" style="max-width:40%;" />
+
+Der **CAN-Transceiver** ermöglicht die Verbindung des CAN-Controllers mit dem physikalischen Übertragungsmedium. In der Regel werden beide Komponenten galvanisch durch Optokoppler getrennt, um sicherzustellen, dass Überspannungen auf dem CAN-Bus den CAN-Transceiver zwar beeinträchtigen können, jedoch nicht den CAN-Controller und den dahinterliegenden Host.
 
 Innerhalb eines CAN-Netzwerks unterscheiden sich die CAN-Knoten hinsichtlich der Anzahl der zu sendenden und empfangenden CAN-Botschaften. Es gibt auch erhebliche Unterschiede in der Sende- und somit auch in der Empfangsfrequenz. Zum Beispiel empfängt ein CAN-Knoten fünf verschiedene CAN-Botschaften in einem Zyklus von zehn Millisekunden, während ein anderer CAN-Knoten alle 100 Millisekunden nur eine CAN-Botschaft empfängt. Diese deutlichen Unterschiede haben zwei grundlegende CAN-Controller-Architekturen hervorgebracht: solche mit und ohne Objektspeicherung.
 
 Unabhängig vom Typ des CAN-Controllers können diese grundsätzlich integriert oder, wie in der Grafik dargestellt, als eigenständige Bausteine verwendet werden (stand-alone). In der Stand-Alone-Variante wird der CAN-Controller vom Mikrocontroller wie ein Speicherbaustein behandelt, was mehr Flexibilität bietet. Die On-Chip-Variante hingegen nimmt weniger Platz ein und ermöglicht eine schnellere und zuverlässigere Kommunikation zwischen Mikrocontroller und CAN-Controller.
 
-### 2.4. CAN-Transceiver
+## 2.4. CAN-Transceiver
 
 Früher wurde die Verbindung des CAN-Controllers mit dem Kommunikationsmedium (CAN-Bus) oft auf diskrete Weise umgesetzt. Heutzutage übernehmen CAN-Transceiver diese Aufgabe. Da die physikalische Signalübertragung in einem CAN-Netzwerk aus elektromagnetischen Verträglichkeitsgründen symmetrisch erfolgt und das physikalische Übertragungsmedium in einem CAN-Netzwerk aus zwei Leitungen besteht, verfügt ein CAN-Transceiver stets über zwei Buspins: einen für die CAN-High-Leitung (CANH) und einen für die CAN-Low-Leitung (CANL).
 
-<imgsrc="image/1705584603557.png"alt="drawing"width="600"/>
-
 Üblicherweise unterscheidet man zwischen High-Speed-CAN-Transceivern und Low-Speed-CAN-Transceivern. High-Speed-CAN-Transceiver unterstützen Datenraten von bis zu 1 MBit/s, während Low-Speed-CAN-Transceiver nur Datenraten von bis zu 125 KBit/s unterstützen. Dabei gewährleisten Low-Speed-CAN-Transceiver eine fehlertolerante Auslegung der Busankopplung (zum Beispiel führt der Ausfall einer der beiden Kommunikationsleitungen nicht zum Ausfall des Kommunikationsbetriebs).
 
-Die Abbildung „CAN-Transceiver“ zeigt den grundlegenden Aufbau eines High-Speed-CAN-Transceivers. Wenn beide Ausgangstransistoren gesperrt sind, nehmen beide CAN-Leitungen dasselbe Potenzial (0,5*Vcc) an – die Differenzspannung beträgt Null. Sobald beide Transistoren durchschalten, entsteht zwischen den Leitungen eine von der Lastwiderstand abhängige Spannungsdifferenz. Gemäß ISO 11898-2 sollte diese Differenz 2 Volt betragen. Dabei fließt ein Strom von etwa 35 mA.
+Die Abbildung unten zeigt den grundlegenden Aufbau eines High-Speed-CAN-Transceivers. Wenn beide Ausgangstransistoren gesperrt sind, nehmen beide CAN-Leitungen dasselbe Potenzial (0,5*Vcc) an – die Differenzspannung beträgt Null. Sobald beide Transistoren durchschalten, entsteht zwischen den Leitungen eine von der Lastwiderstand abhängige Spannungsdifferenz. Gemäß ISO 11898-2 sollte diese Differenz 2 Volt betragen. Dabei fließt ein Strom von etwa 35 mA.
 
-<imgsrc="image/1705584619690.png"alt="drawing"width="400"/>
+<img src="image/README/1712018875173.png" alt="drawing" style="max-width:40%;" />
 
 CAN-Transceiver sorgen im Allgemeinen für eine geringe Emission und bieten durch einen breiten Gleichtaktarbeitsbereich eine hohe Störfestigkeit. Zudem verfügen CAN-Transceiver heutzutage über einen ESD-Schutz von bis zu 8 kV. Trotz hoher Gleichtaktunterdrückung kann in besonders kritischen Anwendungsbereichen eine Gleichtaktdrossel (Common Mode Choke - CMC), die nahe am Ausgang geschaltet ist, helfen, die Emissionen weiter zu reduzieren.
 
 Die ISO 11898 gibt die maximale Anzahl von CAN-Knoten mit 32 an. In der Praxis hängt die maximale Anzahl von CAN-Knoten jedoch stark von der Leistungsfähigkeit der eingesetzten CAN-Transceiver ab und davon, ob es sich um ein CAN-High-Speed- oder CAN-Low-Speed-Netzwerk handelt. Zum Beispiel können laut Spezifikation bis zu 110 CAN-Knoten zu einem CAN-High-Speed-Netzwerk verbunden werden, wenn der High-Speed-CAN-Transceiver TJA1050 verwendet wird.
 
-<imgsrc="image/1705584637660.png"alt="drawing"width="400"/>
+<img src="image/README/1712018897395.png" alt="drawing" style="max-width:40%;" />
 
-### 2.5. CAN-Bus
+## 2.5. CAN-Bus
 
 Die physikalische Übertragung von Signalen in einem CAN-Netzwerk basiert auf der Übermittlung von Spannungsdifferenzen, auch als Differenzialsignalübertragung bekannt. Störspannungen, die durch Motoren, Zündanlagen und Schaltkontakte erzeugt werden, können auf diese Weise effektiv neutralisiert werden. Das Übertragungsmedium, der CAN-Bus, besteht folglich aus zwei Leitungen: der CAN-High-Leitung (CANH) und der CAN-Low-Leitung (CANL).
 
@@ -62,11 +66,11 @@ Das Verdrillen der beiden Leitungen führt zu einer erheblichen Verringerung des
 
 Aufgrund der endlichen Geschwindigkeit der Signalausbreitung nimmt der Einfluss von Ausgleichsvorgängen (Reflexionen) mit steigender Datenrate oder wachsender Ausdehnung des Busses zu. Durch die Terminierung der Enden des Kommunikationskanals mit Abschlusswiderständen, die die elektrischen Eigenschaften des Übertragungsmediums nachbilden, werden Reflexionen in einem CAN-High-Speed-Netzwerk verhindert.
 
-<imgsrc="image/1705584685403.png"alt="drawing"width="600"/>
+<img src="image/README/1712019030667.png" alt="drawing" style="max-width:50%;" />
 
 Entscheidend für den Busabschlusswiderstand ist der sogenannte Wellenwiderstand der elektrischen Leitung, der 120 Ohm beträgt. Im Gegensatz zur ISO 11898-2, die Busabschlusswiderstände vorschreibt, sieht die ISO 11898-3 (CAN-Low-Speed) aufgrund der geringeren maximalen Datenrate von 125 KBit/s keine Busabschlusswiderstände vor.
 
-### 2.6. CAN-Buspegel
+## 2.6. CAN-Buspegel
 
 Die physische Übertragung von Signalen in einem CAN-Netzwerk basiert auf der Übertragung von Differenzsignalen. Die Höhe der Differenzspannungen wird durch die verwendete Buskopplung bestimmt. Es gibt zwei Hauptarten von Buskopplungen: die CAN-Highspeed-Buskopplung (ISO 11898-2) und die CAN-Lowspeed-Buskopplung (ISO 11898-3).
 
@@ -76,11 +80,11 @@ Dagegen wird eine Differenzspannung unterhalb von 0,5 Volt als rezessiver Pegel 
 
 Die Grafiken "CAN-Highspeed-Buspegel" und "CAN-Lowspeed-Buspegel" veranschaulichen die verschiedenen Spannungsverhältnisse auf dem CAN-Bus.
 
-<imgsrc="image/1705584841771.png"alt="drawing"width="400"/>
+<img src="image/README/1712019086765.png" alt="drawing" style="max-width:40%;" />
 
-<imgsrc="image/1705584856667.png"alt="drawing"width="400"/>
+<img src="image/README/1712019099533.png" alt="drawing" style="max-width:40%;" />
 
-### 2.7. CAN-Buslogik
+## 2.7. CAN-Buslogik
 
 Dominanter und rezessiver Buspegel im Kontext von CAN-Netzwerken spielen eine entscheidende Rolle für einen störungsfreien Kommunikationsbetrieb. Sie beeinflussen den Buszugriff, die Erkennung von Fehlern und die Bestätigung (Acknowledgement) der Übertragungen. Die Unterscheidung zwischen dominantem und rezessivem Buspegel ist dabei von essenzieller Bedeutung.
 
@@ -88,7 +92,7 @@ Der dominante Buspegel repräsentiert die logische „0“, während der rezessi
 
 Dieses Verhalten lässt sich logisch als UND-Verknüpfung interpretieren. Die physische Umsetzung erfolgt mithilfe einer sogenannten Open-Collector-Schaltung. Zur besseren Veranschaulichung und Vertiefung des Verständnisses für die zugrunde liegende Wired-AND-Buslogik in CAN-Netzwerken empfehle ich die interaktive Grafik „Buslogik“.
 
-### 2.8. Kommunikationsprinzip
+## 2.8. Kommunikationsprinzip
 
 In sicherheitskritischen Anwendungsbereichen wie dem Antriebsstrang sind hohe Anforderungen an die Verfügbarkeit eines Kommunikationssystems zu erfüllen. Es wäre ungünstig, die Verantwortung für die Buszuteilung auf einen einzigen Busknoten zu übertragen, da ein Ausfall dieses exponierten Busknotens zu einem Kommunikationsausfall führen würde. Eine elegantere Lösung besteht darin, den Buszugriff zu dezentralisieren, so dass jeder Busknoten das Recht hat, auf den Bus zuzugreifen.
 
@@ -100,18 +104,12 @@ Die Animation "Kommunikationsprinzip" ermöglicht es Ihnen, sich mit der Botscha
 
 Die Grafik "Typische CAN-Kommunikation" setzt an die Animation "Kommunikationsprinzip" an und veranschaulicht einen typischen Ablauf der Kommunikation. Sie zeigt die zugrunde liegende Kommunikationsmatrix eines CAN-Netzwerks sowie den resultierenden Sende- und Empfangszweig.
 
-<imgsrc="image/1705585001717.png"alt="drawing"width="800"/>
+1. Aufgrund eines Ereignisses schreibt der Host des CAN-Knoten A die entsprechenden Nutzdaten sowie der zugehörigen Identifier ID=0x12 und den DLC in den Sendepuffer des CAN-Controllers. Der CAN-Controller des CAN-Knoten A sendet den Pufferinhalt sobald der CAN-Bus frei ist.
 
-<imgsrc="image/1705585017391.png"alt="drawing"width="800"/>
+   <img src="image/README/1712019772308.png" alt="drawing" style="max-width:60%;" />
+2. Der CAN-Controller des CAN-Knoten A ergänzt den Pufferinhalt mit zusätzlichen Informationen (u.a. Prüfsumme) und fasst ihn zum Data Frame zusammen und senden diesen "Broadcast" unter Einhaltung des CAN-Protokolls
 
-<imgsrc="image/1705585034814.png"alt="drawing"width="800"/>
+   <img src="image/README/1712019810828.png" alt="drawing" style="max-width:60%;" />
+3. Der Data Frame wird von den CAN-Knoten B, C und D empfangen. Der jeweilige CAN-Controller der CAN-Knoten prüfen den empfangegenen Data Frame auf Korrektheit
 
-<imgsrc="image/1705585109881.png"alt="drawing"width="800"/>
-
-<imgsrc="image/1705585129210.png"alt="drawing"width="800"/>
-
-<imgsrc="image/1705585143167.png"alt="drawing"width="800"/>
-
-<imgsrc="image/1705585155107.png"alt="drawing"width="800"/>
-
-<imgsrc="image/1705585217149.png"alt="drawing"width="800"/>
+   <img src="image/README/1712020016743.png" alt="drawing" style="max-width:60%;" />

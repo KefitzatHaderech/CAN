@@ -1,11 +1,12 @@
+# 5. CAN-Datensicherung
 
-## 5. CAN-Datensicherung
-
-### 5.1. Prinzip der Datensicherung
+## 5.1. Prinzip der Datensicherung
 
 Datenintegrität im Kfz
 
 Eine sichere Datenübertragung ist die Voraussetzung für die Sicherheit elektronischer Systeme im Kfz. CAN hat folglich nicht nur strengen Anforderungen an die Echtzeit zu genügen, sondern in jedem Fall auch für eine sichere Datenübertragung zu sorgen. Weil CAN innerhalb des Kfz auch in sehr zeit- und sicherheitskritischen Anwendungen zum Einsatz kommt, sind die Anforderungen an die Datenintegrität äußerst hoch.
+
+<img src="image/README/1712276601956.png" alt="drawing" style="max-width:40%;" />
 
 Elektromagnetische Verträglichkeit (EMV)
 
@@ -21,9 +22,7 @@ Die Datenintegrität lässt sich als Produkt aus der Wahrscheinlichkeit, mit der
 
 Da wäre einerseits die Vermeidung von verfälschten Daten mittels elektromagnetisch verträglicher Netzwerkauslegung bzw. physikalischen Maßnahmen (u.a. Twisted Pair), andererseits die Erkennung und Korrektur von verfälschten Daten mittels leistungsfähiger logischer Fehlererkennung und einer effektiven logischen Fehlerbehandlung. Die Grafik „Prinzip der Datensicherung im CAN-Netzwerk" gibt dazu einen Überblick.
 
-![1706366486155](image/1706366486155.png)
-
-### 5.2. NRZ-Codierung
+## 5.2. NRZ-Codierung
 
 Bitcodierung
 
@@ -41,9 +40,9 @@ Bitstuffing zur Synchronisation
 
 Bei CAN kommt als Synchronisationsmechanismus das sog. Bitstuffingverfahren zum Einsatz: nach fünf homogenen Bits fügt der Sender ein komplementäres Bit in den Bitstrom ein (die Manchester-Codierung beispielsweise kommt ohne einen solchen Mechanismus aus, da sie selbsttaktend ist).
 
-![1706366510245](image/1706366510245.png)
+<img src="image/README/1712276628306.png" alt="drawing" style="max-width:50%;" />
 
-### 5.3. Twisted Pair
+## 5.3. Twisted Pair
 
 Symmetrische Signalübertragung
 
@@ -62,27 +61,29 @@ Mehr Umschlingungen = weniger Einflüsse
 
 Durch das Verdrillen wird die Leiterschleife in einzelne Leiterstücke zerlegt. Im Idealfall zeigen die Magnetfelder in jedem Teilstück in entgegengesetzte Richtungen, was dazu führt, dass sich die induzierten Spannungen bzw. die induktiven Einflüsse gegenseitig aufheben. Die Wirksamkeit der Verdrillung steigt mit der Anzahl der Umschlingungen. Mindestens 30 Umschlingungen pro Meter sorgen für gute Ergebnisse.
 
-![1706366533286](image/1706366533286.png)
+<img src="image/README/1712276652085.png" alt="drawing" style="max-width:50%;" />
 
-### 5.4. Terminierung
+## 5.4. Terminierung
 
 Wellenwiderstand
 
-Mit steigender Datenrate muss auf dem CAN-Bus aufgrund der endlichen Signalausbreitung mit Ausgleichsvorgängen in Form von Reflexionen gerechnet werden. Dies ist der Grund, warum in CAN-High-Speed-Netzwerken die Bus-Enden mit dem Wellenwiderstand des physikalischen Übertragungsmediums abgeschlossen werden müssen. Der Wellenwiderstand des Kommunikationskanals beträgt 120 Ohm.[]
+Mit steigender Datenrate muss auf dem CAN-Bus aufgrund der endlichen Signalausbreitung mit Ausgleichsvorgängen in Form von Reflexionen gerechnet werden. Dies ist der Grund, warum in CAN-High-Speed-Netzwerken die Bus-Enden mit dem Wellenwiderstand des physikalischen Übertragungsmediums abgeschlossen werden müssen. Der Wellenwiderstand des Kommunikationskanals beträgt 120 Ohm.
 
-![1706366559944](image/1706366559944.png)
+<img src="image/README/1712276671360.png" alt="drawing" style="max-width:50%;" />
 
 Abschluss­widerstand
 
 Anstatt die Enden des Kommunikationskanals mit jeweils einem einzelnen Busabschlusswiderstand zu versehen, können die Enden des CAN-Busses auch mit einem geteiltem Busabschluss terminiert werden. Der geteilte Busabschluss, bestehend aus zwei identischen Widerständen (60 Ohm) und einer Kapazität (typischerweise 4,7 nF), wirkt wie ein Tiefpassfilter: ohne Beeinflussung der Gleichspannungsverhältnisse werden hochfrequente Signale gegen Masse kurzgeschlossen. Messungen haben gezeigt, dass sowohl die Störfestigkeit verbessert als auch die Emissionen reduziert werden können.
 
-![1706366572774](image/1706366572774.png)
+<img src="image/README/1712276687614.png" alt="drawing" style="max-width:50%;" />
 
-### 5.5. Logische Fehlererkennung
+## 5.5. Logische Fehlererkennung
 
 Fünf Fehlererkennungs­mechanismen
 
 Zur Erkennung verfälschter Botschaften definiert das CAN-Protokoll fünf Maßnahmen: Bitmonitoring, Überwachung des Botschaftsformats (Form-Check), Überwachung der Bitcodierung (Stuff-Check), Auswertung des Acknowledgements (ACK-Check) und Auswertung der Prüfsumme (Cyclic Redundancy Check).
+
+<img src="image/README/1712276705185.png" alt="drawing" style="max-width:50%;" />
 
 Aufgaben für Sender und Empfänger
 
@@ -110,7 +111,7 @@ Cyclic Redundancy Check (CRC),
 
 Empfänger
 
-Beim Cyclic Redundancy Check (CRC) geht man davon aus, dass das dem ankommenden Data oder [Remote Frame](https://elearning.vector.com/mod/page/view.php?id=48 "Remote Frame") entsprechende Polynom R(x) einem Vielfachen des durch die ISO 11898-1 spezifizierten Generatorpolynoms G(x) entspricht. Wenn dies nicht der Fall ist (CRC-Fehler), dann wurde das Data oder [Remote Frame](https://elearning.vector.com/mod/page/view.php?id=48 "Remote Frame") während der Übertragung vom Sender zum Empfänger verfälscht.
+Beim Cyclic Redundancy Check (CRC) geht man davon aus, dass das dem ankommenden Data oder Remote Frame entsprechende Polynom R(x) einem Vielfachen des durch die ISO 11898-1 spezifizierten Generatorpolynoms G(x) entspricht. Wenn dies nicht der Fall ist (CRC-Fehler), dann wurde das Data oder Remote Frame während der Übertragung vom Sender zum Empfänger verfälscht.
 
 ACK Check,
 
@@ -118,23 +119,13 @@ Sender
 
 Der im CAN-Protokoll definierte Bestätigungsmechanismus (Acknowledgement) sieht vor, dass alle Empfänger jede ankommende CAN-Botschaft im Anschluss an den Cyclic Redundancy Check bestätigen müssen. Eine einzige positive Bestätigung reicht aus, um dem Sender zu signalisieren, dass mindestens ein Empfänger die von ihm übertragende CAN-Botschaft korrekt empfangen hat. Wenn keine einzige positive Bestätigung beim Sender eintrifft, dann liegt ein Bestätigungsfehler (ACK-Fehler) vor.
 
-![1706366600882](image/1706366600882.png)
-
-![1706366613193](image/1706366613193.png)
-
-![1706366622170](image/1706366622170.png)
-
-![1706366631728](image/1706366631728.png)
-
-![1706366639960](image/1706366639960.png)
-
-![1706366649284](image/1706366649284.png)
-
-### 5.6. Logische Fehlerbehandlung
+## 5.6. Logische Fehlerbehandlung
 
 Netzwerkweite Datenkonsistenz
 
 Das CAN-Protokoll schreibt aus Gründen netzwerkweiter Datenkonsistenz vor, dass bei lokalen Störungen der fehlererkennende [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") alle im [CAN-Netzwerk](https://elearning.vector.com/mod/page/view.php?id=38 "CAN-Netzwerk") angeschlossenen [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") davon in Kenntnis zu setzen hat. Dazu überträgt der fehlererkennende [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") ein Fehlersignal (Error Flag), welches sich aus sechs dominanten Bits zusammensetzt. Damit wird bewusst die Bitstuffingregel verletzt und so ein [Bitstuffing](https://elearning.vector.com/mod/page/view.php?id=51 "Bitstuffing")-Fehler verursacht.
+
+<img src="image/README/1712276741129.png" alt="drawing" style="max-width:50%;" />
 
 Error Flags
 
@@ -142,8 +133,10 @@ Die Übertragung eines Error Flags sorgt also dafür, dass alle anderen [CAN-Kno
 
 Error Delimiter
 
-Der Übertragung eines Error Flags schließt sich immer die Übertragung eines Error Delimiters an. Dieser setzt sich aus acht rezessiven Bit zusammen. Der Error Delimiter ersetzt den ACK-Delimiter und das EOF einer regulären Botschaftsübertragung, so dass sich zusammen mit der obligatorischen Sendepause (ITM - Intermission) auf dem [CAN-Bus](https://elearning.vector.com/mod/page/view.php?id=43 "CAN-Bus") elf rezessive Bit ergeben (Bus-Idle-Kennung). []
+Der Übertragung eines Error Flags schließt sich immer die Übertragung eines Error Delimiters an. Dieser setzt sich aus acht rezessiven Bit zusammen. Der Error Delimiter ersetzt den ACK-Delimiter und das EOF einer regulären Botschaftsübertragung, so dass sich zusammen mit der obligatorischen Sendepause (ITM - Intermission) auf dem [CAN-Bus](https://elearning.vector.com/mod/page/view.php?id=43 "CAN-Bus") elf rezessive Bit ergeben (Bus-Idle-Kennung).
 
+<img src="image/README/1712276756119.png" alt="drawing" style="max-width:50%;" />
+ 
 Abschluss der Fehlerbehandlung
 
 Die Fehlerbehandlung wird vom Sender der abgebrochenen CAN-Botschaft abgeschlossen, indem er nach dem ITM versucht, die abgebrochene CAN-Botschaft nochmals zu übertragen. Die Grafik „Fehlerbehandlung“ fasst alle Aktionen, die nach der Fehlererkennung in einem [CAN-Netzwerk](https://elearning.vector.com/mod/page/view.php?id=38 "CAN-Netzwerk") ablaufen, zusammen. Die Animation „Bitmonitoringfehler“ lädt Sie ein, sich mit der Fehlerbehandlung am Beispiel eines Bitmonitoringfehlers interaktiv auseinanderzusetzen.
@@ -156,30 +149,26 @@ Suspend Transmission Time
 
 31 Bitzeiten dauert es, wenn sich der [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") im fehlerpassiven Zustand befindet. In diesem Zustand hat ein [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") die sog. Suspend Transmission Time abzuwarten, ehe er wieder auf den [CAN-Bus](https://elearning.vector.com/mod/page/view.php?id=43 "CAN-Bus") zugreifen darf. Bei der Suspend Transmission Time handelt es sich also um eine verordnete Sendepause von 8 Bits.
 
-![1706366676774](image/1706366676774.png)
-
-![1706366686255](image/1706366686255.png)
-
-### 5.7. Fehlerverfolgung
+## 5.7. Fehlerverfolgung
 
 Busblockade vermeiden
 
-Zur Sicherstellung netzweiter Datenkonsistenz besitzt jeder Knoten in einem [CAN-Netzwerk](https://elearning.vector.com/mod/page/view.php?id=38 "CAN-Netzwerk") das Recht, eine als fehlerhaft interpretierte CAN-Botschaft abzubrechen. Dies gilt auch für [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten"), die irrtümlicherweise korrekte CAN-Botschaften als fehlerhaft interpretieren. Um die Blockierung des Übertragungsmediums zu vermeiden, hat man im CAN-Protokoll eine Fehlerverfolgung definiert, mit der die [CAN-Knoten](https://elearning.vector.com/mod/page/view.php?id=39 "CAN-Knoten") gelegentlich auftretende von anhaltenden Störungen unterscheiden können.
+Zur Sicherstellung netzweiter Datenkonsistenz besitzt jeder Knoten in einem CAN-Netzwerk das Recht, eine als fehlerhaft interpretierte CAN-Botschaft abzubrechen. Dies gilt auch für CAN-Knoten, die irrtümlicherweise korrekte CAN-Botschaften als fehlerhaft interpretieren. Um die Blockierung des Übertragungsmediums zu vermeiden, hat man im CAN-Protokoll eine Fehlerverfolgung definiert, mit der die CAN-Knoten gelegentlich auftretende von anhaltenden Störungen unterscheiden können.
+
+<img src="image/README/1712276783501.png" alt="drawing" style="max-width:50%;" />
 
 TEC und REC
 
-Im Zuge dessen führt jeder [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") einen Sendefehlerzähler TEC (Transmit Error Counter) und einen Empfangsfehlerzähler REC (Receive Error Counter). Im Falle einer erfolgreichen Übertragung eines Data oder Remote Frames wird der entsprechende Fehlerzähler dekrementiert (TEC=TEC-1; REC=REC-1). Durch das Entdecken und anschließende Übertragen eines Error Flags wird der entsprechende Fehlerzähler nach bestimmten Regeln inkrementiert. Für den Sender gilt folgende Regel: TEC=TEC+8. Fehlererkennende Empfänger inkrementieren ihren REC zunächst um eine Einheit (REC=REC+1). Für den Fehler verursachenden Empfänger gilt zudem REC=REC+8.
+Im Zuge dessen führt jeder CAN-Controller einen Sendefehlerzähler TEC (Transmit Error Counter) und einen Empfangsfehlerzähler REC (Receive Error Counter). Im Falle einer erfolgreichen Übertragung eines Data oder Remote Frames wird der entsprechende Fehlerzähler dekrementiert (TEC=TEC-1; REC=REC-1). Durch das Entdecken und anschließende Übertragen eines Error Flags wird der entsprechende Fehlerzähler nach bestimmten Regeln inkrementiert. Für den Sender gilt folgende Regel: TEC=TEC+8. Fehlererkennende Empfänger inkrementieren ihren REC zunächst um eine Einheit (REC=REC+1). Für den Fehler verursachenden Empfänger gilt zudem REC=REC+8.
 
 Error Active
 
-In Abhängigkeit des jeweiligen Zählerstands unternimmt ein [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") die Umschaltung des Fehlerzustandes. Nach dem Start nimmt ein [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") den Normalzustand Error Active ein. In diesem Zustand überträgt der [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") nach Detektion eines Fehlers sechs dominante Bit (aktives Error Flag). Nach Überschreiten einer Grenze (TEC>127; REC>127) wechseln die [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") in den Zustand Error Passive.
+In Abhängigkeit des jeweiligen Zählerstands unternimmt ein CAN-Controller die Umschaltung des Fehlerzustandes. Nach dem Start nimmt ein CAN-Controller den Normalzustand Error Active ein. In diesem Zustand überträgt der CAN-Controller nach Detektion eines Fehlers sechs dominante Bit (aktives Error Flag). Nach Überschreiten einer Grenze (TEC>127; REC>127) wechseln die CAN-Controller in den Zustand Error Passive.
 
 Error Passive
 
-[CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") im Zustand Error Passive können einen entdeckten Fehler lediglich mit sechs homogenen rezessiven Bits signalisieren. Fehlererkennenden Empfängern wird so die Möglichkeit genommen, entdeckte Fehler zu globalisieren. [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller"), die sich im Zustand Error Passive befinden, müssen beim Senden von zwei aufeinanderfolgenden Data oder Remote Frames zusätzlich die „Suspend Transmission Time“ (8 Bits) abwarten.
+CAN-Controller im Zustand Error Passive können einen entdeckten Fehler lediglich mit sechs homogenen rezessiven Bits signalisieren. Fehlererkennenden Empfängern wird so die Möglichkeit genommen, entdeckte Fehler zu globalisieren. CAN-Controller, die sich im Zustand Error Passive befinden, müssen beim Senden von zwei aufeinanderfolgenden Data oder Remote Frames zusätzlich die „Suspend Transmission Time“ (8 Bits) abwarten.
 
 Bus Off
 
-Bei Ausfall eines CAN-Controllers oder bei extremer Fehlerhäufung erfolgt ein Zustandsübergang nach Bus Off. Der [CAN-Controller](https://elearning.vector.com/mod/page/view.php?id=40 "CAN-Controller") trennt sich vom [CAN-Bus](https://elearning.vector.com/mod/page/view.php?id=43 "CAN-Bus") ab. Der Zustand Bus Off kann nur durch Eingriff des Host (mit 128 x 11 Bit Zwangswartezeit) oder per Hardware-Reset verlassen werden.
-
-![1706366752481](image/1706366752481.png)
+Bei Ausfall eines CAN-Controllers oder bei extremer Fehlerhäufung erfolgt ein Zustandsübergang nach Bus Off. Der CAN-Controller trennt sich vom CAN-Bus ab. Der Zustand Bus Off kann nur durch Eingriff des Host (mit 128 x 11 Bit Zwangswartezeit) oder per Hardware-Reset verlassen werden.
