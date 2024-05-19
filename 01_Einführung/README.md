@@ -1,33 +1,30 @@
+
 # 1. Einführung
 
 ## 1.1. Motivation für CAN
 
-Die Geschichte der Automobilindustrie ist eine Geschichte ständiger Innovation und Anpassung an die sich verändernden Anforderungen und Herausforderungen. Die jüngsten Entwicklungen, die von einer verstärkten Integration von Elektronik geprägt sind, sind ein klares Zeichen dafür, wie die Branche sich kontinuierlich weiterentwickelt, um den wachsenden Bedürfnissen der Kunden und den strengen gesetzlichen Vorschriften gerecht zu werden. Die Evolution des Controller Area Networks (CAN) in der Automobilindustrie ist ein beeindruckendes Beispiel für technologische Innovation und Standardisierung, das die Art und Weise, wie Fahrzeuge entworfen, entwickelt und betrieben werden, revolutioniert hat.
+Die Automobilindustrie hat eine lange Tradition der Innovation, angetrieben durch die Notwendigkeit, sich ständig verändernden Anforderungen und Herausforderungen anzupassen. In den letzten Jahrzehnten hat die zunehmende Integration von Elektronik in Fahrzeuge die Branche grundlegend verändert. Ein herausragendes Beispiel für technologische Innovation in diesem Bereich ist das Controller Area Network (CAN), das die Art und Weise, wie Fahrzeuge entworfen, entwickelt und betrieben werden, revolutioniert hat.
 
-Die zunehmende Komplexität moderner Fahrzeuge erforderte eine effizientere Methode zur Integration elektronischer Systeme. Frühe Ansätze mit eigenständigen Steuergeräten waren nicht mehr ausreichend, um den wachsenden Anforderungen gerecht zu werden. Die Einführung des CAN-Bus löste dieses Problem, indem es einen effizienten bitseriellen Datenaustausch über einen einzigen Kommunikationskanal ermöglichte.
+Moderne Fahrzeuge sind zunehmend komplexer geworden und erfordern effizientere Methoden zur Integration elektronischer Systeme. Frühe Ansätze, bei denen eigenständige Steuergeräte verwendet wurden, konnten den steigenden Anforderungen nicht mehr gerecht werden. Die Einführung des CAN-Busses löste dieses Problem, indem ein effizienter, bitserieller Datenaustausch über einen einzigen Kommunikationskanal ermöglicht wurde.
 
-<img src="image/README/1712016724992.png" alt="drawing" style="max-width:50%;" />
+<img src="image/README/1712016724992.png" alt="CAN-Bus Diagramm" style="max-width:50%;" />
 
-Die Standardisierung von CAN durch Bosch in den 80er Jahren legte den Grundstein für eine nahtlose Kommunikation zwischen den verschiedenen elektronischen Steuergeräten im Fahrzeug. Die Zuverlässigkeit und Sicherheit der Datenübertragung des CAN-Bus erfüllen die Echtzeitanforderungen, die in der Automobilindustrie unerlässlich sind.
+In den 1980er Jahren standardisierte Bosch den CAN-Bus, was den Grundstein für eine nahtlose Kommunikation zwischen verschiedenen elektronischen Steuergeräten im Fahrzeug legte. Die Zuverlässigkeit und Sicherheit der Datenübertragung des CAN-Busses erfüllen die strengen Echtzeitanforderungen der Automobilindustrie. Die Implementierung von CAN führte nicht nur zu einer signifikanten Reduzierung der Verkabelungskosten und des Platzbedarfs, sondern vereinfachte auch die Systemintegration. Die komplexen und sperrigen Kabelbäume der Vergangenheit wurden durch eine schlankere und effizientere Fahrzeugarchitektur ersetzt.
 
-Durch die Implementierung von CAN wurden nicht nur die Verkabelungskosten und der Platzbedarf erheblich reduziert, sondern auch die Systemintegration vereinfacht. Komplexe und sperrige Kabelbäume gehören der Vergangenheit an, was zu einer schlankeren und effizienteren Fahrzeugarchitektur führt.
-
-Die kontinuierliche Weiterentwicklung von CAN zeigt, wie Technologie dazu beiträgt, die Leistungsfähigkeit und Zuverlässigkeit moderner Fahrzeuge zu verbessern. Die Automobilindustrie setzt weiterhin auf CAN und baut auf dieser bewährten Technologie auf, um zukünftige Herausforderungen zu meistern und innovative Lösungen für die Mobilität von morgen zu entwickeln.
+Die kontinuierliche Weiterentwicklung von CAN verdeutlicht, wie Technologie dazu beiträgt, die Leistungsfähigkeit und Zuverlässigkeit moderner Fahrzeuge zu verbessern. Die Automobilindustrie setzt weiterhin auf CAN und baut auf dieser bewährten Technologie auf, um zukünftige Herausforderungen zu meistern und innovative Lösungen für die Mobilität von morgen zu entwickeln.
 
 ## 1.2. Standardisierung
 
-Die CAN-Technologie wurde im Jahr 1994 standardisiert und ist hauptsächlich durch drei ISO-Dokumente definiert. Die ISO 11898-1 spezifiziert das CAN-Protokoll, das den Data Link Layer (MAC - Medium Access Control, LLC - Logical Link Control) und das Physical Layer (PLS - Physical Signalling) abdeckt, im Gegensatz zum Referenzmodell für Datenkommunikation.
+Das CAN-Protokoll (Controller Area Network) ist eine seit 1994 standardisierte Technologie, die hauptsächlich durch drei ISO-Dokumente beschrieben wird. Die ISO 11898-1 definiert das CAN-Protokoll und umfasst den Data Link Layer (MAC - Medium Access Control, LLC - Logical Link Control) sowie den Physical Layer (PLS - Physical Signalling) gemäß dem Referenzmodell der Datenkommunikation.
 
-Die Implementierung des CAN-Protokolls erfolgt in Hardware. Es gibt eine Vielzahl von CAN-Controllern, die sich hauptsächlich im Umgang mit CAN-Nachrichten unterscheiden und daher Unterschiede auf der Object Layer aufweisen. CAN-Controller werden in Full-CAN-Controller (mit Objektspeicherung) und Basic-CAN-Controller (ohne Objektspeicherung) unterteilt.
+Die Implementierung des CAN-Protokolls erfolgt in Hardware durch sogenannte CAN-Controller, die sich hauptsächlich in ihrem Umgang mit CAN-Botschaften unterscheiden. Es gibt CAN-Controller mit Objektespeicherung (Full-CAN-Controller) und solche ohne Objektespeicherung (Basic-CAN-Controller).
 
-Die ISO-Dokumente ISO 11898-2 und ISO 11898-3 behandeln die beiden Unterschichten PMA (Physical Medium Attachment) und PMS (Physical Medium Specification) des Referenzmodells für Datenkommunikation. Sie beschreiben zwei verschiedene CAN Physical Layer: CAN-High-Speed Physical Layer und CAN-Low-Speed Physical Layer, wobei die Hauptunterschiede in der Spannungsdefinition und der Datenübertragungsgeschwindigkeit (Datenrate) liegen.
+Die ISO 11898-2 und ISO 11898-3 beschreiben die Unterschichten PMA (Physical Medium Attachment) und PMS (Physical Medium Specification) des Referenzmodells der Datenkommunikation. Sie definieren zwei verschiedene CAN Physical Layer: den CAN-High-Speed Physical Layer und den CAN-Low-Speed Physical Layer, die sich hauptsächlich in der Spannungsdefinition und der Datenübertragungsgeschwindigkeit unterscheiden.
 
-ISO 11898-3 ermöglicht Datenraten von bis zu 125 KBit/s und wird hauptsächlich im Komfortbereich des Automobils eingesetzt, während ISO 11898-2 Datenraten bis zu 1 MBit/s erlaubt und vor allem im Antriebs- und Fahrwerksbereich des Automobils verwendet wird. Die ISO 11898-5 beschreibt das Verhalten eines CAN-Knotens im "Low Power Mode" bezüglich der Datenübertragung in einem CAN-High-Speed CAN-Netzwerk.
+Die Datenraten variieren je nach ISO-Dokument. Die ISO 11898-3 erlaubt Datenraten bis zu 125 KBit/s und wird hauptsächlich im Komfortbereich des Fahrzeugs eingesetzt. Die ISO 11898-2 ermöglicht Datenraten bis zu 1 MBit/s und findet vor allem Anwendung im Antriebs- und Fahrwerksbereich. Für die Unterschicht MDI (Medium Dependent Interface) des Physical Layers gibt es keinen Standard, aber die CiA DS-102 (CAN in Automation) empfiehlt bestimmte Steckertypen und Belegungen.
 
-Für die Unterschicht MDI (Medium Dependent Interface) des Physical Layers existiert kein Standard. Die CiA DS-102 (CiA: CAN in Automation) empfiehlt lediglich die Verwendung bestimmter Stecker (SUB-D9) und eine spezifische Steckerbelegung.
+Das CAN-Protokoll ermöglicht eine ereignisgesteuerte Kommunikation gemäß der ISO 11898-1. Bei hoher Buslast kann es zu Verzögerungen kommen, insbesondere bei niederprioritären CAN-Botschaften. Um eine deterministische Kommunikation zu gewährleisten, bietet die ISO 11898-4 eine Time Triggered Communication-Option für CAN-basierte Netzwerke an, die eine zeitgesteuerte Kommunikation ermöglicht.
 
-Die ISO 11898-1 definiert eine ereignisgesteuerte Kommunikation. Bei hoher Buslast können niedrig priorisierte CAN-Nachrichten zu Verzögerungen führen. Um eine deterministische Kommunikation in einem CAN-Netzwerk sicherzustellen, steht die ISO 11898-4 zur Verfügung. Diese erweitert den Data Link Layer und bietet eine Time Triggered Communication-Option für CAN-basierte Netzwerke.
+Das ISO/OSI-Referenzmodell der Datenkommunikation bildet den Rahmen für das CAN-Protokoll und dessen Implementierung. Die Grafik "Standard und Implementierung" zeigt den Zusammenhang zwischen diesen Elementen auf. Durch die klare Strukturierung und Standardisierung bietet das CAN-Protokoll eine robuste und zuverlässige Grundlage für die Kommunikation in verschiedensten Anwendungen, insbesondere im Automobilbereich.
 
-Die untenstehende Grafik "Standard und Implementierung" veranschaulicht den Zusammenhang zwischen dem ISO/OSI-Referenzmodell für Datenkommunikation, dem CAN-Standard und der Implementierung.
-
-<img src="image/README/1712017003646.png" alt="drawing" style="max-width:50%;" />
+<img src="image/README/1712017003646.png" alt="ISO/OSI-Referenzmodell und CAN-Standard" style="max-width:50%;" />
