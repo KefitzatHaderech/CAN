@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Länge Datenfeld - Controller Area Network</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_Einfuehrung/index.html"><strong aria-hidden="true">1.</strong> Einführung</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_Einfuehrung/01_motivation.html"><strong aria-hidden="true">1.1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="../01_Einfuehrung/02_standardisierung.html"><strong aria-hidden="true">1.2.</strong> Standardisierung</a></li></ol></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/index.html"><strong aria-hidden="true">2.</strong> Kommunikation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/01_netzwerk.html"><strong aria-hidden="true">2.1.</strong> Netzwerk</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/02_knoten.html"><strong aria-hidden="true">2.2.</strong> Knoten</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/03_controller.html"><strong aria-hidden="true">2.3.</strong> Controller</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/04_transceiver.html"><strong aria-hidden="true">2.4.</strong> Transceiver</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/05_bus.html"><strong aria-hidden="true">2.5.</strong> Bus</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/06_buspegel.html"><strong aria-hidden="true">2.6.</strong> Buspegel</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/07_buslogik.html"><strong aria-hidden="true">2.7.</strong> Buslogik</a></li><li class="chapter-item expanded "><a href="../02_CAN-Kommunikation/08_kommunikationsprinzip.html"><strong aria-hidden="true">2.8.</strong> Kommunikationsprinzip</a></li></ol></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/index.html"><strong aria-hidden="true">3.</strong> Framing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_CAN-Framing/01_frametypen.html"><strong aria-hidden="true">3.1.</strong> Frametypen</a></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/02_data-frame.html"><strong aria-hidden="true">3.2.</strong> Data-Frame</a></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/03_remote-frame.html"><strong aria-hidden="true">3.3.</strong> Remote-Frame</a></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/04_adressierung.html"><strong aria-hidden="true">3.4.</strong> Adressierung</a></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/05_crc-ack.html"><strong aria-hidden="true">3.5.</strong> CRC-Acknowledge</a></li><li class="chapter-item expanded "><a href="../03_CAN-Framing/06_bitstuffing.html"><strong aria-hidden="true">3.6.</strong> Bitstuffing</a></li></ol></li><li class="chapter-item expanded "><a href="../04_CAN-Buszugriff/index.html"><strong aria-hidden="true">4.</strong> Buszugriff</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_CAN-Buszugriff/01_prinzip.html"><strong aria-hidden="true">4.1.</strong> Prinzip</a></li><li class="chapter-item expanded "><a href="../04_CAN-Buszugriff/02_arbitrierung.html"><strong aria-hidden="true">4.2.</strong> Arbitrierung</a></li><li class="chapter-item expanded "><a href="../04_CAN-Buszugriff/03_priorisierung.html"><strong aria-hidden="true">4.3.</strong> Priorisierung</a></li></ol></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/index.html"><strong aria-hidden="true">5.</strong> Datensicherung</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/01_datensicherung.html"><strong aria-hidden="true">5.1.</strong> Datensicherung</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/02_nrz-codierung.html"><strong aria-hidden="true">5.2.</strong> NRZ-Codierung</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/03_twisted-pair.html"><strong aria-hidden="true">5.3.</strong> Twisted Pair</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/04_terminierung.html"><strong aria-hidden="true">5.4.</strong> Terminierung</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/05_logische-fehlererkennung.html"><strong aria-hidden="true">5.5.</strong> Logische Fehlererkennung</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/06_logische-fehlerbehandlung.html"><strong aria-hidden="true">5.6.</strong> Logische Fehlerbehandlung</a></li><li class="chapter-item expanded "><a href="../05_CAN-Datensicherung/07_fehlerverfolgung.html"><strong aria-hidden="true">5.7.</strong> Fehlerverfolgung</a></li></ol></li><li class="chapter-item expanded "><a href="../06_CAN-FD/index.html"><strong aria-hidden="true">6.</strong> CAN-FD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06_CAN-FD/01_motivation.html"><strong aria-hidden="true">6.1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/02_vorteile-konsequenzen.html"><strong aria-hidden="true">6.2.</strong> Vorteile und Konsequenzen</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/03_botschaftsformate.html"><strong aria-hidden="true">6.3.</strong> Botschaftsformate</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/04_details-can-fd-botschaft.html"><strong aria-hidden="true">6.4.</strong> Details CAN-FD Botschaft</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/05_can-vs-can-fd.html"><strong aria-hidden="true">6.5.</strong> CAN vs. CAN-FD</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/06_kompatibilitaet.html"><strong aria-hidden="true">6.6.</strong> Kompatbilität</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/07_beschleunigte-uerbertragung.html"><strong aria-hidden="true">6.7.</strong> Beschleunigte Übertragung</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/08_selbstanzeige.html"><strong aria-hidden="true">6.8.</strong> Selbstanzeige</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/09_laenge-datenfeld.html" class="active"><strong aria-hidden="true">6.9.</strong> Länge Datenfeld</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/10_gleichbleibende-sicherheit.html"><strong aria-hidden="true">6.10.</strong> Gleichbleibende Sicherheit</a></li><li class="chapter-item expanded "><a href="../06_CAN-FD/11_geaendertes-bitstuffing.html"><strong aria-hidden="true">6.11.</strong> Geändertes Bitstuffing</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Controller Area Network</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="länge-des-datenfeldes"><a class="header" href="#länge-des-datenfeldes">Länge des Datenfeldes</a></h1>
+<h2 id="verständnis-von-can"><a class="header" href="#verständnis-von-can">Verständnis von CAN</a></h2>
+<p>CAN ist ein robustes Fahrzeugbus-Standard, das entwickelt wurde, um Mikrocontroller und Geräte miteinander kommunizieren zu lassen, ohne dass ein Host-Computer benötigt wird. Es wurde ursprünglich für Automobilanwendungen entwickelt, hat aber mittlerweile in vielen anderen Bereichen Verwendung gefunden.</p>
+<p><strong>Wichtige Merkmale von CAN:</strong></p>
+<ol>
+<li><strong>Datenübertragung:</strong> CAN unterstützt Datenübertragungsraten von bis zu 1 Mbps.</li>
+<li><strong>Nachrichtenbasiertes Protokoll:</strong> Die Kommunikation basiert auf Nachrichten, wobei jede Nachricht eine Kennung und eine Nutzlast enthält.</li>
+<li><strong>Data Length Code (DLC):</strong> Bei CAN ist der DLC ein 4-Bit-Feld, das die Anzahl der Bytes im Datenfeld angibt. Es kann neun mögliche Längen darstellen, von 0 bis 8 Bytes.</li>
+</ol>
+<p><strong>DLC bei CAN:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>DLC</th><th>Datenfeld Bytes</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>4</td></tr>
+<tr><td>5</td><td>5</td></tr>
+<tr><td>6</td><td>6</td></tr>
+<tr><td>7</td><td>7</td></tr>
+<tr><td>8</td><td>8</td></tr>
+</tbody></table>
+</div>
+<p>Diese feste Struktur begrenzt die Nutzlast auf maximal 8 Bytes, was für Anwendungen, die eine höhere Datenrate benötigen, einschränkend sein kann.</p>
+<h2 id="Übergang-zu-can-fd"><a class="header" href="#Übergang-zu-can-fd">Übergang zu CAN-FD</a></h2>
+<p>CAN-FD wurde eingeführt, um die Beschränkungen des klassischen CAN, insbesondere die begrenzte Nutzlastgröße und niedrigere Datenübertragungsraten, zu überwinden. CAN-FD erweitert die Fähigkeiten von CAN, indem es flexiblere Datenfeldlängen und höhere Bitraten während der Datenphase der Kommunikation ermöglicht.</p>
+<p><strong>Wichtige Merkmale von CAN-FD:</strong></p>
+<ol>
+<li><strong>Flexible Datenlänge:</strong> CAN-FD erweitert die Datenfeldlänge auf bis zu 64 Bytes, was die Menge der Daten, die in einer einzigen Nachricht übertragen werden können, erheblich erhöht.</li>
+<li><strong>Verbesserte Datenraten:</strong> CAN-FD kann während der Datenphase höhere Datenraten als 1 Mbps erreichen, was die Gesamteffizienz der Kommunikation verbessert.</li>
+<li><strong>Erweiterter DLC:</strong> Der DLC bei CAN-FD verwendet zusätzliche Werte, um größere Datenfeldlängen darzustellen.</li>
+</ol>
+<p><strong>DLC bei CAN-FD:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>DLC</th><th>(CAN)</th><th>(CAN-FD)</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>4</td><td>4</td></tr>
+<tr><td>5</td><td>5</td><td>5</td></tr>
+<tr><td>6</td><td>6</td><td>6</td></tr>
+<tr><td>7</td><td>7</td><td>7</td></tr>
+<tr><td>8</td><td>8</td><td>8</td></tr>
+<tr><td>9</td><td>8</td><td>12</td></tr>
+<tr><td>10</td><td>8</td><td>16</td></tr>
+<tr><td>11</td><td>8</td><td>20</td></tr>
+<tr><td>12</td><td>8</td><td>24</td></tr>
+<tr><td>13</td><td>8</td><td>32</td></tr>
+<tr><td>14</td><td>8</td><td>48</td></tr>
+<tr><td>15</td><td>8</td><td>64</td></tr>
+</tbody></table>
+</div>
+<p>Für DLC-Werte größer als 8 ist der Zusammenhang zwischen DLC und der Anzahl der Bytes im Datenfeld nicht mehr linear. Diese Änderung ermöglicht es CAN-FD, eine breitere Palette von Datenfeldgrößen zu unterstützen, wodurch seine Flexibilität und Anwendbarkeit in modernen Fahrzeugsystemen verbessert wird.</p>
+<h2 id="detaillierte-analyse-von-dlc-und-datenfeldgrößen"><a class="header" href="#detaillierte-analyse-von-dlc-und-datenfeldgrößen">Detaillierte Analyse von DLC und Datenfeldgrößen</a></h2>
+<p>Die Rolle des DLC-Felds bei der Bestimmung der Datenfeldgrößen ist entscheidend, um die Unterschiede zwischen CAN und CAN-FD zu verstehen. Im klassischen CAN entsprechen die DLC-Werte direkt der Anzahl der Bytes im Datenfeld, mit einem Maximum von 8 Bytes. Im CAN-FD hingegen ermöglichen DLC-Werte von 9 bis 15 erweiterte Datenfeldgrößen, wie in der obigen Tabelle dargestellt.</p>
+<p><strong>Auswirkungen der erweiterten DLC-Werte in CAN-FD:</strong></p>
+<ol>
+<li><strong>Erhöhte Daten-Nutzlast:</strong> Die erweiterten DLC-Werte in CAN-FD ermöglichen Daten-Nutzlasten von bis zu 64 Bytes, was die Übertragung größerer Datenpakete in einem einzigen Nachrichtenrahmen erleichtert.</li>
+<li><strong>Nichtlinearer DLC-zu-Datenfeld-Zusammenhang:</strong> Für DLC-Werte größer als 8 ist die Zuordnung zu Datenfeldgrößen nicht linear, wodurch die verfügbaren DLC-Werte effizienter genutzt werden können, um unterschiedlichen Nutzlastanforderungen gerecht zu werden.</li>
+<li><strong>Abwärtskompatibilität:</strong> CAN-FD bleibt abwärtskompatibel mit dem klassischen CAN und stellt sicher, dass Systeme auf CAN-FD umgestellt werden können, ohne bestehende CAN-basierte Kommunikationsrahmen zu stören.</li>
+</ol>
+<h2 id="praktische-anwendungen-und-vorteile"><a class="header" href="#praktische-anwendungen-und-vorteile">Praktische Anwendungen und Vorteile</a></h2>
+<p>Die Verbesserungen in CAN-FD, insbesondere in Bezug auf DLC und Datenfeldgrößen, bieten mehrere praktische Vorteile in der Automobilindustrie und anderen Anwendungsbereichen:</p>
+<ol>
+<li><strong>Höhere Effizienz:</strong> Die Möglichkeit, größere Datenpakete zu übertragen, reduziert die Anzahl der erforderlichen Nachrichten und erhöht somit die Gesamteffizienz des Kommunikationsnetzwerks.</li>
+<li><strong>Skalierbarkeit:</strong> Die flexiblen Datenfeldlängen von CAN-FD machen es für eine breite Palette von Anwendungen geeignet, von einfachen Sensordatenübertragungen bis hin zu komplexen Datenaustauschen in fortschrittlichen Fahrerassistenzsystemen (ADAS).</li>
+<li><strong>Zukunftssicherheit:</strong> Die höheren Datenraten und die erhöhte Nutzlastkapazität stellen sicher, dass CAN-FD den wachsenden Datenkommunikationsanforderungen zukünftiger Automobiltechnologien, einschließlich autonomem Fahren und vernetzten Fahrzeugsystemen, gerecht wird.</li>
+</ol>
+<h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
+<p>CAN und CAN-FD sind wesentliche Komponenten moderner Fahrzeugkommunikationsnetzwerke. Das Verständnis der Unterschiede in DLC und Datenfeldgrößen zwischen den beiden Protokollen ist entscheidend, um ihre Fähigkeiten effektiv zu nutzen. Die Verbesserungen von CAN-FD, insbesondere die Unterstützung größerer Datenfeldgrößen und höherer Datenraten, machen es zu einem leistungsstarken Upgrade vom klassischen CAN und adressieren die sich entwickelnden Anforderungen der Automobilindustrie.</p>
+<p>Durch ein umfassendes Verständnis und die effektive Nutzung der Funktionen von CAN-FD können Automobilingenieure und Netzwerkdesigner die Leistung, Effizienz und Skalierbarkeit von Fahrzeugkommunikationssystemen erheblich verbessern.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../06_CAN-FD/08_selbstanzeige.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../06_CAN-FD/10_gleichbleibende-sicherheit.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../06_CAN-FD/08_selbstanzeige.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../06_CAN-FD/10_gleichbleibende-sicherheit.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
