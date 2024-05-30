@@ -20,7 +20,7 @@ jobs:
           cargo install mdbook
 
       - name: Build the book
-        run: mdbook build Django  # 'Django' is your book directory
+        run: mdbook build CAN  # 'CAN' is your book directory
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
