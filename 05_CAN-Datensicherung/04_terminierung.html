@@ -176,7 +176,7 @@
                         <h1 id="terminierung"><a class="header" href="#terminierung">Terminierung</a></h1>
 <h2 id="einführung"><a class="header" href="#einführung">Einführung</a></h2>
 <p>In modernen Automobilen sind zuverlässige Kommunikationsnetzwerke entscheidend für die Funktionalität und Effizienz von elektronischen Steuergeräten. Neben dem bekannten CAN-Bus (Controller Area Network) hat sich der LIN-Bus (Local Interconnect Network) als kostengünstige Alternative etabliert, insbesondere für Anwendungen, die keine hohen Datenübertragungsraten erfordern. Im Folgenden wird ein detailliertes und wissenschaftlich fundiertes Tutorial zur Bedeutung des Wellenwiderstands und des Abschlusswiderstands im CAN-Bus präsentiert, mit speziellen Hinweisen auf die Relevanz dieser Konzepte für den LIN-Bus.</p>
-<img src="./image/README/1712276671360.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276671360.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="wellenwiderstand"><a class="header" href="#wellenwiderstand">Wellenwiderstand</a></h2>
 <p>Der Wellenwiderstand (charakteristische Impedanz) eines Übertragungsmediums ist eine fundamentale Eigenschaft, die die Ausbreitung von elektrischen Signalen entlang des Mediums beschreibt. Im Kontext von Hochgeschwindigkeits-Datenübertragungen, wie sie im CAN-Bus üblich sind, spielt der Wellenwiderstand eine entscheidende Rolle.</p>
 <h2 id="definition-und-bedeutung"><a class="header" href="#definition-und-bedeutung">Definition und Bedeutung</a></h2>
@@ -189,7 +189,7 @@
 <p>Ein typischer Abschlusswiderstand im CAN-Bus hat einen Wert von 120 Ohm und wird an beiden Enden des Buskabels angebracht. Diese Abschlusswiderstände sorgen dafür, dass das Signal vollständig absorbiert wird und keine Reflexionen entstehen, die die Signalübertragung stören könnten.</p>
 <h2 id="geteilter-abschlusswiderstand"><a class="header" href="#geteilter-abschlusswiderstand">Geteilter Abschlusswiderstand</a></h2>
 <p>Eine alternative Methode zur Terminierung ist die Verwendung eines geteilten Abschlusswiderstands. Diese Technik verwendet zwei identische Widerstände von jeweils 60 Ohm und eine Kapazität, typischerweise 4,7 nF, die zwischen den beiden Widerständen und der Masse geschaltet wird.</p>
-<img src="./image/README/1712276687614.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276687614.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="funktionsweise-und-vorteile"><a class="header" href="#funktionsweise-und-vorteile">Funktionsweise und Vorteile</a></h3>
 <p>Der geteilte Abschlusswiderstand wirkt als Tiefpassfilter. Hochfrequente Signalanteile werden gegen Masse kurzgeschlossen, während die Gleichspannungsverhältnisse nicht beeinflusst werden. Diese Konfiguration hat mehrere Vorteile:</p>
 <ul>
@@ -205,7 +205,6 @@
 </ul>
 <h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
 <p>Die korrekte Terminierung von Kommunikationsbussen wie CAN und LIN ist entscheidend für die Sicherstellung einer zuverlässigen und störungsfreien Datenübertragung. Der Wellenwiderstand muss sorgfältig beachtet und die Enden des Busses entsprechend terminiert werden, um Reflexionen zu minimieren. Die Anwendung geteilter Abschlusswiderstände bietet zusätzliche Vorteile in Bezug auf Störfestigkeit und Emissionsreduktion und kann daher in anspruchsvollen Anwendungen eine sinnvolle Ergänzung darstellen.</p>
-<p>Dieses Tutorial hat die theoretischen Grundlagen und praktischen Anwendungen des Wellenwiderstands und der Abschlusswiderstände im Automobilbereich detailliert erläutert. Eine fundierte Kenntnis dieser Konzepte ist für Ingenieure und Techniker im Bereich der Fahrzeugkommunikation unerlässlich, um robuste und zuverlässige Netzwerke zu entwickeln.</p>
 
                     </main>
 

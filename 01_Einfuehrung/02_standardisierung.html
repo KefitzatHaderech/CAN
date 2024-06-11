@@ -173,44 +173,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="standardisierung"><a class="header" href="#standardisierung">Standardisierung</a></h2>
+                        <h1 id="standardisierung"><a class="header" href="#standardisierung">Standardisierung</a></h1>
 <p>Die Controller Area Network (CAN)-Technologie ist seit 1994 standardisiert und spielt eine zentrale Rolle in der Fahrzeug-Elektronik. Die CAN-Standards werden hauptsächlich durch drei ISO-Dokumente beschrieben, die spezifische Aspekte des CAN-Protokolls und seiner Implementierung abdecken. In dieser detaillierten Einführung werden wir die verschiedenen Schichten des ISO/OSI-Referenzmodells, die relevanten CAN-Standards und die Implementierung von CAN in Fahrzeugen betrachten.</p>
-<h3 id="can-protokoll"><a class="header" href="#can-protokoll">CAN-Protokoll</a></h3>
+<h2 id="can-protokoll"><a class="header" href="#can-protokoll">CAN-Protokoll</a></h2>
 <p>Das CAN-Protokoll ist durch die ISO 11898-1 standardisiert. Im Vergleich zum ISO/OSI-Referenzmodell der Datenkommunikation deckt das CAN-Protokoll die Schichten Data Link Layer und Physical Layer ab.</p>
-<h4 id="data-link-layer"><a class="header" href="#data-link-layer">Data Link Layer</a></h4>
+<h2 id="data-link-layer"><a class="header" href="#data-link-layer">Data Link Layer</a></h2>
 <p>Im Data Link Layer wird das CAN-Protokoll in zwei Hauptkomponenten unterteilt:</p>
 <ul>
 <li><strong>LLC (Logical Link Control)</strong>: Diese Komponente sorgt für die logische Steuerung des Datenflusses.</li>
 <li><strong>MAC (Medium Access Control)</strong>: Diese Komponente regelt den Zugang zum Übertragungsmedium und steuert die Datenübertragung zwischen den Netzwerkteilnehmern.</li>
 </ul>
-<h4 id="physical-layer"><a class="header" href="#physical-layer">Physical Layer</a></h4>
+<h2 id="physical-layer"><a class="header" href="#physical-layer">Physical Layer</a></h2>
 <p>Der Physical Layer des CAN-Protokolls wird durch die PLS (Physical Layer Signalling) beschrieben, welche die physikalische Signalisierung der Daten definiert.</p>
-<h3 id="can-controller"><a class="header" href="#can-controller">CAN-Controller</a></h3>
+<h2 id="can-controller"><a class="header" href="#can-controller">CAN-Controller</a></h2>
 <p>Das CAN-Protokoll wird in Hardware durch sogenannte CAN-Controller implementiert. Es gibt verschiedene Arten von CAN-Controllern, die sich im Umgang mit CAN-Botschaften unterscheiden. Man unterscheidet hauptsächlich zwischen:</p>
 <ul>
 <li><strong>Full-CAN-Controller</strong>: Diese Controller speichern CAN-Botschaften in einem internen Speicher.</li>
 <li><strong>Basic-CAN-Controller</strong>: Diese Controller besitzen keinen internen Objektespeicher und bearbeiten Botschaften direkt.</li>
 </ul>
-<h3 id="can-high-speed-und-can-low-speed"><a class="header" href="#can-high-speed-und-can-low-speed">CAN-High-Speed und CAN-Low-Speed</a></h3>
+<h2 id="can-high-speed-und-can-low-speed"><a class="header" href="#can-high-speed-und-can-low-speed">CAN-High-Speed und CAN-Low-Speed</a></h2>
 <p>Die physikalische Schicht des CAN-Protokolls wird durch zwei Hauptstandards definiert:</p>
 <ul>
 <li><strong>ISO 11898-2 (CAN-High-Speed)</strong>: Dieser Standard erlaubt Datenraten bis zu 1 MBit/s und findet Anwendung in sicherheitskritischen Bereichen wie Antrieb und Fahrwerk.</li>
 <li><strong>ISO 11898-3 (CAN-Low-Speed)</strong>: Dieser Standard erlaubt Datenraten bis zu 125 KBit/s und wird vorwiegend in weniger kritischen Bereichen wie Komfortsystemen verwendet.</li>
 </ul>
-<h3 id="datenraten"><a class="header" href="#datenraten">Datenraten</a></h3>
+<h2 id="datenraten"><a class="header" href="#datenraten">Datenraten</a></h2>
 <p>Die Datenübertragungsraten im CAN-Netzwerk variieren je nach Anwendungsbereich:</p>
 <ul>
 <li><strong>ISO 11898-2</strong>: Unterstützt Datenraten bis zu 1 MBit/s und wird in Bereichen eingesetzt, die hohe Datenübertragungsraten erfordern.</li>
 <li><strong>ISO 11898-3</strong>: Unterstützt Datenraten bis zu 125 KBit/s und wird in Anwendungen verwendet, die geringere Übertragungsraten benötigen.</li>
 </ul>
-<h3 id="medium-dependent-interface-mdi"><a class="header" href="#medium-dependent-interface-mdi">Medium Dependent Interface (MDI)</a></h3>
+<h2 id="medium-dependent-interface-mdi"><a class="header" href="#medium-dependent-interface-mdi">Medium Dependent Interface (MDI)</a></h2>
 <p>Für die Unterschicht MDI des Physical Layers existiert kein spezifischer Standard. Die CiA DS-102 (CAN in Automation) gibt jedoch Empfehlungen für die Verwendung bestimmter Stecker, wie zum Beispiel SUB-D9-Stecker, und deren Belegung.</p>
-<h3 id="ereignisgesteuerte-kommunikation"><a class="header" href="#ereignisgesteuerte-kommunikation">Ereignisgesteuerte Kommunikation</a></h3>
+<h2 id="ereignisgesteuerte-kommunikation"><a class="header" href="#ereignisgesteuerte-kommunikation">Ereignisgesteuerte Kommunikation</a></h2>
 <p>Die Kommunikation im CAN-Netzwerk ist ereignisgesteuert, wie in der ISO 11898-1 definiert. Bei hoher Buslast kann es zur Verzögerung niederpriorisierter CAN-Botschaften kommen. Um eine deterministische Kommunikation zu gewährleisten, kann die ISO 11898-4 herangezogen werden, welche eine zeitgesteuerte Kommunikationsoption für CAN-basierte Netzwerke bietet.</p>
-<h3 id="isoosi-referenzmodell-und-can"><a class="header" href="#isoosi-referenzmodell-und-can">ISO/OSI-Referenzmodell und CAN</a></h3>
+<h2 id="isoosi-referenzmodell-und-can"><a class="header" href="#isoosi-referenzmodell-und-can">ISO/OSI-Referenzmodell und CAN</a></h2>
 <p>Die folgende Grafik zeigt die Beziehung zwischen dem ISO/OSI-Referenzmodell der Datenkommunikation, dem CAN-Standard und der Implementierung:</p>
-<img src="./image/README/1712017003646.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
-<h4 id="schichtenmodell"><a class="header" href="#schichtenmodell">Schichtenmodell</a></h4>
+<img src="./image/1712017003646.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<h2 id="schichtenmodell"><a class="header" href="#schichtenmodell">Schichtenmodell</a></h2>
 <ul>
 <li><strong>ISO/OSI-Modell</strong>: Das klassische 7-Schichten-Modell der Datenkommunikation.</li>
 <li><strong>CAN im ISO/OSI-Modell</strong>: Darstellung der Schichten, die durch das CAN-Protokoll abgedeckt werden.</li>

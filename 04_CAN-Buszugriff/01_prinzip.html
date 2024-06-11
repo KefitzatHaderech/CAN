@@ -191,38 +191,14 @@
 <li><strong>Priorität der Nachrichten</strong>: Jede Nachricht im CAN-Bus hat eine eindeutige Priorität, die durch ihre Identifier (ID) bestimmt wird. Nachrichten mit niedrigeren ID-Werten haben höhere Prioritäten.</li>
 <li><strong>Arbitrierungsprozess</strong>: Wenn mehrere Knoten gleichzeitig den Bus nutzen wollen, wird die Nachricht mit der höchsten Priorität (niedrigste ID) bevorzugt. Die anderen Knoten ziehen sich zurück und versuchen es erneut, sobald der Bus frei ist.</li>
 </ol>
-<h2 id="detaillierte-analyse-der-grafik"><a class="header" href="#detaillierte-analyse-der-grafik">Detaillierte Analyse der Grafik</a></h2>
-<p>Die Grafik „Prinzip des Buszugriffs im CAN-Netzwerk“ zeigt ein Szenario mit zwei CAN-Knoten, die auf den Bus zugreifen möchten:</p>
-<ol>
-<li>
-<p><strong>Ereignis 1</strong>:</p>
-<ul>
-<li><strong>Situation</strong>: Knoten A möchte seine hochpriorisierte Nachricht (CAN-Frame A) senden.</li>
-<li><strong>Problem</strong>: Der Bus ist besetzt.</li>
-<li><strong>Detail</strong>: Knoten A überwacht den Bus (Carrier Sense) und erkennt, dass der Bus aktuell belegt ist. Daher wartet er.</li>
-</ul>
-</li>
-<li>
-<p><strong>Folge</strong>:</p>
-<ul>
-<li><strong>Zugriffsbedingung</strong>: Knoten A darf nur dann auf den Bus zugreifen, wenn dieser frei ist.</li>
-<li><strong>Ereignis</strong>: Nach Ablauf der Intermission (ITM) beobachtet Knoten A den Bus und wartet auf eine freie Phase.</li>
-</ul>
-</li>
-<li>
-<p><strong>Nachrichtenübertragung</strong>:</p>
-<ul>
-<li><strong>Freigabe des Busses</strong>: Sobald der Bus frei ist, beginnt Knoten A seine Nachricht (CAN-Frame A) zu senden.</li>
-<li><strong>ITM-Periode</strong>: Nach Abschluss der Nachricht wird eine kurze Pause (Intermission) eingelegt, um den Busstatus zu stabilisieren.</li>
-</ul>
-</li>
-<li>
-<p><strong>Weiterer Zugriff</strong>:</p>
-<ul>
-<li><strong>Nächster Knoten</strong>: Nach der ITM-Periode kann Knoten B seine niederpriorisierte Nachricht (CAN-Frame B) senden, sofern der Bus frei ist.</li>
-</ul>
-</li>
-</ol>
+<h2 id="ereignis-1"><a class="header" href="#ereignis-1">Ereignis 1</a></h2>
+<img src="./image/1712022411179.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-2"><a class="header" href="#ereignis-2">Ereignis 2</a></h2>
+<img src="./image/1712022493865.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-3"><a class="header" href="#ereignis-3">Ereignis 3</a></h2>
+<img src="./image/1712022523730.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-4"><a class="header" href="#ereignis-4">Ereignis 4</a></h2>
+<img src="./image/1712022543957.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="technische-erläuterungen"><a class="header" href="#technische-erläuterungen">Technische Erläuterungen</a></h2>
 <ul>
 <li><strong>Carrier Sense</strong>: Dieser Mechanismus überwacht kontinuierlich den Zustand des Busses. Er stellt sicher, dass ein Knoten nur dann sendet, wenn der Bus tatsächlich frei ist. Dies ist ein wichtiger Aspekt des CSMA/CA-Verfahrens.</li>

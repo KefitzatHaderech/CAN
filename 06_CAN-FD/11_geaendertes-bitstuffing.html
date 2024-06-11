@@ -173,7 +173,45 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="bitstuffing-bei-can-und-can-fd-ein-umfassendes-tutorial"><a class="header" href="#bitstuffing-bei-can-und-can-fd-ein-umfassendes-tutorial">Bitstuffing bei CAN und CAN FD: Ein umfassendes Tutorial</a></h1>
+<h2 id="einführung"><a class="header" href="#einführung">Einführung</a></h2>
+<p>Das Bitstuffing ist eine zentrale Technik im Controller Area Network (CAN), die dazu dient, Synchronisationsprobleme zu vermeiden und eine zuverlässige Datenübertragung sicherzustellen. Sowohl im klassischen CAN-Protokoll als auch im CAN Flexible Data-Rate (CAN FD) Protokoll wird das Bitstuffing angewendet, jedoch mit unterschiedlichen Regeln und Bereichen. Dieser Teil bietet eine detaillierte Erklärung der Bitstuffing-Mechanismen bei CAN und CAN FD, einschließlich der Behandlung von Stuffbits im CRC-Feld.</p>
+<h2 id="bitstuffing-im-klassischen-can"><a class="header" href="#bitstuffing-im-klassischen-can">Bitstuffing im klassischen CAN</a></h2>
+<p>Im klassischen CAN-Protokoll wird Bitstuffing angewendet, um die Takt-Synchronisation zwischen Sender und Empfänger aufrechtzuerhalten. Die Grundregel des Bitstuffings lautet: Nach jeweils fünf aufeinanderfolgenden Bits mit gleichem Wert (entweder 0 oder 1) wird ein komplementäres Bit eingefügt. Dieses eingefügte Bit wird als "Stuffbit" bezeichnet.</p>
+<p><strong>Beispiel:</strong></p>
+<ul>
+<li>Wenn eine Nachricht die Bitfolge <code>111110</code> enthält, wird ein Stuffbit eingefügt, wodurch die Folge <code>1111101</code> entsteht.</li>
+<li>Wichtig ist, dass die Stuffbits nicht in die Berechnung der Prüfsumme (CRC) einfließen.</li>
+<li>Dies bedeutet, dass beim Empfangen der Nachricht die Stuffbits entfernt werden, bevor die CRC-Prüfung durchgeführt wird.</li>
+</ul>
+<h2 id="bitstuffing-bei-can-fd"><a class="header" href="#bitstuffing-bei-can-fd">Bitstuffing bei CAN FD</a></h2>
+<p>Das CAN FD-Protokoll erweitert das klassische CAN-Protokoll um höhere Datenraten und größere Datenfelder. Daher sind die Regeln für das Bitstuffing bei CAN FD etwas anders und spezifischer.</p>
+<p><strong>Bitstuffing-Regel:</strong></p>
+<ul>
+<li>Stuffbits werden ab dem Start of Frame (SOF) eingefügt.</li>
+<li>Das Bitstuffing endet mit dem Ende des Datenfeldes.</li>
+<li>Nach dem Ende des Datenfeldes wird die Anzahl der eingefügten Stuffbits (Modulo 8) berechnet und ein zusätzliches Paritätsbit eingefügt.</li>
+</ul>
+<p><strong>CRC-Berechnung bei CAN FD:</strong></p>
+<p>Der sendende Knoten berechnet die Prüfsumme (CRC), einschließlich der bis zu diesem Punkt eingefügten Stuffbits. Dies unterscheidet sich vom klassischen CAN, wo die Stuffbits nicht in die CRC-Berechnung einfließen.</p>
+<h2 id="bitstuffing-im-crc-feld-bei-can-fd"><a class="header" href="#bitstuffing-im-crc-feld-bei-can-fd">Bitstuffing im CRC-Feld bei CAN FD</a></h2>
+<p>Zusätzlich zur allgemeinen Bitstuffing-Regel bei CAN FD gibt es spezielle Regeln für das CRC-Feld:</p>
+<ol>
+<li>Das CRC-Feld beginnt immer mit einem Stuffbit.</li>
+<li>Nach jeweils vier weiteren CRC-Feld-Bits wird ein weiteres Stuffbit eingefügt, unabhängig davon, ob die Bits gleichnamig sind oder nicht.</li>
+<li>Der Wert eines CRC-Stuffbits ist komplementär zu seinem Vorgängerbit.</li>
+</ol>
+<p><strong>Beispiel:</strong></p>
+<ul>
+<li>Angenommen, das CRC-Feld beginnt mit der Bitfolge <code>1101</code>.</li>
+<li>Es wird ein Stuffbit eingefügt, wodurch die Folge <code>11011</code> entsteht.</li>
+<li>Nach vier weiteren Bits, z.B. <code>1000</code>, wird ein weiteres Stuffbit eingefügt, was <code>10001</code> ergibt.</li>
+</ul>
+<h2 id="keine-stuffbits-nach-dem-crc-feld"><a class="header" href="#keine-stuffbits-nach-dem-crc-feld">Keine Stuffbits nach dem CRC-Feld</a></h2>
+<p>Nach dem CRC-Feld werden, wie beim klassischen CAN, keine weiteren Stuffbits mehr eingefügt. Das bedeutet, dass der Rest des Frames (Acknowledge Slot, End of Frame, etc.) ohne zusätzliche Stuffbits gesendet wird.</p>
+<h3 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h3>
+<p>Bitstuffing ist ein wesentlicher Bestandteil der CAN-Kommunikation, um die Synchronisation zwischen Sender und Empfänger zu gewährleisten und Fehler zu minimieren. Im klassischen CAN-Protokoll werden Stuffbits nach jeweils fünf gleichnamigen Bits eingefügt, jedoch nicht in die CRC-Berechnung einbezogen. Bei CAN FD erstreckt sich das Bitstuffing bis zum Ende des Datenfeldes, und die Stuffbits werden in die CRC-Berechnung einbezogen. Zusätzlich gibt es im CRC-Feld von CAN FD spezielle Bitstuffing-Regeln, die unabhängig von der Bitfolge angewendet werden.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

@@ -190,7 +190,7 @@
 <li><strong>End of Frame (EOF):</strong> Markiert das Ende des Data Frames.</li>
 <li><strong>Intermission (ITM):</strong> Ein Intervall, das zwischen zwei aufeinanderfolgenden Nachrichten liegt.</li>
 </ul>
-<img src="./image/README/1712276187445.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276187445.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <p>Der Data Frame ist das Rückgrat der CAN-Kommunikation und ermöglicht die effiziente Übertragung von Daten zwischen den Knoten eines CAN-Netzwerks.</p>
 <h2 id="remote-frame"><a class="header" href="#remote-frame">Remote Frame</a></h2>
 <p>Während zur Übertragung von Data Frames die entsprechenden Informationserzeuger die Initiative ergreifen, existiert mit dem Remote Frame ein Frametyp, mit dem Nutzdaten, also Data Frames, von beliebigen CAN-Knoten angefordert werden können. Bis auf das fehlende Data Field setzt sich ein Remote Frame wie ein Data Frame zusammen. Die Felder sind wie folgt:</p>
@@ -207,7 +207,7 @@
 <li><strong>End of Frame (EOF)</strong></li>
 <li><strong>Intermission (ITM)</strong></li>
 </ul>
-<img src="./image/README/1712276204782.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276204782.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <p>Der wesentliche Unterschied zum Data Frame besteht im Fehlen des Data Fields. Der Remote Frame dient dazu, einen anderen Knoten im Netzwerk zur Übertragung eines Data Frames aufzufordern.</p>
 <h2 id="error-frame"><a class="header" href="#error-frame">Error Frame</a></h2>
 <p>Der Error Frame steht zur Verfügung, um während des Kommunikationsbetriebs entdeckte Fehler zu signalisieren. Mit dem Übertragen eines Error Frames geht der Abbruch der laufenden Botschaftsübertragung einher. Der Aufbau eines Error Frames unterscheidet sich wesentlich vom Aufbau eines Data oder Remote Frames. Man kann lediglich zwei Felder voneinander unterscheiden:</p>
@@ -216,7 +216,7 @@
 <li><strong>Error Delimiter:</strong> Dieses Feld besteht aus acht rezessiven Bits und markiert das Ende des Error Frames.</li>
 </ul>
 <p>Ein Error Frame wird gesendet, wenn eine Station einen Fehler erkennt, und zwingt alle Stationen dazu, die fehlerhafte Nachricht zu verwerfen. Dies stellt sicher, dass keine fehlerhaften Daten im Netzwerk akzeptiert werden.</p>
-<img src="./image/README/1712276232272.png" alt="CAN-Knoten" style="max-width:40%; display: block; margin: 0 auto;" />
+<img src="./image/1712276232272.png" alt="CAN-Knoten" style="max-width:70%; display: block; margin: 0 auto;" />
 <h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
 <p>Das Verständnis der verschiedenen CAN-Frame-Typen und ihrer Felder ist essenziell für die Implementierung und Fehlersuche in CAN-basierten Netzwerken. Jeder Frame-Typ erfüllt eine spezifische Rolle innerhalb des CAN-Kommunikationsprotokolls und trägt zur Robustheit und Zuverlässigkeit des Systems bei. Die präzise Kenntnis und Anwendung dieser Frames ermöglichen eine effiziente und fehlerfreie Datenkommunikation in modernen Fahrzeugnetzwerken.</p>
 

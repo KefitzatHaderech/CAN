@@ -174,7 +174,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="bitcodierung-im-can-bus"><a class="header" href="#bitcodierung-im-can-bus">Bitcodierung im CAN-Bus</a></h1>
-<p>In diesem Tutorial werden wir die Grundlagen der Bitcodierung im CAN-Bus (Controller Area Network) untersuchen, insbesondere die NRZ-Bitcodierung und deren Bedeutung für die Störfestigkeit und die Synchronisation.</p>
+<p>In diesem Teil werden wir die Grundlagen der Bitcodierung im CAN-Bus (Controller Area Network) untersuchen, insbesondere die NRZ-Bitcodierung und deren Bedeutung für die Störfestigkeit und die Synchronisation.</p>
 <h2 id="einleitung"><a class="header" href="#einleitung">Einleitung</a></h2>
 <p>Die Bitcodierung spielt eine zentrale Rolle bei der Kommunikation in Fahrzeugnetzwerken, da sie sowohl die Übertragungseffizienz als auch die Störfestigkeit beeinflusst. Im Kontext des CAN-Bus, der in der Automobilindustrie weit verbreitet ist, wurde die NRZ-Bitcodierung (Non Return to Zero) gewählt. Wir werden die Gründe für diese Wahl und die damit verbundenen Herausforderungen im Detail beleuchten.</p>
 <h2 id="nrz-bitcodierung"><a class="header" href="#nrz-bitcodierung">NRZ-Bitcodierung</a></h2>
@@ -199,12 +199,11 @@
 <li>Nach Bitstuffing: <code>111110</code></li>
 </ul>
 <p>Hier wurde nach fünf aufeinanderfolgenden „1“-Bits eine „0“ eingefügt. Dieser Mechanismus stellt sicher, dass der Empfänger die Synchronisation beibehält, auch wenn die ursprüngliche Bitfolge keine Pegeländerung aufweist.</p>
-<img src="./image/README/1712276628306.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276628306.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="vergleich-mit-manchester-codierung"><a class="header" href="#vergleich-mit-manchester-codierung">Vergleich mit Manchester-Codierung</a></h3>
 <p>Im Gegensatz zur NRZ-Codierung ist die Manchester-Codierung selbsttaktend. Bei der Manchester-Codierung wird jedes Bit durch eine Pegeländerung dargestellt, was eine inhärente Synchronisation gewährleistet. Allerdings verdoppelt sich dadurch die Bandbreite, da für jedes Datenbit zwei Pegeländerungen erforderlich sind. Dies führt zu höheren Emissionen und geringerer Übertragungseffizienz im Vergleich zur NRZ-Codierung.</p>
 <h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
 <p>Die Wahl der NRZ-Bitcodierung für den CAN-Bus bietet klare Vorteile in Bezug auf hohe Datenraten und reduzierte Emissionen. Allerdings erfordert sie zusätzliche Synchronisationsmechanismen wie das Bitstuffing, um die zuverlässige Datenübertragung zu gewährleisten. Durch das Verständnis dieser Techniken können Ingenieure und Entwickler die Leistungsfähigkeit und Störfestigkeit von Fahrzeugnetzwerken optimieren.</p>
-<p>Das Wissen um die Feinheiten der Bitcodierung ist entscheidend für die Entwicklung robuster und effizienter Kommunikationssysteme im Automobilbereich. Durch die sorgfältige Implementierung und Überwachung dieser Systeme kann die Zuverlässigkeit und Sicherheit moderner Fahrzeuge weiter gesteigert werden.</p>
 
                     </main>
 

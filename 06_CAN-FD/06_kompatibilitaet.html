@@ -186,10 +186,16 @@
 <p>Diese Erweiterungen sind besonders nützlich in modernen Fahrzeugen, die zunehmend mehr Daten zwischen verschiedenen Systemen austauschen müssen.</p>
 <h2 id="unterschiede-zwischen-klassischem-can-und-can-fd"><a class="header" href="#unterschiede-zwischen-klassischem-can-und-can-fd">Unterschiede zwischen klassischem CAN und CAN-FD</a></h2>
 <h3 id="datenrate"><a class="header" href="#datenrate">Datenrate</a></h3>
-<p>Im klassischen CAN ist die Datenrate auf maximal 1 Mbit/s beschränkt. CAN-FD erlaubt es, die Datenrate im Datenfeld zu erhöhen, was die Übertragung von größeren Datenmengen in kürzerer Zeit ermöglicht.</p>
+<ul>
+<li>Im klassischen CAN ist die Datenrate auf maximal 1 Mbit/s beschränkt.</li>
+<li>CAN-FD erlaubt es, die Datenrate im Datenfeld zu erhöhen, was die Übertragung von größeren Datenmengen in kürzerer Zeit ermöglicht.</li>
+</ul>
 <h3 id="datenfeldgröße"><a class="header" href="#datenfeldgröße">Datenfeldgröße</a></h3>
-<p>Während das klassische CAN nur Datenfelder bis zu 8 Byte unterstützt, kann CAN-FD Datenfelder bis zu 64 Byte handhaben. Dies reduziert die Anzahl der benötigten Nachrichten und erhöht die Effizienz des Netzwerks.</p>
-<h3 id="kompatibilität-1"><a class="header" href="#kompatibilität-1">Kompatibilität</a></h3>
+<ul>
+<li>Während das klassische CAN nur Datenfelder bis zu 8 Byte unterstützt, kann CAN-FD Datenfelder bis zu 64 Byte handhaben.</li>
+<li>Dies reduziert die Anzahl der benötigten Nachrichten und erhöht die Effizienz des Netzwerks.</li>
+</ul>
+<h3 id="kompatibilität-zwischen-can-und-can-fd"><a class="header" href="#kompatibilität-zwischen-can-und-can-fd">Kompatibilität zwischen CAN und CAN-FD</a></h3>
 <p>Ein wesentlicher Punkt ist die Kompatibilität zwischen klassischem CAN und CAN-FD. CAN-FD Controller sind abwärtskompatibel und können klassische CAN-Botschaften empfangen und senden. Klassische CAN Controller hingegen können CAN-FD-Botschaften nicht interpretieren und würden beim Empfang einer solchen Botschaft einen Fehler signalisieren. Dies liegt daran, dass die zusätzlichen Bits und die erhöhte Datenrate im CAN-FD-Protokoll von klassischen CAN Controllern als Regelverstöße interpretiert werden.</p>
 <h2 id="fehlerbehandlung"><a class="header" href="#fehlerbehandlung">Fehlerbehandlung</a></h2>
 <p>In einem gemischten Netzwerk, in dem sowohl klassische CAN als auch CAN-FD Controller existieren, ist die Fehlerbehandlung ein kritischer Aspekt. Wenn ein klassischer CAN Controller eine CAN-FD-Botschaft empfängt, erkennt er die zusätzlichen Bits als ungültig und sendet einen Error Frame. Dies signalisiert den anderen Geräten im Netzwerk, dass ein Kommunikationsfehler aufgetreten ist.</p>

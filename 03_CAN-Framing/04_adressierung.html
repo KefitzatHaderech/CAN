@@ -173,7 +173,57 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="kommunikation-und-adressierung"><a class="header" href="#kommunikation-und-adressierung">Kommunikation und Adressierung</a></h1>
+<h2 id="botschafts-adressierung"><a class="header" href="#botschafts-adressierung">Botschafts-Adressierung</a></h2>
+<p>Im CAN-Netzwerk (Controller Area Network) wird die Kommunikation durch inhaltsbezogene Adressierung organisiert. Anders als bei vielen anderen Netzwerken, werden nicht die CAN-Knoten selbst, sondern die Daten- und Remote-Frames mit einer Kennung (Identifier - ID) versehen. Diese IDs bestimmen, welche Art von Nachricht gesendet wird und wer sie empfangen soll. Da alle CAN-Botschaften jedem Knoten im Netzwerk zur Verfügung stehen (Broadcasting), muss jeder Empfänger selbstständig die relevanten Botschaften auswählen und verarbeiten. Dies erfordert eine empfängerseitige Filterung der empfangenen Nachrichten, bekannt als Akzeptanzfilterung.</p>
+<h2 id="standard-und-extended-format"><a class="header" href="#standard-und-extended-format">Standard und Extended Format</a></h2>
+<p>Der CAN-Bus bietet zwei verschiedene Formate für Nachrichten: das Standard-Format und das Extended-Format. Diese Formate unterscheiden sich primär in der Länge des Identifiers:</p>
+<ol>
+<li>
+<p><strong>Standard-Format</strong>:</p>
+<ul>
+<li>Der Identifier (ID) umfasst 11 Bit.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extended-Format</strong>:</p>
+<ul>
+<li>Der Identifier umfasst 29 Bit.</li>
+<li>Der 29-Bit-Identifier setzt sich aus einem 11-Bit-Basis-ID und einem 18-Bit-Extended-ID zusammen.</li>
+<li>Zwischen Basis-ID und Extended-ID befinden sich die beiden Bits IDE (Identifier Extension) und SRR (Substitute Remote Request).</li>
+</ul>
+</li>
+</ol>
+<h3 id="identifier-und-kontrollbits"><a class="header" href="#identifier-und-kontrollbits">Identifier und Kontrollbits</a></h3>
+<p>Im Standard-Format wird der ID mit 11 Bit übertragen. Dies bedeutet, dass bis zu 2048 verschiedene Nachrichten-IDs möglich sind. Im Extended-Format wird der ID auf 29 Bit erweitert, was eine viel größere Vielfalt an Nachrichten-IDs ermöglicht, nämlich bis zu 536.870.912 verschiedene IDs.</p>
+<ul>
+<li>
+<p><strong>IDE-Bit</strong>:</p>
+<ul>
+<li>Ein dominantes IDE-Bit (0) kennzeichnet eine Nachricht im Standard-Format.</li>
+<li>Ein rezessives IDE-Bit (1) kennzeichnet eine Nachricht im Extended-Format.</li>
+</ul>
+</li>
+<li>
+<p><strong>SRR-Bit</strong>:</p>
+<ul>
+<li>Im Extended-Format ersetzt das SRR-Bit das RTR-Bit (Remote Transmission Request) des Standard-Formats. Das SRR-Bit wird immer rezessiv übertragen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Control Field (r0 und r1)</strong>:</p>
+<ul>
+<li>Im Extended-Format haben die beiden ersten Bits des Control-Fields keine Bedeutung und werden immer dominant übertragen.</li>
+</ul>
+</li>
+</ul>
+<h2 id="bedeutung-der-identifier-und-flexibilität-der-adressierung"><a class="header" href="#bedeutung-der-identifier-und-flexibilität-der-adressierung">Bedeutung der Identifier und Flexibilität der Adressierung</a></h2>
+<p>Die inhaltsbezogene Adressierung im CAN-Bus ist besonders flexibel und effizient für die Kommunikation in Fahrzeugnetzwerken. Jeder Knoten kann so konfiguriert werden, dass er nur die relevanten Nachrichten empfängt und verarbeitet. Dies reduziert die Belastung des Systems und verbessert die Gesamtleistung des Netzwerks.</p>
+<p>Durch die Erweiterung auf 29-Bit-Identifiers im Extended-Format wird die Skalierbarkeit des Systems erheblich erhöht, was besonders in modernen Fahrzeugen mit einer Vielzahl von Steuergeräten und Sensoren von Vorteil ist. Diese Flexibilität ist jedoch nur durch eine effektive Akzeptanzfilterung auf Empfängerseite gewährleistet.</p>
+<h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
+<p>Die inhaltsbezogene Adressierung im CAN-Bus, kombiniert mit den beiden verfügbaren Botschaftsformaten, bietet eine hochflexible und skalierbare Kommunikationslösung für den Automobilbereich. Das Standard-Format mit 11-Bit-Identifiers ermöglicht eine einfache und schnelle Nachrichtenübertragung, während das Extended-Format mit 29-Bit-Identifiers eine erweiterte Adressierbarkeit für komplexere Systeme bietet.</p>
+<p>Durch die klare Trennung und Definition von Kontrollbits und die effiziente Nutzung von Filtermechanismen können CAN-Netzwerke auch in sehr anspruchsvollen Anwendungen zuverlässig und performant arbeiten.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

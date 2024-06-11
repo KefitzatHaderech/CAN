@@ -191,7 +191,7 @@
 <li><strong>Eingeschränkte Erweiterbarkeit:</strong> Das Hinzufügen neuer Steuergeräte oder Funktionen führt zu einer exponentiellen Zunahme der Verkabelung.</li>
 <li><strong>Gewicht und Platzbedarf:</strong> Die Vielzahl an Kabeln erhöht das Fahrzeuggewicht und beansprucht wertvollen Raum.</li>
 </ol>
-<img src="01_Einfuehrung/./image/README/1712016724992.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="01_Einfuehrung/./image/1712016724992.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <p>Das obige Bild veranschaulicht den Unterschied zwischen konventioneller Vernetzung und Busvernetzung. Links sind mehrere ECUs direkt miteinander verbunden, was eine aufwendige und unübersichtliche Verkabelung darstellt. Rechts hingegen sind die ECUs über einen gemeinsamen Bus verbunden, was die Verkabelung erheblich vereinfacht und effizienter macht. Darunter ist ein Signalverlauf dargestellt, der die bitserielle Datenübertragung im CAN-Bus symbolisiert.</p>
 <h2 id="einführung-des-seriellen-kommunikationssystems"><a class="header" href="#einführung-des-seriellen-kommunikationssystems">Einführung des seriellen Kommunikationssystems</a></h2>
 <p>Um den Verkabelungsaufwand zu reduzieren und die Datenkommunikation zu optimieren, wurde ein serielles Kommunikationssystem entwickelt. Der bitserielle Austausch von Daten über einen einzigen Kommunikationskanal (Bus) wurde als Lösung identifiziert. Dies erforderte die Entwicklung eines spezifischen seriellen Kommunikationssystems für Automobile.</p>
@@ -205,46 +205,46 @@
 <li><strong>Gewichts- und Platzersparnis:</strong> Weniger Kabel bedeuten geringeres Gewicht und mehr Platz für andere Komponenten.</li>
 <li><strong>Sichere Übertragung:</strong> CAN zeichnet sich durch eine sehr zuverlässige und sichere Datenübertragung aus, die für Echtzeitanwendungen geeignet ist.</li>
 </ol>
-<h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
+<h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
 <p>Die Elektronifizierung des Automobils hat durch die Einführung des CAN-Bus-Systems erhebliche Fortschritte gemacht. Die komplexen und umfangreichen Kabelbäume der konventionellen Vernetzung gehören der Vergangenheit an. CAN vereinfacht nicht nur die Projektierung und Installation, sondern trägt auch zur Reduktion des Gewichts und Platzbedarfs der Verkabelung bei. Dies spiegelt die kontinuierliche Innovationskraft und Anpassungsfähigkeit der Automobilindustrie wider, um den steigenden Anforderungen und regulatorischen Vorgaben gerecht zu werden.</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="standardisierung"><a class="header" href="#standardisierung">Standardisierung</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="standardisierung"><a class="header" href="#standardisierung">Standardisierung</a></h1>
 <p>Die Controller Area Network (CAN)-Technologie ist seit 1994 standardisiert und spielt eine zentrale Rolle in der Fahrzeug-Elektronik. Die CAN-Standards werden hauptsächlich durch drei ISO-Dokumente beschrieben, die spezifische Aspekte des CAN-Protokolls und seiner Implementierung abdecken. In dieser detaillierten Einführung werden wir die verschiedenen Schichten des ISO/OSI-Referenzmodells, die relevanten CAN-Standards und die Implementierung von CAN in Fahrzeugen betrachten.</p>
-<h3 id="can-protokoll"><a class="header" href="#can-protokoll">CAN-Protokoll</a></h3>
+<h2 id="can-protokoll"><a class="header" href="#can-protokoll">CAN-Protokoll</a></h2>
 <p>Das CAN-Protokoll ist durch die ISO 11898-1 standardisiert. Im Vergleich zum ISO/OSI-Referenzmodell der Datenkommunikation deckt das CAN-Protokoll die Schichten Data Link Layer und Physical Layer ab.</p>
-<h4 id="data-link-layer"><a class="header" href="#data-link-layer">Data Link Layer</a></h4>
+<h2 id="data-link-layer"><a class="header" href="#data-link-layer">Data Link Layer</a></h2>
 <p>Im Data Link Layer wird das CAN-Protokoll in zwei Hauptkomponenten unterteilt:</p>
 <ul>
 <li><strong>LLC (Logical Link Control)</strong>: Diese Komponente sorgt für die logische Steuerung des Datenflusses.</li>
 <li><strong>MAC (Medium Access Control)</strong>: Diese Komponente regelt den Zugang zum Übertragungsmedium und steuert die Datenübertragung zwischen den Netzwerkteilnehmern.</li>
 </ul>
-<h4 id="physical-layer"><a class="header" href="#physical-layer">Physical Layer</a></h4>
+<h2 id="physical-layer"><a class="header" href="#physical-layer">Physical Layer</a></h2>
 <p>Der Physical Layer des CAN-Protokolls wird durch die PLS (Physical Layer Signalling) beschrieben, welche die physikalische Signalisierung der Daten definiert.</p>
-<h3 id="can-controller"><a class="header" href="#can-controller">CAN-Controller</a></h3>
+<h2 id="can-controller"><a class="header" href="#can-controller">CAN-Controller</a></h2>
 <p>Das CAN-Protokoll wird in Hardware durch sogenannte CAN-Controller implementiert. Es gibt verschiedene Arten von CAN-Controllern, die sich im Umgang mit CAN-Botschaften unterscheiden. Man unterscheidet hauptsächlich zwischen:</p>
 <ul>
 <li><strong>Full-CAN-Controller</strong>: Diese Controller speichern CAN-Botschaften in einem internen Speicher.</li>
 <li><strong>Basic-CAN-Controller</strong>: Diese Controller besitzen keinen internen Objektespeicher und bearbeiten Botschaften direkt.</li>
 </ul>
-<h3 id="can-high-speed-und-can-low-speed"><a class="header" href="#can-high-speed-und-can-low-speed">CAN-High-Speed und CAN-Low-Speed</a></h3>
+<h2 id="can-high-speed-und-can-low-speed"><a class="header" href="#can-high-speed-und-can-low-speed">CAN-High-Speed und CAN-Low-Speed</a></h2>
 <p>Die physikalische Schicht des CAN-Protokolls wird durch zwei Hauptstandards definiert:</p>
 <ul>
 <li><strong>ISO 11898-2 (CAN-High-Speed)</strong>: Dieser Standard erlaubt Datenraten bis zu 1 MBit/s und findet Anwendung in sicherheitskritischen Bereichen wie Antrieb und Fahrwerk.</li>
 <li><strong>ISO 11898-3 (CAN-Low-Speed)</strong>: Dieser Standard erlaubt Datenraten bis zu 125 KBit/s und wird vorwiegend in weniger kritischen Bereichen wie Komfortsystemen verwendet.</li>
 </ul>
-<h3 id="datenraten"><a class="header" href="#datenraten">Datenraten</a></h3>
+<h2 id="datenraten"><a class="header" href="#datenraten">Datenraten</a></h2>
 <p>Die Datenübertragungsraten im CAN-Netzwerk variieren je nach Anwendungsbereich:</p>
 <ul>
 <li><strong>ISO 11898-2</strong>: Unterstützt Datenraten bis zu 1 MBit/s und wird in Bereichen eingesetzt, die hohe Datenübertragungsraten erfordern.</li>
 <li><strong>ISO 11898-3</strong>: Unterstützt Datenraten bis zu 125 KBit/s und wird in Anwendungen verwendet, die geringere Übertragungsraten benötigen.</li>
 </ul>
-<h3 id="medium-dependent-interface-mdi"><a class="header" href="#medium-dependent-interface-mdi">Medium Dependent Interface (MDI)</a></h3>
+<h2 id="medium-dependent-interface-mdi"><a class="header" href="#medium-dependent-interface-mdi">Medium Dependent Interface (MDI)</a></h2>
 <p>Für die Unterschicht MDI des Physical Layers existiert kein spezifischer Standard. Die CiA DS-102 (CAN in Automation) gibt jedoch Empfehlungen für die Verwendung bestimmter Stecker, wie zum Beispiel SUB-D9-Stecker, und deren Belegung.</p>
-<h3 id="ereignisgesteuerte-kommunikation"><a class="header" href="#ereignisgesteuerte-kommunikation">Ereignisgesteuerte Kommunikation</a></h3>
+<h2 id="ereignisgesteuerte-kommunikation"><a class="header" href="#ereignisgesteuerte-kommunikation">Ereignisgesteuerte Kommunikation</a></h2>
 <p>Die Kommunikation im CAN-Netzwerk ist ereignisgesteuert, wie in der ISO 11898-1 definiert. Bei hoher Buslast kann es zur Verzögerung niederpriorisierter CAN-Botschaften kommen. Um eine deterministische Kommunikation zu gewährleisten, kann die ISO 11898-4 herangezogen werden, welche eine zeitgesteuerte Kommunikationsoption für CAN-basierte Netzwerke bietet.</p>
-<h3 id="isoosi-referenzmodell-und-can"><a class="header" href="#isoosi-referenzmodell-und-can">ISO/OSI-Referenzmodell und CAN</a></h3>
+<h2 id="isoosi-referenzmodell-und-can"><a class="header" href="#isoosi-referenzmodell-und-can">ISO/OSI-Referenzmodell und CAN</a></h2>
 <p>Die folgende Grafik zeigt die Beziehung zwischen dem ISO/OSI-Referenzmodell der Datenkommunikation, dem CAN-Standard und der Implementierung:</p>
-<img src="01_Einfuehrung/./image/README/1712017003646.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
-<h4 id="schichtenmodell"><a class="header" href="#schichtenmodell">Schichtenmodell</a></h4>
+<img src="01_Einfuehrung/./image/1712017003646.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<h2 id="schichtenmodell"><a class="header" href="#schichtenmodell">Schichtenmodell</a></h2>
 <ul>
 <li><strong>ISO/OSI-Modell</strong>: Das klassische 7-Schichten-Modell der Datenkommunikation.</li>
 <li><strong>CAN im ISO/OSI-Modell</strong>: Darstellung der Schichten, die durch das CAN-Protokoll abgedeckt werden.</li>
@@ -262,21 +262,21 @@
 <li><a href="02_CAN-Kommunikation/./07_buslogik.html">Buslogik</a></li>
 <li><a href="02_CAN-Kommunikation/./08_kommunikationsprinzip.html">Kommunikationsprinzip</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="can-netzwerk"><a class="header" href="#can-netzwerk">CAN-Netzwerk</a></h2>
-<h3 id="aufbau"><a class="header" href="#aufbau">Aufbau</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-netzwerk"><a class="header" href="#can-netzwerk">CAN-Netzwerk</a></h1>
+<h2 id="aufbau"><a class="header" href="#aufbau">Aufbau</a></h2>
 <p>Ein Controller Area Network (CAN) ist ein robustes Fahrzeugbussystem, das zur Kommunikation zwischen Mikrocontrollern und Geräten ohne Host-Computer konzipiert wurde. Ein typisches CAN-Netzwerk, wie im Bild dargestellt, besteht aus mehreren CAN-Knoten, die über ein physikalisches Übertragungsmedium, den sogenannten CAN-Bus, miteinander verbunden sind. Die Linientopologie ist die gängigste Konfiguration, bei der elektronische Steuergeräte (ECUs) mit CAN-Schnittstelle passiv an einen linearen Bus angeschlossen werden. Alternativ kann auch eine passive Sterntopologie verwendet werden, wobei alle Knoten sternförmig an einen zentralen Punkt angeschlossen sind.</p>
-<h3 id="physikalisches-Übertragungsmedium"><a class="header" href="#physikalisches-Übertragungsmedium">Physikalisches Übertragungsmedium</a></h3>
+<h2 id="physikalisches-Übertragungsmedium"><a class="header" href="#physikalisches-Übertragungsmedium">Physikalisches Übertragungsmedium</a></h2>
 <p>Das physikalische Übertragungsmedium in einem CAN-Netzwerk ist in der Regel eine ungeschirmte, verdrillte Zweidrahtleitung (Unshielded Twisted Pair - UTP). Diese verdrillte Paarleitung ermöglicht eine symmetrische Signalübertragung, was Störungen minimiert. Typische Leitungen haben einen Querschnitt zwischen 0,34 mm² und 0,6 mm². Der spezifische Widerstand der Leitung sollte weniger als 60 mΩ/m betragen, um eine effiziente Signalübertragung sicherzustellen.</p>
-<h3 id="randbedingungen"><a class="header" href="#randbedingungen">Randbedingungen</a></h3>
+<h2 id="randbedingungen"><a class="header" href="#randbedingungen">Randbedingungen</a></h2>
 <ul>
 <li><strong>Datenrate und Netzwerkgröße:</strong> Die maximale Datenrate in einem CAN-Netzwerk beträgt 1 MBit/s. Bei dieser Datenrate ist eine maximale Netzwerkreichweite von etwa 40 Metern zulässig.</li>
 <li><strong>Busabschlusswiderstände:</strong> An den Enden des CAN-Busses befinden sich Abschlusswiderstände (RT), um Reflexionen zu vermeiden und die Signalintegrität zu gewährleisten. Diese Widerstände haben typischerweise einen Wert von 120 Ohm.</li>
 <li><strong>Anzahl der Knoten:</strong> Gemäß der ISO 11898-Norm darf ein CAN-Netzwerk bis zu 32 Knoten umfassen.</li>
 </ul>
-<h3 id="can-netzwerk-mit-drei-knoten"><a class="header" href="#can-netzwerk-mit-drei-knoten">CAN-Netzwerk mit drei Knoten</a></h3>
+<h2 id="can-netzwerk-mit-drei-knoten"><a class="header" href="#can-netzwerk-mit-drei-knoten">CAN-Netzwerk mit drei Knoten</a></h2>
 <p>Das untere Bild zeigt ein typisches CAN-Netzwerk mit drei CAN-Knoten (Steuergeräten), die an einen CAN-Bus angeschlossen sind. Die beiden Leitungen, CANH (CAN High Leitung) und CANL (CAN Low Leitung), sind die beiden verdrillten Drähte, die das symmetrische Signal übertragen. An beiden Enden des Busses sind Abschlusswiderstände (RT) installiert, um Reflexionen zu verhindern und die Signalqualität zu sichern. Eine mögliche Ergänzung könnte die Erwähnung der spezifischen Anforderungen an die Länge und Verdrillung der Leitungen sein, um elektromagnetische Störungen weiter zu minimieren. Auch die Integration von Busüberwachung und Diagnosefunktionen könnte für ein umfassendes Verständnis von CAN-Netzwerken sinnvoll sein.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712017258157.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
-<h3 id="fazit-1"><a class="header" href="#fazit-1">Fazit</a></h3>
+<img src="02_CAN-Kommunikation/./image/1712017258157.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="schlussfolgerung-1"><a class="header" href="#schlussfolgerung-1">Schlussfolgerung</a></h2>
 <p>Ein CAN-Netzwerk ist eine wesentliche Komponente in der Fahrzeugtechnik, die eine zuverlässige und effiziente Kommunikation zwischen verschiedenen elektronischen Steuergeräten ermöglicht. Durch die Einhaltung der beschriebenen technischen Spezifikationen und Normen kann die Leistungsfähigkeit und Zuverlässigkeit eines CAN-Systems sichergestellt werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-knoten"><a class="header" href="#can-knoten">CAN-Knoten</a></h1>
 <h2 id="einleitung-1"><a class="header" href="#einleitung-1">Einleitung</a></h2>
@@ -289,7 +289,7 @@
 <p>AUTOSAR bietet eine Referenzarchitektur für Steuergerätesoftware, mit dem Ziel, die Softwareentwicklung zu standardisieren und zu vereinfachen. Im Mittelpunkt dieser Architektur steht das AUTOSAR Runtime Environment (RTE), welches das Netzwerk vollständig von den Applikationssoftware-Komponenten entkoppelt. Das RTE bietet den Software-Komponenten einheitliche Dienste in Form der Basis-Software. Diese Basis-Software ist in drei Ebenen unterteilt: Microcontroller Abstraction Layer, ECU Abstraction Layer und Service Layer.</p>
 <h2 id="aufbau-eines-can-knotens"><a class="header" href="#aufbau-eines-can-knotens">Aufbau eines CAN-Knotens</a></h2>
 <p>Die folgende Grafik zeigt den Aufbau eines modernen CAN-Knotens gemäß der AUTOSAR-Architektur.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712017613322.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712017613322.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="microcontroller-abstraction-layer"><a class="header" href="#microcontroller-abstraction-layer">Microcontroller Abstraction Layer</a></h3>
 <p>Diese unterste Ebene abstrahiert die Hardware und stellt Treiber bereit, die direkt mit der Hardware interagieren. Dazu gehören:</p>
 <ul>
@@ -312,14 +312,14 @@
 <li><strong>Memory Services</strong>: Dienste für den Speicherzugriff und -verwaltung.</li>
 <li><strong>Communication Services</strong>: Diese umfassen AUTOSAR COM für die Standardkommunikation, den Diagnostic COM Manager für Diagnosedienste und Generic NM/CAN NM für das Netzwerkmanagement. Der PDU Router koordiniert die Kommunikation zwischen diesen Diensten und dem CAN TP (Transportprotokoll).</li>
 </ul>
-<h2 id="fazit-2"><a class="header" href="#fazit-2">Fazit</a></h2>
+<h2 id="schlussfolgerung-2"><a class="header" href="#schlussfolgerung-2">Schlussfolgerung</a></h2>
 <p>Die Verwendung der AUTOSAR-Architektur in modernen Fahrzeugen ermöglicht eine strukturierte und effiziente Entwicklung von Steuergerätesoftware. Durch die Entkopplung der Applikationssoftware von der Hardware und die Bereitstellung einheitlicher Dienste wird die Komplexität beherrschbar und die Wiederverwendbarkeit von Software-Komponenten gefördert. Dies trägt wesentlich zur Reduzierung von Entwicklungskosten und zur Erhöhung der Qualität und Zuverlässigkeit der Fahrzeugsoftware bei.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-controller-1"><a class="header" href="#can-controller-1">CAN-Controller</a></h1>
 <h2 id="einführung-in-das-can-netzwerk"><a class="header" href="#einführung-in-das-can-netzwerk">Einführung in das CAN-Netzwerk</a></h2>
 <p>Das Controller Area Network (CAN) ist ein robustes Fahrzeugbus-Standard, der es Mikrocontrollern und Geräten ermöglicht, ohne Host-Computer miteinander zu kommunizieren.</p>
 <h3 id="aufbau-eines-can-netzwerks"><a class="header" href="#aufbau-eines-can-netzwerks">Aufbau eines CAN-Netzwerks</a></h3>
 <p>In einem CAN-Netzwerk, wie in der unteren Grafik dargestellt, bestehen die grundlegenden Komponenten aus mehreren CAN-Knoten, die jeweils aus einem Host, einem CAN-Controller und einem CAN-Transceiver bestehen. Die Knoten sind über die beiden Leitungen CANH (CAN High) und CANL (CAN Low) miteinander verbunden. An beiden Enden des CAN-Busses befindet sich jeweils ein Terminierungswiderstand ( R_T ), der für die korrekte Funktion des Netzwerks notwendig ist.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712018663985.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712018663985.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="komponenten-eines-can-knotens"><a class="header" href="#komponenten-eines-can-knotens">Komponenten eines CAN-Knotens</a></h3>
 <h4 id="can-controller-2"><a class="header" href="#can-controller-2">CAN-Controller</a></h4>
 <p>Der CAN-Controller übernimmt die Kommunikationsaufgaben gemäß dem CAN-Protokoll und entlastet dadurch den Host. Er ist verantwortlich für das Senden und Empfangen von Nachrichten, das Erkennen von Fehlern und das Gewährleisten der Datensicherheit und -integrität.</p>
@@ -335,12 +335,12 @@
 <p>CAN-Controller können entweder als integrierte oder eigenständige Bausteine (stand-alone) verwendet werden. Bei der Stand-Alone-Variante behandelt der Mikrocontroller den CAN-Controller wie einen Speicherbaustein, was größere Flexibilität bietet. Die On-Chip-Variante nimmt weniger Platz in Anspruch und ermöglicht eine schnellere und zuverlässigere Kommunikation zwischen Mikrocontroller und CAN-Controller.</p>
 <h3 id="terminierung-des-can-busses"><a class="header" href="#terminierung-des-can-busses">Terminierung des CAN-Busses</a></h3>
 <p>Die Terminierung des CAN-Busses erfolgt durch Widerstände an den beiden Enden der CAN-Leitungen. Diese Terminierungswiderstände ( R_T ) verhindern Signalreflexionen, die zu Kommunikationsstörungen führen könnten. In der obigen Grafik sind diese Widerstände am Anfang und Ende des Busses dargestellt.</p>
-<h3 id="fazit-3"><a class="header" href="#fazit-3">Fazit</a></h3>
+<h3 id="schlussfolgerung-3"><a class="header" href="#schlussfolgerung-3">Schlussfolgerung</a></h3>
 <p>Das Verständnis der Architektur und der Funktionsweise eines CAN-Netzwerks ist essenziell für die Entwicklung und Wartung moderner Fahrzeugsysteme. Die richtige Integration und Konfiguration der CAN-Controller und Transceiver sowie die korrekte Terminierung des Busses sind entscheidend für die Zuverlässigkeit und Effizienz der Kommunikation im Fahrzeug.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-transceiver-1"><a class="header" href="#can-transceiver-1">CAN-Transceiver</a></h1>
 <h2 id="busankopplung-in-can-netzwerken"><a class="header" href="#busankopplung-in-can-netzwerken">Busankopplung in CAN-Netzwerken</a></h2>
 <p>In modernen Fahrzeugen wird die Ankopplung des CAN-Controllers an das Kommunikationsmedium (CAN-Bus) in der Regel durch CAN-Transceiver realisiert. Dies ist eine Weiterentwicklung gegenüber der früheren diskreten Realisierung. Die symmetrische physikalische Signalübertragung in einem CAN-Netzwerk gewährleistet eine hohe elektromagnetische Verträglichkeit. Das physikalische Übertragungsmedium besteht aus zwei Leitungen: der CAN-High-Leitung (CANH) und der CAN-Low-Leitung (CANL). Entsprechend verfügen CAN-Transceiver über zwei Buspins für diese Leitungen.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712018875173.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712018875173.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
 <ol>
 <li>
 <p><strong>CAN-Transceiver</strong>:</p>
@@ -366,7 +366,7 @@
 <p>Die Struktur eines High-Speed-CAN-Transceivers ist in der beigefügten Grafik dargestellt. Wenn beide Ausgangstransistoren gesperrt sind, nehmen beide CAN-Leitungen das gleiche Potenzial (0,5*Vcc) an, wodurch die Differenzspannung null ist. Sobald beide Transistoren durchschalten, entsteht zwischen den Leitungen eine vom Lastwiderstand abhängige Spannungsdifferenz, die gemäß ISO 11898-2 2 Volt betragen sollte. Dabei fließt ein Strom von etwa 35 mA.</p>
 <h2 id="störfestigkeit"><a class="header" href="#störfestigkeit">Störfestigkeit</a></h2>
 <p>CAN-Transceiver zeichnen sich durch eine geringe Emission und eine hohe Störfestigkeit aus, die durch einen breiten Gleichtaktarbeitsbereich erreicht wird. Moderne Transceiver bieten zudem einen ESD-Schutz von bis zu 8 kV. In besonders kritischen Anwendungen kann eine nahe am Ausgang geschaltete Gleichtaktdrossel (Common Mode Choke - CMC) verwendet werden, um Emissionen weiter zu reduzieren.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712018897395.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712018897395.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
 <h2 id="maximale-anzahl-an-can-knoten"><a class="header" href="#maximale-anzahl-an-can-knoten">Maximale Anzahl an CAN-Knoten</a></h2>
 <p>Die ISO 11898 gibt eine maximale Anzahl von 32 CAN-Knoten vor. In der Praxis hängt die maximale Anzahl der Knoten jedoch stark von der Leistungsfähigkeit der verwendeten CAN-Transceiver ab und davon, ob es sich um ein High-Speed- oder Low-Speed-Netzwerk handelt. Beispielsweise können mit dem High-Speed-CAN-Transceiver TJA1050 in einem entsprechenden Netzwerk bis zu 110 Knoten verbunden werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-bus"><a class="header" href="#can-bus">CAN-Bus</a></h1>
@@ -387,8 +387,8 @@
 <li><strong>CAN-Transceiver</strong>: Der Transceiver wandelt die vom Controller kommenden digitalen Signale in differenzielle Signale um, die über das physikalische Medium übertragen werden, und umgekehrt.</li>
 </ul>
 <p>Das dargestellte Diagramm zeigt ein typisches CAN-Netzwerk mit drei CAN-Knoten. Jeder Knoten besteht aus einem Host, einem CAN-Controller und einem CAN-Transceiver. Die CAN-High- (CANH) und CAN-Low-Leitungen (CANL) sind als verdrillte Leiterpaare dargestellt, die die Störanfälligkeit minimieren. An den Enden des Busses befinden sich Abschlusswiderstände (RT) mit einem Wert von 120 Ohm, um Reflexionen zu verhindern.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712019030667.png" alt="CAN-Bus" style="max-width:50%; display: block; margin: 0 auto;" />
-<h3 id="fazit-4"><a class="header" href="#fazit-4">Fazit</a></h3>
+<img src="02_CAN-Kommunikation/./image/1712019030667.png" alt="CAN-Bus" style="max-width:90%; display: block; margin: 0 auto;" />
+<h3 id="schlussfolgerung-4"><a class="header" href="#schlussfolgerung-4">Schlussfolgerung</a></h3>
 <p>Ein tiefes Verständnis der physikalischen Prinzipien der CAN-Kommunikation, einschließlich der Differenzsignalübertragung, der Verwendung verdrillter Leiterpaare und der Rolle von Abschlusswiderständen, ist essenziell für die Entwicklung zuverlässiger und effizienter Netzwerke in der Automobilindustrie. Dieses Tutorial hat die wesentlichen Aspekte dieser Technologie beleuchtet und bietet eine solide Grundlage für weiterführende Studien und Anwendungen im Bereich der Fahrzeug-Elektronik.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="busankopplung"><a class="header" href="#busankopplung">Busankopplung</a></h1>
 <p>Die physikalische Signalübertragung in einem CAN-Netzwerk basiert auf der Differenzsignalübertragung. Die Differenzspannungen hängen von der eingesetzten Busankopplung ab. Man unterscheidet zwischen der CAN-Highspeed-Busankopplung (ISO 11898-2) und der CAN-Lowspeed-Busankopplung (ISO 11898-3).</p>
@@ -402,7 +402,7 @@
 <li><strong>Dominanter Zustand (logische 0)</strong>: CANH hat eine Spannung von etwa 3,5 Volt und CANL eine Spannung von etwa 1,5 Volt.</li>
 </ul>
 <p>Diese Differenz von 2 Volt wird als dominanter Pegel erkannt, während eine Differenz von 0 Volt als rezessiver Pegel erkannt wird.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712019086765.png" alt="CAN-Bus" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712019086765.png" alt="CAN-Bus" style="max-width:70%; display: block; margin: 0 auto;" />
 <h3 id="can-lowspeed-buspegel-iso-11898-3"><a class="header" href="#can-lowspeed-buspegel-iso-11898-3">CAN-Lowspeed-Buspegel (ISO 11898-3)</a></h3>
 <p>Die Grafik "CAN-Lowspeed-Buspegel" zeigt die unterschiedlichen Spannungsverhältnisse auf dem CAN-Bus für Lowspeed-Anwendungen. Bei der Lowspeed-Busankopplung bewegen sich die Spannungen für CANH und CANL wie folgt:</p>
 <ul>
@@ -410,8 +410,8 @@
 <li><strong>Dominanter Zustand (logische 0)</strong>: CANH hat eine Spannung von etwa 3,6 Volt und CANL eine Spannung von etwa 1,4 Volt.</li>
 </ul>
 <p>Auch hier ergibt sich eine Differenz von 2 Volt für den dominanten Pegel, während eine Differenz von 5 Volt als rezessiver Pegel erkannt wird.</p>
-<img src="02_CAN-Kommunikation/./image/README/1712019099533.png" alt="CAN-Bus" style="max-width:50%; display: block; margin: 0 auto;" />
-<h2 id="fazit-5"><a class="header" href="#fazit-5">Fazit</a></h2>
+<img src="02_CAN-Kommunikation/./image/1712019099533.png" alt="CAN-Bus" style="max-width:70%; display: block; margin: 0 auto;" />
+<h2 id="schlussfolgerung-5"><a class="header" href="#schlussfolgerung-5">Schlussfolgerung</a></h2>
 <p>Die Spannungsverhältnisse und die Unterscheidung zwischen dominanten und rezessiven Pegeln sind entscheidend für die korrekte Funktion eines CAN-Busses. Die unterschiedlichen Normen ISO 11898-2 und ISO 11898-3 definieren spezifische Spannungsbereiche für Highspeed- und Lowspeed-Anwendungen. Ein tiefes Verständnis dieser Spezifikationen ist essentiell für die Entwicklung und Fehlerdiagnose in Fahrzeugnetzwerken.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-buslogik-im-fahrzeug"><a class="header" href="#can-buslogik-im-fahrzeug">CAN-Buslogik im Fahrzeug</a></h1>
 <p>Der Controller Area Network (CAN) Bus ist ein robustes Fahrzeugnetzwerk, das es Mikrocontrollern und Geräten ermöglicht, ohne einen Host-Computer direkt miteinander zu kommunizieren. CAN-Busse sind in der Automobilindustrie weit verbreitet und werden für verschiedene elektronische Steuergeräte (ECUs) genutzt. Ein tiefes Verständnis der CAN-Buslogik ist entscheidend für die Diagnose und das Design von Fahrzeugnetzen. Diese Anleitung gibt eine detaillierte Erklärung der CAN-Buslogik basierend auf den bereitgestellten Informationen und Abbildungen.</p>
@@ -429,14 +429,14 @@
 <li><strong>Sender 1, 2 und 3:</strong> Diese repräsentieren die Signale der drei Knoten. Jeder Knoten kann ein Bit senden, das entweder 0 (dominant) oder 1 (rezessiv) ist.</li>
 <li><strong>CAN-Bus:</strong> Der kombinierte Pegel auf dem Bus, der durch die dominante Logik der Open-Collector-Schaltung bestimmt wird.</li>
 </ul>
-<img src="02_CAN-Kommunikation/./image/README/1716539577015.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1716539577015.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="funktionsweise-der-schaltung"><a class="header" href="#funktionsweise-der-schaltung">Funktionsweise der Schaltung</a></h2>
 <ol>
 <li><strong>Initialzustand:</strong> Der Widerstand R zieht den Bus auf den rezessiven Pegel "1", wenn keine Knoten senden.</li>
 <li><strong>Senden eines dominanten Pegels:</strong> Wenn ein Knoten einen dominanten Pegel "0" sendet, zieht er den Bus auf diesen Pegel, unabhängig davon, was die anderen Knoten senden.</li>
 <li><strong>Rezessiver Pegel:</strong> Der Bus bleibt nur dann auf dem rezessiven Pegel "1", wenn alle Knoten rezessiv senden.</li>
 </ol>
-<h1 id="verständnis-der-wired-and-buslogik"><a class="header" href="#verständnis-der-wired-and-buslogik">Verständnis der Wired-AND-Buslogik</a></h1>
+<h2 id="verständnis-der-wired-and-buslogik"><a class="header" href="#verständnis-der-wired-and-buslogik">Verständnis der Wired-AND-Buslogik</a></h2>
 <p>Die Open-Collector-Schaltung ermöglicht eine effektive Realisierung der Wired-AND-Logik. Die Tabelle in der Abbildung zeigt verschiedene Szenarien, in denen die Kombination der gesendeten Pegel durch die Knoten das Ergebnis auf dem CAN-Bus beeinflusst.</p>
 <p>Beispiel:</p>
 <ul>
@@ -448,7 +448,7 @@
 <p>Hier zeigt sich, dass der CAN-Bus nur dann "1" (rezessiv) ist, wenn alle Sender diesen Pegel senden.</p>
 <h2 id="anwendung-in-fahrzeugen"><a class="header" href="#anwendung-in-fahrzeugen">Anwendung in Fahrzeugen</a></h2>
 <p>Diese Logik ermöglicht eine zuverlässige Kommunikation und Fehlererkennung in Fahrzeugen. Jeder Knoten kann den Zustand des Busses überwachen und feststellen, ob sein gesendetes Signal korrekt übertragen wird. Falls ein dominantes Signal gesendet wird und ein rezessiver Pegel gelesen wird, erkennt der Knoten eine Kollision und kann entsprechend reagieren.</p>
-<h1 id="fazit-6"><a class="header" href="#fazit-6">Fazit</a></h1>
+<h2 id="schlussfolgerung-6"><a class="header" href="#schlussfolgerung-6">Schlussfolgerung</a></h2>
 <p>Das Verständnis der CAN-Buslogik und der Wired-AND-Logik ist essenziell für das Design und die Diagnose von Fahrzeugnetzwerken. Die Open-Collector-Schaltung stellt sicher, dass der dominante Pegel Vorrang hat und ermöglicht so eine zuverlässige Kommunikation zwischen den verschiedenen Steuergeräten im Fahrzeug.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-kommunikationsprinzips-im-fahrzeug"><a class="header" href="#can-kommunikationsprinzips-im-fahrzeug">CAN-Kommunikationsprinzips im Fahrzeug</a></h1>
 <p>Im Folgenden wird das CAN-Kommunikationsprinzip im Detail erklärt. Das Ziel ist es, ein tiefes Verständnis der Struktur und Funktionsweise eines CAN-Netzwerks im Fahrzeug zu vermitteln. Dabei wird besonders auf die Aspekte der Dezentralisierung, Ereignisorientierung und empfängerselektiven Adressierung eingegangen. Zusätzlich wird die Kommunikationsmatrix ausführlich behandelt, um die komplexen Interaktionen zwischen den CAN-Knoten zu verdeutlichen.</p>
@@ -519,11 +519,11 @@
 <li><strong>Akzeptanzprüfung</strong>: Prüft, ob eine empfangene Nachricht für den Knoten bestimmt ist.</li>
 <li><strong>Senden und Empfangen</strong>: Über die CAN-Schnittstelle werden Nachrichten gesendet und empfangen.</li>
 </ol>
-<img src="02_CAN-Kommunikation/./image/README/1712019772308.png" alt="CAN-Knoten" style="max-width:80%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712019772308.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <hr />
-<img src="02_CAN-Kommunikation/./image/README/1712019810828.png" alt="CAN-Knoten" style="max-width:80%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712019810828.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <hr />
-<img src="02_CAN-Kommunikation/./image/README/1712020016743.png" alt="CAN-Knoten" style="max-width:80%; display: block; margin: 0 auto;" />
+<img src="02_CAN-Kommunikation/./image/1712020016743.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="kommunikationsablauf"><a class="header" href="#kommunikationsablauf">Kommunikationsablauf</a></h3>
 <ol>
 <li><strong>Nachricht senden</strong>: Der Host legt eine Nachricht in den Sendepuffer.</li>
@@ -546,7 +546,7 @@
 </tbody></table>
 </div>
 <p>Dieses Beispiel zeigt, wie die verschiedenen Steuergeräte im Fahrzeug über ein CAN-Netzwerk interagieren und Informationen austauschen.</p>
-<h2 id="fazit-7"><a class="header" href="#fazit-7">Fazit</a></h2>
+<h2 id="schlussfolgerung-7"><a class="header" href="#schlussfolgerung-7">Schlussfolgerung</a></h2>
 <p>Ein CAN-Netzwerk im Fahrzeug bietet eine zuverlässige und flexible Kommunikationsplattform für sicherheitskritische Anwendungen. Durch die Dezentralisierung des Buszugriffs, ereignisorientierte Datenübertragung und empfängerselektive Adressierung wird eine hohe Verfügbarkeit und Effizienz gewährleistet. Die Kommunikationsmatrix hilft bei der Planung und Verwaltung der Datenströme im Netzwerk und unterstützt bei der Integration neuer Knoten.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-framing"><a class="header" href="#can-framing">CAN-Framing</a></h1>
 <ul>
@@ -574,7 +574,7 @@
 <li><strong>End of Frame (EOF):</strong> Markiert das Ende des Data Frames.</li>
 <li><strong>Intermission (ITM):</strong> Ein Intervall, das zwischen zwei aufeinanderfolgenden Nachrichten liegt.</li>
 </ul>
-<img src="03_CAN-Framing/./image/README/1712276187445.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="03_CAN-Framing/./image/1712276187445.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <p>Der Data Frame ist das Rückgrat der CAN-Kommunikation und ermöglicht die effiziente Übertragung von Daten zwischen den Knoten eines CAN-Netzwerks.</p>
 <h2 id="remote-frame"><a class="header" href="#remote-frame">Remote Frame</a></h2>
 <p>Während zur Übertragung von Data Frames die entsprechenden Informationserzeuger die Initiative ergreifen, existiert mit dem Remote Frame ein Frametyp, mit dem Nutzdaten, also Data Frames, von beliebigen CAN-Knoten angefordert werden können. Bis auf das fehlende Data Field setzt sich ein Remote Frame wie ein Data Frame zusammen. Die Felder sind wie folgt:</p>
@@ -591,7 +591,7 @@
 <li><strong>End of Frame (EOF)</strong></li>
 <li><strong>Intermission (ITM)</strong></li>
 </ul>
-<img src="03_CAN-Framing/./image/README/1712276204782.png" alt="CAN-Knoten" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="03_CAN-Framing/./image/1712276204782.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <p>Der wesentliche Unterschied zum Data Frame besteht im Fehlen des Data Fields. Der Remote Frame dient dazu, einen anderen Knoten im Netzwerk zur Übertragung eines Data Frames aufzufordern.</p>
 <h2 id="error-frame"><a class="header" href="#error-frame">Error Frame</a></h2>
 <p>Der Error Frame steht zur Verfügung, um während des Kommunikationsbetriebs entdeckte Fehler zu signalisieren. Mit dem Übertragen eines Error Frames geht der Abbruch der laufenden Botschaftsübertragung einher. Der Aufbau eines Error Frames unterscheidet sich wesentlich vom Aufbau eines Data oder Remote Frames. Man kann lediglich zwei Felder voneinander unterscheiden:</p>
@@ -600,17 +600,177 @@
 <li><strong>Error Delimiter:</strong> Dieses Feld besteht aus acht rezessiven Bits und markiert das Ende des Error Frames.</li>
 </ul>
 <p>Ein Error Frame wird gesendet, wenn eine Station einen Fehler erkennt, und zwingt alle Stationen dazu, die fehlerhafte Nachricht zu verwerfen. Dies stellt sicher, dass keine fehlerhaften Daten im Netzwerk akzeptiert werden.</p>
-<img src="03_CAN-Framing/./image/README/1712276232272.png" alt="CAN-Knoten" style="max-width:40%; display: block; margin: 0 auto;" />
-<h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
+<img src="03_CAN-Framing/./image/1712276232272.png" alt="CAN-Knoten" style="max-width:70%; display: block; margin: 0 auto;" />
+<h2 id="schlussfolgerung-8"><a class="header" href="#schlussfolgerung-8">Schlussfolgerung</a></h2>
 <p>Das Verständnis der verschiedenen CAN-Frame-Typen und ihrer Felder ist essenziell für die Implementierung und Fehlersuche in CAN-basierten Netzwerken. Jeder Frame-Typ erfüllt eine spezifische Rolle innerhalb des CAN-Kommunikationsprotokolls und trägt zur Robustheit und Zuverlässigkeit des Systems bei. Die präzise Kenntnis und Anwendung dieser Frames ermöglichen eine effiziente und fehlerfreie Datenkommunikation in modernen Fahrzeugnetzwerken.</p>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="can-buszugriff"><a class="header" href="#can-buszugriff">CAN-Buszugriff</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="struktur-und-funktion-von-data-frames-im-can-netzwerk"><a class="header" href="#struktur-und-funktion-von-data-frames-im-can-netzwerk">Struktur und Funktion von Data Frames im CAN-Netzwerk</a></h1>
+<h2 id="einleitung-3"><a class="header" href="#einleitung-3">Einleitung</a></h2>
+<p>Der Controller Area Network (CAN)-Bus ist ein wesentlicher Bestandteil moderner Automobile, der eine zuverlässige Kommunikation zwischen verschiedenen elektronischen Steuergeräten (ECUs) ermöglicht. In diesem Kontext nehmen Data Frames eine zentrale Rolle ein, da sie die Nutzdaten übertragen. Dieser Leitfaden beschreibt detailliert den Aufbau und die Funktion jedes Elements eines CAN Data Frames, um ein tiefgehendes Verständnis für dessen Mechanismen und Anwendungen zu vermitteln.</p>
+<img src="03_CAN-Framing/./image/1712276346227.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="aufbau-eines-can-data-frames"><a class="header" href="#aufbau-eines-can-data-frames">Aufbau eines CAN Data Frames</a></h2>
+<p>Ein CAN Data Frame setzt sich aus mehreren Komponenten zusammen, die jeweils spezifische Aufgaben während der Übertragung erfüllen. Diese Komponenten gewährleisten die Initiierung und Aufrechterhaltung der Synchronisation zwischen Kommunikationspartnern, die Herstellung der definierten Kommunikationsbeziehungen sowie die Übertragung und Sicherung der Nutzdaten. Im Folgenden werden die einzelnen Komponenten eines CAN Data Frames erläutert:</p>
+<h3 id="1-start-of-frame-sof"><a class="header" href="#1-start-of-frame-sof">1. Start of Frame (SOF)</a></h3>
+<p>Die Übertragung eines Data Frames beginnt mit dem Startbit, auch als Start Of Frame (SOF) bezeichnet. Dieses Bit wird vom Sender dominant übertragen und sorgt durch den Wechsel des Signalpegels von rezessiv (Bus Idle) nach dominant für die netzwerkweite Synchronisation. Empfänger vergleichen während der Übertragung alle Signalflankenwechsel von rezessiv nach dominant mit ihrem eingestellten Bittiming. Bei Abweichungen synchronisieren sich die Empfänger, um den Phasenfehler auszugleichen (Nachsynchronisation).</p>
+<h3 id="2-identifier-id-und-remote-transmission-request-rtr"><a class="header" href="#2-identifier-id-und-remote-transmission-request-rtr">2. Identifier (ID) und Remote Transmission Request (RTR)</a></h3>
+<p>Dem SOF folgt der Identifier (ID), der die Priorität des Data Frames festlegt und in Verbindung mit der Akzeptanzfilterung die in der Kommunikationsmatrix definierten Sender-Empfänger-Relationen im CAN-Netzwerk sicherstellt. Das RTR-Bit (Remote Transmission Request) informiert die Empfänger über den Frametyp: Ein dominantes RTR-Bit zeigt einen Data Frame an, während ein rezessives RTR-Bit einen Remote Frame anzeigt.</p>
+<h3 id="3-identifier-extension-ide"><a class="header" href="#3-identifier-extension-ide">3. Identifier Extension (IDE)</a></h3>
+<p>Das Identifier Extension (IDE)-Bit unterscheidet zwischen dem Standard- und Extended-Format. Im Standard-Format umfasst der Identifier 11 Bit, während er im Extended-Format 29 Bit umfasst. Diese Unterscheidung ermöglicht die Anpassung der Identifier-Länge an spezifische Anforderungen des Netzwerks.</p>
+<h3 id="4-data-length-code-dlc"><a class="header" href="#4-data-length-code-dlc">4. Data Length Code (DLC)</a></h3>
+<p>Der Data Length Code (DLC) gibt die Anzahl der zu übertragenden Nutzbytes an. Diese Nutzbytes werden im Data Field transportiert. Ein Data Frame kann maximal acht Nutzbytes übertragen.</p>
+<img src="03_CAN-Framing/./image/1712276365231.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h3 id="5-data-field"><a class="header" href="#5-data-field">5. Data Field</a></h3>
+<p>Das Data Field enthält die eigentlichen Nutzdaten, die im Rahmen der CAN-Kommunikation übertragen werden. Die Länge des Data Fields variiert je nach im DLC angegebenen Anzahl der Bytes.</p>
+<img src="03_CAN-Framing/./image/1712276396634.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h3 id="6-cyclic-redundancy-check-crc-und-acknowledgement-ack"><a class="header" href="#6-cyclic-redundancy-check-crc-und-acknowledgement-ack">6. Cyclic Redundancy Check (CRC) und Acknowledgement (ACK)</a></h3>
+<p>Zur Sicherung der übertragenen Nutzbytes wird eine Prüfsumme unter Anwendung des Cyclic Redundancy Checks (CRC) erstellt. Basierend auf dem Ergebnis des CRCs quittieren die Empfänger im ACK-Slot (Acknowledgement) den Empfang des Frames entweder positiv oder negativ.</p>
+<h3 id="7-end-of-frame-eof"><a class="header" href="#7-end-of-frame-eof">7. End of Frame (EOF)</a></h3>
+<p>Die Übertragung eines Data Frames wird mit sieben rezessiven Bits, dem End Of Frame (EOF), beendet. Diese Bits signalisieren das Ende der Übertragung und ermöglichen den Übergang in den Bus Idle-Zustand.</p>
+<h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
+<p>Ein tiefgehendes Verständnis der Struktur und Funktionsweise von CAN Data Frames ist für die Entwicklung und Wartung von CAN-Netzwerken essenziell. Jedes Element eines Data Frames spielt eine spezifische Rolle bei der Sicherstellung einer zuverlässigen und effizienten Kommunikation. Durch die Kenntnis dieser Elemente können Entwickler und Ingenieure robustere und effizientere CAN-basierte Systeme gestalten und implementieren.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anforderung-von-daten-im-can-netzwerk"><a class="header" href="#anforderung-von-daten-im-can-netzwerk">Anforderung von Daten im CAN-Netzwerk</a></h1>
+<h2 id="einleitung-4"><a class="header" href="#einleitung-4">Einleitung</a></h2>
+<p>Im Bereich der automobilen Netzwerktechnik spielt das Controller Area Network (CAN) eine zentrale Rolle bei der Kommunikation zwischen verschiedenen elektronischen Steuergeräten (ECUs). Dieses Tutorial beleuchtet die Funktion und Anwendung von Remote Frames zur Anforderung von Daten innerhalb eines CAN-Netzwerks. Besondere Aufmerksamkeit wird den Unterschieden zu Data Frames, der Rolle des RTR-Bits und der Implementierung in realen Anwendungen gewidmet.</p>
+<h2 id="Überblick-über-can-frames"><a class="header" href="#Überblick-über-can-frames">Überblick über CAN-Frames</a></h2>
+<h3 id="data-frames"><a class="header" href="#data-frames">Data Frames</a></h3>
+<p>Data Frames sind die grundlegenden Elemente für die Datenübertragung in einem CAN-Netzwerk. Sie enthalten Nutzdaten, die von einem CAN-Knoten an andere Knoten im Netzwerk gesendet werden.</p>
+<h3 id="remote-frames"><a class="header" href="#remote-frames">Remote Frames</a></h3>
+<p>Remote Frames sind eine spezielle Art von CAN-Frames, die verwendet werden, um Nutzdaten von anderen Knoten anzufordern. Im Vergleich zu Data Frames fehlt ihnen das Data Field. Remote Frames können sowohl im Standard- als auch im Extended-Format übertragen werden.</p>
+<h3 id="unterschiede-zwischen-data-und-remote-frames"><a class="header" href="#unterschiede-zwischen-data-und-remote-frames">Unterschiede zwischen Data und Remote Frames</a></h3>
+<p>Der Hauptunterschied zwischen Data und Remote Frames liegt im RTR-Bit (Remote Transmission Request):</p>
+<ul>
+<li><strong>Data Frame</strong>: Das RTR-Bit wird dominant gesendet.</li>
+<li><strong>Remote Frame</strong>: Das RTR-Bit wird rezessiv gesendet.</li>
+</ul>
+<h2 id="implementierung-und-nutzung-von-remote-frames"><a class="header" href="#implementierung-und-nutzung-von-remote-frames">Implementierung und Nutzung von Remote Frames</a></h2>
+<h3 id="definition-und-identifikation"><a class="header" href="#definition-und-identifikation">Definition und Identifikation</a></h3>
+<p>Für jeden existierenden Data Frame im CAN-Netzwerk kann ein entsprechender Remote Frame definiert werden. Es ist dabei sicherzustellen, dass die Identifier der Remote Frames mit denen der assoziierten Data Frames übereinstimmen. Wenn ein CAN-Knoten einen Remote Frame mit einer ID empfängt, die mit der ID eines seiner Data Frames identisch ist, antwortet er mit dem entsprechenden Data Frame.</p>
+<h3 id="automatische-und-manuelle-beantwortung"><a class="header" href="#automatische-und-manuelle-beantwortung">Automatische und manuelle Beantwortung</a></h3>
+<p>Die Beantwortung eines Remote Frames kann auf zwei Arten erfolgen:</p>
+<ol>
+<li><strong>Automatische Beantwortung</strong>: Bei CAN-Controllern mit Objektespeicherung wird die Beantwortung eines Remote Frames automatisch durch den CAN-Controller durchgeführt.</li>
+<li><strong>Manuelle Beantwortung</strong>: CAN-Controller ohne Objektespeicherung müssen den Host benachrichtigen, damit dieser die Beantwortung des Remote Frames initiiert.</li>
+</ol>
+<h3 id="priorität-und-verzögerung"><a class="header" href="#priorität-und-verzögerung">Priorität und Verzögerung</a></h3>
+<p>Im Idealfall erfolgt die Beantwortung eines Remote Frames sofort durch das entsprechende Data Frame. Allerdings kann es zu Verzögerungen kommen, wenn sich CAN-Botschaften mit höherer Priorität zwischen die Anfrage und die Beantwortung schieben.</p>
+<h2 id="kritische-betrachtung-und-anwendung-in-der-praxis"><a class="header" href="#kritische-betrachtung-und-anwendung-in-der-praxis">Kritische Betrachtung und Anwendung in der Praxis</a></h2>
+<h3 id="geringe-anwendung-im-automobilbereich"><a class="header" href="#geringe-anwendung-im-automobilbereich">Geringe Anwendung im Automobilbereich</a></h3>
+<p>Trotz der Möglichkeit, Daten mittels Remote Frames anzufordern, findet diese Methode im Automobilbereich kaum Anwendung. Dies liegt daran, dass die Datenübertragung in Fahrzeugnetzwerken primär durch die Informationserzeuger initiiert wird und nicht auf Nachfrage erfolgt. Diese Praxis stellt sicher, dass wichtige Daten kontinuierlich und zuverlässig übertragen werden, ohne dass erst eine Anforderung erfolgen muss.</p>
+<h3 id="potenzielle-einsatzgebiete"><a class="header" href="#potenzielle-einsatzgebiete">Potenzielle Einsatzgebiete</a></h3>
+<p>Remote Frames könnten in speziellen Fällen nützlich sein, beispielsweise in Diagnoseanwendungen oder in Netzwerken, wo eine gezielte Datenanforderung notwendig ist. Allerdings ist die praktische Relevanz im Automobilbereich begrenzt, weshalb die Implementierung und der Einsatz von Remote Frames wohlüberlegt erfolgen sollten.</p>
+<h3 id="sicherheits--und-leistungsaspekte"><a class="header" href="#sicherheits--und-leistungsaspekte">Sicherheits- und Leistungsaspekte</a></h3>
+<p>Bei der Implementierung von Remote Frames müssen Sicherheits- und Leistungsaspekte berücksichtigt werden. Unbeabsichtigte oder böswillige Nutzung von Remote Frames könnte zu unnötigem Datenverkehr und erhöhtem Netzwerklast führen, was die Leistung und Zuverlässigkeit des Gesamtsystems beeinträchtigen kann.</p>
+<h2 id="zusammenfassung"><a class="header" href="#zusammenfassung">Zusammenfassung</a></h2>
+<p>Remote Frames bieten eine Möglichkeit, Nutzdaten im CAN-Netzwerk anzufordern, werden jedoch im Automobilbereich aufgrund der überwiegend ereignisgesteuerten Kommunikation selten genutzt. Das Verständnis des Aufbaus und der Funktion von Remote Frames sowie deren Vor- und Nachteile ist für die Planung und Implementierung von CAN-Netzwerken essenziell. Die Entscheidung, Remote Frames zu nutzen, sollte sorgfältig abgewogen werden, insbesondere in sicherheitskritischen und leistungsabhängigen Anwendungen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kommunikation-und-adressierung"><a class="header" href="#kommunikation-und-adressierung">Kommunikation und Adressierung</a></h1>
+<h2 id="botschafts-adressierung"><a class="header" href="#botschafts-adressierung">Botschafts-Adressierung</a></h2>
+<p>Im CAN-Netzwerk (Controller Area Network) wird die Kommunikation durch inhaltsbezogene Adressierung organisiert. Anders als bei vielen anderen Netzwerken, werden nicht die CAN-Knoten selbst, sondern die Daten- und Remote-Frames mit einer Kennung (Identifier - ID) versehen. Diese IDs bestimmen, welche Art von Nachricht gesendet wird und wer sie empfangen soll. Da alle CAN-Botschaften jedem Knoten im Netzwerk zur Verfügung stehen (Broadcasting), muss jeder Empfänger selbstständig die relevanten Botschaften auswählen und verarbeiten. Dies erfordert eine empfängerseitige Filterung der empfangenen Nachrichten, bekannt als Akzeptanzfilterung.</p>
+<h2 id="standard-und-extended-format"><a class="header" href="#standard-und-extended-format">Standard und Extended Format</a></h2>
+<p>Der CAN-Bus bietet zwei verschiedene Formate für Nachrichten: das Standard-Format und das Extended-Format. Diese Formate unterscheiden sich primär in der Länge des Identifiers:</p>
+<ol>
+<li>
+<p><strong>Standard-Format</strong>:</p>
+<ul>
+<li>Der Identifier (ID) umfasst 11 Bit.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extended-Format</strong>:</p>
+<ul>
+<li>Der Identifier umfasst 29 Bit.</li>
+<li>Der 29-Bit-Identifier setzt sich aus einem 11-Bit-Basis-ID und einem 18-Bit-Extended-ID zusammen.</li>
+<li>Zwischen Basis-ID und Extended-ID befinden sich die beiden Bits IDE (Identifier Extension) und SRR (Substitute Remote Request).</li>
+</ul>
+</li>
+</ol>
+<h3 id="identifier-und-kontrollbits"><a class="header" href="#identifier-und-kontrollbits">Identifier und Kontrollbits</a></h3>
+<p>Im Standard-Format wird der ID mit 11 Bit übertragen. Dies bedeutet, dass bis zu 2048 verschiedene Nachrichten-IDs möglich sind. Im Extended-Format wird der ID auf 29 Bit erweitert, was eine viel größere Vielfalt an Nachrichten-IDs ermöglicht, nämlich bis zu 536.870.912 verschiedene IDs.</p>
+<ul>
+<li>
+<p><strong>IDE-Bit</strong>:</p>
+<ul>
+<li>Ein dominantes IDE-Bit (0) kennzeichnet eine Nachricht im Standard-Format.</li>
+<li>Ein rezessives IDE-Bit (1) kennzeichnet eine Nachricht im Extended-Format.</li>
+</ul>
+</li>
+<li>
+<p><strong>SRR-Bit</strong>:</p>
+<ul>
+<li>Im Extended-Format ersetzt das SRR-Bit das RTR-Bit (Remote Transmission Request) des Standard-Formats. Das SRR-Bit wird immer rezessiv übertragen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Control Field (r0 und r1)</strong>:</p>
+<ul>
+<li>Im Extended-Format haben die beiden ersten Bits des Control-Fields keine Bedeutung und werden immer dominant übertragen.</li>
+</ul>
+</li>
+</ul>
+<h2 id="bedeutung-der-identifier-und-flexibilität-der-adressierung"><a class="header" href="#bedeutung-der-identifier-und-flexibilität-der-adressierung">Bedeutung der Identifier und Flexibilität der Adressierung</a></h2>
+<p>Die inhaltsbezogene Adressierung im CAN-Bus ist besonders flexibel und effizient für die Kommunikation in Fahrzeugnetzwerken. Jeder Knoten kann so konfiguriert werden, dass er nur die relevanten Nachrichten empfängt und verarbeitet. Dies reduziert die Belastung des Systems und verbessert die Gesamtleistung des Netzwerks.</p>
+<p>Durch die Erweiterung auf 29-Bit-Identifiers im Extended-Format wird die Skalierbarkeit des Systems erheblich erhöht, was besonders in modernen Fahrzeugen mit einer Vielzahl von Steuergeräten und Sensoren von Vorteil ist. Diese Flexibilität ist jedoch nur durch eine effektive Akzeptanzfilterung auf Empfängerseite gewährleistet.</p>
+<h2 id="schlussfolgerung-9"><a class="header" href="#schlussfolgerung-9">Schlussfolgerung</a></h2>
+<p>Die inhaltsbezogene Adressierung im CAN-Bus, kombiniert mit den beiden verfügbaren Botschaftsformaten, bietet eine hochflexible und skalierbare Kommunikationslösung für den Automobilbereich. Das Standard-Format mit 11-Bit-Identifiers ermöglicht eine einfache und schnelle Nachrichtenübertragung, während das Extended-Format mit 29-Bit-Identifiers eine erweiterte Adressierbarkeit für komplexere Systeme bietet.</p>
+<p>Durch die klare Trennung und Definition von Kontrollbits und die effiziente Nutzung von Filtermechanismen können CAN-Netzwerke auch in sehr anspruchsvollen Anwendungen zuverlässig und performant arbeiten.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fehlererkennung-und--behandlung-im-can-netzwerk"><a class="header" href="#fehlererkennung-und--behandlung-im-can-netzwerk">Fehlererkennung und -behandlung im CAN-Netzwerk</a></h1>
+<p>Das Controller Area Network (CAN) ist ein weit verbreitetes serielles Kommunikationsprotokoll, das in Automobilen und vielen anderen Anwendungen eingesetzt wird. Eine der größten Herausforderungen bei der seriellen Kommunikation in Kraftfahrzeugen besteht darin, eine äußerst hohe Übertragungssicherheit zu garantieren. Ein zentraler Mechanismus zur Fehlererkennung im CAN-Netzwerk ist das CRC-Verfahren (Cyclic Redundancy Check). Dieses Tutorial bietet eine detaillierte und wissenschaftlich fundierte Beschreibung des CRC-Verfahrens und der Acknowledgement-Mechanismen im CAN-Protokoll gemäß der ISO 11898-1 Norm.</p>
+<h2 id="cyclic-redundancy-check-crc"><a class="header" href="#cyclic-redundancy-check-crc">Cyclic Redundancy Check (CRC)</a></h2>
+<h3 id="funktionsweise-des-crc-verfahrens"><a class="header" href="#funktionsweise-des-crc-verfahrens">Funktionsweise des CRC-Verfahrens</a></h3>
+<p>Das CRC-Verfahren dient zur Erkennung von Übertragungsfehlern in Datenpaketen. Hierbei wird eine CRC-Sequenz auf Basis der zu übertragenden Bits berechnet. Diese Bits umfassen den Start-of-Frame (SOF) bis einschließlich des Data Fields. Zur Berechnung der CRC-Sequenz wird ein Generatorpolynom G(x) verwendet, das in der ISO 11898-1 Norm definiert ist.</p>
+<p>Die CRC-Sequenz wird wie folgt berechnet:</p>
+<ol>
+<li><strong>Polynomdarstellung der Datenbits:</strong> Die zu übertragenden Bits werden als Polynom interpretiert.</li>
+<li><strong>Division durch das Generatorpolynom:</strong> Dieses Datenpolynom wird durch das Generatorpolynom G(x) dividiert. Der Rest dieser Division stellt die CRC-Sequenz dar.</li>
+<li><strong>Anfügen der CRC-Sequenz:</strong> Die CRC-Sequenz wird an die ursprünglichen Datenbits angehängt und zusammen mit diesen übertragen.</li>
+</ol>
+<h3 id="fehlererkennung-durch-den-empfänger"><a class="header" href="#fehlererkennung-durch-den-empfänger">Fehlererkennung durch den Empfänger</a></h3>
+<p>Der Empfänger erhält das Gesamtpolynom (Originaldaten + CRC-Sequenz) und führt erneut eine Division durch das gleiche Generatorpolynom G(x) durch. Ergibt diese Division einen Rest von Null, so ist die Übertragung fehlerfrei. Andernfalls wurde ein Übertragungsfehler erkannt.</p>
+<h2 id="acknowledgement-ack"><a class="header" href="#acknowledgement-ack">Acknowledgement (ACK)</a></h2>
+<h3 id="quittierungsmechanismus"><a class="header" href="#quittierungsmechanismus">Quittierungsmechanismus</a></h3>
+<p>Nach der Berechnung und Überprüfung der CRC-Sequenz durch den Empfänger erfolgt die Quittierung der empfangenen Nachricht im Acknowledgement-Slot (ACK-Slot). Jeder Empfänger steuert das Acknowledgement unabhängig von der Akzeptanzfilterung:</p>
+<ul>
+<li><strong>Dominanter Pegel:</strong> Ein dominanter Pegel im ACK-Slot signalisiert eine positive Quittung (korrekte Datenübertragung).</li>
+<li><strong>Rezessiver Pegel:</strong> Ein rezessiver Pegel im ACK-Slot signalisiert eine negative Quittung (fehlerhafte Datenübertragung).</li>
+</ul>
+<h3 id="ack-delimiter"><a class="header" href="#ack-delimiter">ACK-Delimiter</a></h3>
+<p>Der ACK-Delimiter folgt unmittelbar auf den ACK-Slot und wird immer rezessiv übertragen. Dieser Mechanismus stellt sicher, dass der ACK-Slot eindeutig interpretierbar ist.</p>
+<h3 id="knotenneutrales-positives-acknowledgement"><a class="header" href="#knotenneutrales-positives-acknowledgement">Knotenneutrales positives Acknowledgement</a></h3>
+<p>Da der Sender sowohl den ACK-Slot als auch den ACK-Delimiter rezessiv überträgt, reicht eine einzige positive Quittung (dominanter Pegel) eines beliebigen Empfängers aus, um die Korrektheit der Botschaft zu bestätigen. Dies wird als knotenneutrales positives Acknowledgement bezeichnet, da es unabhängig von der Anzahl der Empfänger funktioniert.</p>
+<h2 id="fehlerbehandlung-ack-fehler-und-error-flag"><a class="header" href="#fehlerbehandlung-ack-fehler-und-error-flag">Fehlerbehandlung: ACK-Fehler und Error Flag</a></h2>
+<h3 id="ack-fehler"><a class="header" href="#ack-fehler">ACK-Fehler</a></h3>
+<p>Ein ACK-Fehler tritt auf, wenn keine einzige positive Quittung von den Empfängern erfolgt. Das bedeutet, dass der rezessive Pegel im ACK-Slot nicht überschrieben wird. Ein ACK-Fehler kann auf folgende Ursachen hinweisen:</p>
+<ul>
+<li><strong>Fehlerhafte Übertragung durch den Sender:</strong> Der Sender hat möglicherweise einen Fehler bei der Übertragung der Nachricht verursacht.</li>
+<li><strong>Nicht vorhandene Empfänger:</strong> Es gibt keine Empfänger, die die Nachricht erfolgreich empfangen und positiv quittieren konnten.</li>
+</ul>
+<h3 id="error-flag"><a class="header" href="#error-flag">Error Flag</a></h3>
+<p>Wenn ein ACK-Fehler erkannt wird, bricht der Sender die laufende Nachrichtenübertragung sofort ab und sendet ein Error Flag. Dieses Error Flag signalisiert allen Knoten im Netzwerk, dass ein Fehler aufgetreten ist und stellt sicher, dass keine fehlerhaften Daten im Netzwerk verbleiben.</p>
+<h2 id="schlussbemerkungen"><a class="header" href="#schlussbemerkungen">Schlussbemerkungen</a></h2>
+<p>Die beschriebenen Mechanismen zur Fehlererkennung und -behandlung im CAN-Netzwerk sind von zentraler Bedeutung, um eine hohe Übertragungssicherheit zu gewährleisten. Das CRC-Verfahren ermöglicht eine zuverlässige Erkennung von Übertragungsfehlern, während der Acknowledgement-Mechanismus sicherstellt, dass nur korrekte Nachrichten im Netzwerk akzeptiert werden. Bei Erkennung eines Fehlers erfolgt sofort eine Fehlerbehandlung, um die Datenkonsistenz im gesamten Netzwerk zu wahren. Diese Mechanismen tragen maßgeblich zur Robustheit und Zuverlässigkeit des CAN-Netzwerks bei.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="synchronisation-und-resynchronisation"><a class="header" href="#synchronisation-und-resynchronisation">Synchronisation und Resynchronisation</a></h1>
+<h2 id="einführung-in-die-synchronisation"><a class="header" href="#einführung-in-die-synchronisation">Einführung in die Synchronisation</a></h2>
+<p>Für eine korrekte und zuverlässige Datenübertragung im CAN-Bus (Controller Area Network) ist die Synchronisation der Kommunikationspartner von entscheidender Bedeutung. Eine präzise Synchronisation gewährleistet, dass alle Knoten im Netzwerk die Datenbits korrekt empfangen und interpretieren können.</p>
+<h2 id="synchronisation-der-kommunikationspartner"><a class="header" href="#synchronisation-der-kommunikationspartner">Synchronisation der Kommunikationspartner</a></h2>
+<p>Die Synchronisation der Kommunikationspartner beginnt mit dem Startbit, auch als Start of Frame (SOF) bezeichnet. Das SOF ist ein Signalwechsel von einem rezessiven (logisch "1") zu einem dominanten (logisch "0") Pegel und markiert den Beginn einer CAN-Botschaft. Dieser Signalwechsel dient als Referenzpunkt, um den Gleichlauf zwischen Sender und Empfänger herzustellen.</p>
+<p>Nach dem SOF übernimmt ein Resynchronisationsmechanismus die Aufgabe, den Gleichlauf während der gesamten Botschaftsübertragung aufrechtzuerhalten. Dies ist notwendig, um sicherzustellen, dass die Bits korrekt ausgerichtet und interpretiert werden, auch wenn geringfügige Unterschiede in den Taktraten der Knoten vorhanden sind.</p>
+<h2 id="resynchronisation"><a class="header" href="#resynchronisation">Resynchronisation</a></h2>
+<p>Der Resynchronisationsmechanismus basiert auf der Auswertung der von rezessiv nach dominant wechselnden Signalflanken. Diese Signalflanken werden zur Korrektur eventueller Phasenabweichungen zwischen Sender und Empfänger verwendet.</p>
+<p>Ein wesentlicher Bestandteil dieses Mechanismus ist der Bitstuffing-Mechanismus. Laut der Norm ISO 11898-1 müssen Sender nach spätestens fünf aufeinanderfolgenden Bits gleicher Polarität ein komplementäres Bit einfügen. Dies bedeutet, dass nach fünf identischen Bits (entweder fünf "0" oder fünf "1") ein Bit der entgegengesetzten Polarität eingefügt wird, um sicherzustellen, dass ausreichend Signalflanken zur Resynchronisation vorhanden sind.</p>
+<h2 id="bitstuffing-und-seine-bedeutung"><a class="header" href="#bitstuffing-und-seine-bedeutung">Bitstuffing und seine Bedeutung</a></h2>
+<p>Bitstuffing beginnt mit der Übertragung des SOF und endet mit dem letzten Bit der CRC-Sequenz (Cyclic Redundancy Check). Für einen Data Frame im Standard-Format mit einem maximalen Nutzdatenfeld von acht Bytes können im theoretischen Worst-Case-Fall bis zu 24 Stuffbits eingefügt werden. Dies führt dazu, dass der längstmögliche Data Frame im Standard-Format theoretisch aus 132 Bits besteht.</p>
+<p>Der Bitstuffing-Mechanismus sorgt dafür, dass lange Sequenzen homogener Bits vermieden werden, wodurch der Resynchronisationsmechanismus effektiv arbeiten kann. Dadurch wird die zuverlässige Übertragung der Botschaft auch bei unterschiedlichen Taktraten und in Umgebungen mit elektrischen Störungen gewährleistet.</p>
+<h2 id="kritische-betrachtung-und-wissenschaftliche-genauigkeit"><a class="header" href="#kritische-betrachtung-und-wissenschaftliche-genauigkeit">Kritische Betrachtung und wissenschaftliche Genauigkeit</a></h2>
+<p>Es ist wichtig zu beachten, dass die theoretische maximale Anzahl von Stuffbits selten in der Praxis erreicht wird, da Datenfelder typischerweise eine Mischung aus "0" und "1" enthalten. Dennoch bietet diese Worst-Case-Betrachtung wertvolle Einblicke in die Grenzen und Kapazitäten des CAN-Bus-Systems.</p>
+<p>Ein weiterer Punkt, der wissenschaftlich betrachtet werden muss, ist die mögliche Verzögerung durch das Bitstuffing. Jede eingefügte Stuffbit verlängert die Übertragungszeit eines Frames geringfügig, was bei sehr zeitkritischen Anwendungen berücksichtigt werden muss.</p>
+<h2 id="schlussfolgerung-10"><a class="header" href="#schlussfolgerung-10">Schlussfolgerung</a></h2>
+<p>Die Synchronisation und Resynchronisation sind essenzielle Mechanismen im CAN-Bus, um eine präzise und zuverlässige Datenübertragung zu gewährleisten. Der Bitstuffing-Mechanismus spielt dabei eine zentrale Rolle, indem er sicherstellt, dass stets genügend Signalflanken für die Resynchronisation vorhanden sind. Ein tiefgehendes Verständnis dieser Prozesse ist entscheidend für die Entwicklung und Analyse robuster CAN-Netzwerke im Automotive-Bereich.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-buszugriff"><a class="header" href="#can-buszugriff">CAN-Buszugriff</a></h1>
 <ul>
 <li><a href="04_CAN-Buszugriff/./01_prinzip.html">Prinzip</a></li>
 <li><a href="04_CAN-Buszugriff/./02_arbitrierung.html">Arbitrierung</a></li>
 <li><a href="04_CAN-Buszugriff/./03_priorisierung.html">Priorisierung</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="buszugriffs-im-can-netzwerk"><a class="header" href="#buszugriffs-im-can-netzwerk">Buszugriffs im CAN-Netzwerk</a></h1>
-<h2 id="einleitung-3"><a class="header" href="#einleitung-3">Einleitung</a></h2>
+<h2 id="einleitung-5"><a class="header" href="#einleitung-5">Einleitung</a></h2>
 <p>Der CAN-Bus (Controller Area Network) ist ein robustes Fahrzeugnetzwerk, das es Mikrocontrollern und Geräten ermöglicht, miteinander zu kommunizieren, ohne einen Host-Computer. Der Standard ISO 11898-1 definiert die Spezifikationen für die Kommunikation im CAN-Bus. In diesem Abschnitt werden die Mechanismen des Buszugriffs im CAN-Netzwerk detailliert beschrieben und erklärt, wie Kollisionen vermieden werden.</p>
 <h2 id="grundlagen-des-can-buszugriffs"><a class="header" href="#grundlagen-des-can-buszugriffs">Grundlagen des CAN-Buszugriffs</a></h2>
 <p>Im CAN-Netzwerk haben alle Knoten gleichberechtigten Zugang zum Bus, was bedeutet, dass jeder Knoten jederzeit das Recht hat, eine Nachricht zu senden. Diese Architektur wird als Multi-Master-Architektur bezeichnet. Sie gewährleistet eine hohe Verfügbarkeit und erlaubt eine ereignisgesteuerte Datenübertragung. Jedoch birgt sie auch die Gefahr von Kollisionen, wenn mehrere Knoten gleichzeitig den Bus verwenden möchten.</p>
@@ -627,38 +787,14 @@
 <li><strong>Priorität der Nachrichten</strong>: Jede Nachricht im CAN-Bus hat eine eindeutige Priorität, die durch ihre Identifier (ID) bestimmt wird. Nachrichten mit niedrigeren ID-Werten haben höhere Prioritäten.</li>
 <li><strong>Arbitrierungsprozess</strong>: Wenn mehrere Knoten gleichzeitig den Bus nutzen wollen, wird die Nachricht mit der höchsten Priorität (niedrigste ID) bevorzugt. Die anderen Knoten ziehen sich zurück und versuchen es erneut, sobald der Bus frei ist.</li>
 </ol>
-<h2 id="detaillierte-analyse-der-grafik"><a class="header" href="#detaillierte-analyse-der-grafik">Detaillierte Analyse der Grafik</a></h2>
-<p>Die Grafik „Prinzip des Buszugriffs im CAN-Netzwerk“ zeigt ein Szenario mit zwei CAN-Knoten, die auf den Bus zugreifen möchten:</p>
-<ol>
-<li>
-<p><strong>Ereignis 1</strong>:</p>
-<ul>
-<li><strong>Situation</strong>: Knoten A möchte seine hochpriorisierte Nachricht (CAN-Frame A) senden.</li>
-<li><strong>Problem</strong>: Der Bus ist besetzt.</li>
-<li><strong>Detail</strong>: Knoten A überwacht den Bus (Carrier Sense) und erkennt, dass der Bus aktuell belegt ist. Daher wartet er.</li>
-</ul>
-</li>
-<li>
-<p><strong>Folge</strong>:</p>
-<ul>
-<li><strong>Zugriffsbedingung</strong>: Knoten A darf nur dann auf den Bus zugreifen, wenn dieser frei ist.</li>
-<li><strong>Ereignis</strong>: Nach Ablauf der Intermission (ITM) beobachtet Knoten A den Bus und wartet auf eine freie Phase.</li>
-</ul>
-</li>
-<li>
-<p><strong>Nachrichtenübertragung</strong>:</p>
-<ul>
-<li><strong>Freigabe des Busses</strong>: Sobald der Bus frei ist, beginnt Knoten A seine Nachricht (CAN-Frame A) zu senden.</li>
-<li><strong>ITM-Periode</strong>: Nach Abschluss der Nachricht wird eine kurze Pause (Intermission) eingelegt, um den Busstatus zu stabilisieren.</li>
-</ul>
-</li>
-<li>
-<p><strong>Weiterer Zugriff</strong>:</p>
-<ul>
-<li><strong>Nächster Knoten</strong>: Nach der ITM-Periode kann Knoten B seine niederpriorisierte Nachricht (CAN-Frame B) senden, sofern der Bus frei ist.</li>
-</ul>
-</li>
-</ol>
+<h2 id="ereignis-1"><a class="header" href="#ereignis-1">Ereignis 1</a></h2>
+<img src="04_CAN-Buszugriff/./image/1712022411179.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-2"><a class="header" href="#ereignis-2">Ereignis 2</a></h2>
+<img src="04_CAN-Buszugriff/./image/1712022493865.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-3"><a class="header" href="#ereignis-3">Ereignis 3</a></h2>
+<img src="04_CAN-Buszugriff/./image/1712022523730.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
+<h2 id="ereignis-4"><a class="header" href="#ereignis-4">Ereignis 4</a></h2>
+<img src="04_CAN-Buszugriff/./image/1712022543957.png" alt="CAN-Knoten" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="technische-erläuterungen"><a class="header" href="#technische-erläuterungen">Technische Erläuterungen</a></h2>
 <ul>
 <li><strong>Carrier Sense</strong>: Dieser Mechanismus überwacht kontinuierlich den Zustand des Busses. Er stellt sicher, dass ein Knoten nur dann sendet, wenn der Bus tatsächlich frei ist. Dies ist ein wichtiger Aspekt des CSMA/CA-Verfahrens.</li>
@@ -678,10 +814,10 @@
 <li>Sobald Knoten B ein Bit sendet, das mit einem höheren Bit von Knoten A kollidiert, erkennt Knoten B die höhere Priorität und zieht sich zurück.</li>
 <li>Knoten A setzt die Übertragung fort, da seine Nachricht die höhere Priorität hat.</li>
 </ul>
-<h1 id="fazit-8"><a class="header" href="#fazit-8">Fazit</a></h1>
+<h1 id="fazit-1"><a class="header" href="#fazit-1">Fazit</a></h1>
 <p>Die Mechanismen des Buszugriffs im CAN-Netzwerk, wie in der ISO 11898-1 beschrieben, sind darauf ausgelegt, eine effiziente und kollisionsfreie Kommunikation zu gewährleisten. Durch die Verwendung von CSMA/CA und der bitweisen Busarbitrierung können Nachrichten in Echtzeit übertragen werden, was besonders für sicherheitskritische Anwendungen in Fahrzeugen und industriellen Steuerungssystemen von großer Bedeutung ist. Die detaillierte Analyse und die grafische Darstellung helfen, diese komplexen Prozesse besser zu verstehen und ihre Bedeutung für die Zuverlässigkeit und Effizienz des CAN-Busses zu erkennen.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="bitweise-arbitrierung-im-can-netzwerk"><a class="header" href="#bitweise-arbitrierung-im-can-netzwerk">Bitweise Arbitrierung im CAN-Netzwerk</a></h1>
-<h2 id="einleitung-4"><a class="header" href="#einleitung-4">Einleitung</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bitweise-arbitrierung"><a class="header" href="#bitweise-arbitrierung">Bitweise Arbitrierung</a></h1>
+<h2 id="einleitung-6"><a class="header" href="#einleitung-6">Einleitung</a></h2>
 <p>Die bitweise Arbitrierung ist ein wesentliches Element des Controller Area Network (CAN), das in der ISO 11898-1 normiert ist. Diese Technik ermöglicht es mehreren Steuergeräten (ECUs) in einem Fahrzeug, über ein gemeinsames Netzwerk zu kommunizieren, ohne dass es zu Datenkollisionen kommt. In diesem detaillierten und wissenschaftlich fundierten Tutorial werden die Mechanismen und Abläufe der bitweisen Arbitrierung im CAN-Netzwerk erläutert, basierend auf der bereitgestellten Abbildung und ergänzenden Informationen.</p>
 <h2 id="grundlagen-der-bitweisen-arbitrierung"><a class="header" href="#grundlagen-der-bitweisen-arbitrierung">Grundlagen der bitweisen Arbitrierung</a></h2>
 <p>Die bitweise Arbitrierung stellt sicher, dass in einem CAN-Netzwerk nur ein Steuergerät zur gleichen Zeit auf den Bus zugreifen und Daten senden kann. Dieses Verfahren, das auch als Carrier Sense Multiple Access mit Collision Resolution (CSMA/CR) oder Collision Avoidance (CSMA/CA) bekannt ist, verhindert Kollisionen und ermöglicht eine prioritätsbasierte Übertragung von Nachrichten.</p>
@@ -729,10 +865,41 @@
 </ul>
 <h2 id="ende-der-arbitrierungsphase"><a class="header" href="#ende-der-arbitrierungsphase">Ende der Arbitrierungsphase</a></h2>
 <p>Am Ende der Arbitrierungsphase hat das Steuergerät mit der Nachricht mit der kleinsten ID die Berechtigung zu senden. Alle anderen Steuergeräte wechseln in den Empfangszustand und versuchen erneut zu senden, sobald der Bus wieder frei ist.</p>
-<h2 id="schlussfolgerung-1"><a class="header" href="#schlussfolgerung-1">Schlussfolgerung</a></h2>
+<h2 id="schlussfolgerung-11"><a class="header" href="#schlussfolgerung-11">Schlussfolgerung</a></h2>
 <p>Die bitweise Arbitrierung im CAN-Netzwerk ist ein komplexer, aber effizienter Mechanismus, der sicherstellt, dass nur das Steuergerät mit der höchsten Priorität seine Nachricht senden kann. Dies verhindert Datenkollisionen und sorgt für eine zuverlässige Kommunikation zwischen den Steuergeräten in einem Fahrzeug.</p>
 <p>Die detaillierte Abbildung des Buszugriffsprozesses und die Erklärung der einzelnen Schritte bieten eine umfassende Übersicht über die Funktionsweise der bitweisen Arbitrierung und deren Bedeutung für die Fahrzeugkommunikation. Diese Methode ist entscheidend für die hohe Zuverlässigkeit und Robustheit moderner Fahrzeugsysteme.</p>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="can-datensicherung"><a class="header" href="#can-datensicherung">CAN-Datensicherung</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prioritäten-und-arbitrierung"><a class="header" href="#prioritäten-und-arbitrierung">Prioritäten und Arbitrierung</a></h1>
+<h2 id="einführung-1"><a class="header" href="#einführung-1">Einführung</a></h2>
+<p>Der CAN-Bus (Controller Area Network) ist ein wesentliches Netzwerkprotokoll im Automobilbereich, das für die Kommunikation zwischen verschiedenen Steuergeräten (ECUs) verwendet wird. Ein zentrales Element des CAN-Bus ist die Priorisierung von Nachrichten, die durch den Identifier festgelegt wird. Dieses Tutorial bietet eine tiefgehende Analyse der Prioritätensteuerung und der Auswirkungen auf die Echtzeitfähigkeit und Buslast des CAN-Netzwerks.</p>
+<h2 id="priorität-und-identifier"><a class="header" href="#priorität-und-identifier">Priorität und Identifier</a></h2>
+<p>Im CAN-Netzwerk ist der Identifier einer Nachricht entscheidend für die Priorität, mit der die Nachricht den Buszugriff erhält. Der Identifier wird bitweise vom höchstwertigen zum niederwertigsten Bit übertragen.</p>
+<p><strong>Regel der Priorität:</strong></p>
+<ul>
+<li><strong>Kleinerer Identifier = höhere Priorität:</strong> In einem CAN-Bus bedeutet ein kleinerer numerischer Wert des Identifiers eine höhere Priorität der Nachricht. Die Arbitrierungslogik und die Wired-AND-Buslogik gewährleisten, dass Nachrichten mit kleineren Identifiers bevorzugt gesendet werden. Dies liegt daran, dass in einem CAN-Bus das dominante Bit (logisch 0) das rezessive Bit (logisch 1) überschreibt. Daher gewinnt die Nachricht mit dem kleinsten Identifier die Arbitrierung.</li>
+</ul>
+<p>Eine grafische Darstellung der Priorisierung könnte den Zusammenhang weiter verdeutlichen, indem sie zeigt, wie verschiedene Nachrichten mit unterschiedlichen Identifiers um den Buszugriff konkurrieren und wie die Nachrichten mit den kleinsten Identifiers dominieren.</p>
+<h2 id="buslast-und-echtzeitfähigkeit"><a class="header" href="#buslast-und-echtzeitfähigkeit">Buslast und Echtzeitfähigkeit</a></h2>
+<p>Die Effektivität des CAN-Bus hängt stark von der Buslast ab. Der CAN-Bus ermöglicht durch sein Arbitrierungsschema einen schnellen und zerstörungsfreien Zugriff auf den Bus, solange die Buslast moderat ist.</p>
+<p><strong>Auswirkungen hoher Buslast:</strong></p>
+<ul>
+<li><strong>Verzögerung niederpriorer Nachrichten:</strong> Bei hoher Buslast können Nachrichten mit niedriger Priorität erhebliche Verzögerungen erfahren, da sie immer wieder von höher priorisierten Nachrichten übertroffen werden. Dies kann die Echtzeitfähigkeit des Systems beeinträchtigen, besonders wenn zeitkritische Daten übertragen werden müssen.</li>
+</ul>
+<p>Bei der Gestaltung eines CAN-Systems ist es daher unerlässlich, die Prioritäten der Nachrichten gemäß der Dringlichkeit der übertragenen Signale festzulegen. Dies stellt sicher, dass kritische Nachrichten auch bei hoher Buslast rechtzeitig übertragen werden.</p>
+<h2 id="typische-can-kommunikation"><a class="header" href="#typische-can-kommunikation">Typische CAN-Kommunikation</a></h2>
+<p>Die Dynamik der CAN-Kommunikation kann am besten durch eine interaktive Grafik oder eine Kommunikationsmatrix verstanden werden. Diese zeigt die zeitliche Abfolge der Nachrichtenübertragung und die Interaktionen zwischen verschiedenen Steuergeräten.</p>
+<p><strong>Kommunikationsmatrix:</strong></p>
+<ul>
+<li>Die Matrix enthält die Kommunikationsbeziehungen zwischen verschiedenen Steuergeräten und die zeitlich versetzten Ereignisse, die zu Nachrichtenübertragungen führen. Durch die Analyse der Matrix kann man verstehen, wie oft Nachrichten gesendet werden, welche Prioritäten sie haben und wie sie sich auf den Buszugriff auswirken.</li>
+</ul>
+<h2 id="wissensvertiefung-durch-praxis"><a class="header" href="#wissensvertiefung-durch-praxis">Wissensvertiefung durch Praxis</a></h2>
+<p>Eine praktische Aufgabe, wie die Simulation des Buszugriffs im CAN-Netzwerk, kann das Verständnis der theoretischen Konzepte vertiefen. Solche Aufgaben könnten Szenarien mit verschiedenen Data Frames und Ereignissen simulieren, um die resultierende Nachrichtenabfolge auf dem CAN-Bus zu analysieren.</p>
+<p><strong>Aufgabenstellung:</strong></p>
+<ul>
+<li><strong>Buszugriff im CAN-Netzwerk:</strong> Entwickeln Sie die Botschaftsabfolge für eine zufällige Konstellation von Data Frames und Ereignissen. Dies hilft, die Auswirkungen der Priorität und Buslast auf die Nachrichtenübertragung zu beobachten und zu verstehen.</li>
+</ul>
+<h2 id="schlussfolgerung-12"><a class="header" href="#schlussfolgerung-12">Schlussfolgerung</a></h2>
+<p>Ein tiefes Verständnis der Prioritäten und der Buslast im CAN-Bus ist entscheidend für die Entwicklung effizienter und zuverlässiger Kommunikationssysteme im Automobilbereich. Die Wahl der richtigen Prioritäten und die Berücksichtigung der Buslast sind essenziell, um die Echtzeitfähigkeit des Systems zu gewährleisten und Verzögerungen zu minimieren. Durch theoretische Analysen und praktische Übungen können Entwickler ihre Fähigkeiten und ihr Wissen im Umgang mit dem CAN-Bus verbessern.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-datensicherung"><a class="header" href="#can-datensicherung">CAN-Datensicherung</a></h1>
 <ul>
 <li><a href="05_CAN-Datensicherung/./01_datensicherung.html">Datensicherung</a></li>
 <li><a href="05_CAN-Datensicherung/./02_nrz-codierung.html">NRZ-Codierung</a></li>
@@ -743,9 +910,9 @@
 <li><a href="05_CAN-Datensicherung/./07_fehlerverfolgung.html">Fehlerverfolgung</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="datenintegrität-im-kfz"><a class="header" href="#datenintegrität-im-kfz">Datenintegrität im Kfz</a></h1>
-<h2 id="einführung-1"><a class="header" href="#einführung-1">Einführung</a></h2>
+<h2 id="einführung-2"><a class="header" href="#einführung-2">Einführung</a></h2>
 <p>Die Sicherstellung einer zuverlässigen Datenübertragung ist entscheidend für die Sicherheit und Funktionalität elektronischer Systeme in modernen Kraftfahrzeugen. Der Controller Area Network (CAN)-Bus ist ein weit verbreitetes Kommunikationssystem, das in Kfz-Anwendungen eingesetzt wird, um verschiedene elektronische Steuergeräte (ECUs) zu verbinden und den Datenaustausch zu ermöglichen. Die Anforderungen an den CAN-Bus umfassen nicht nur strikte Echtzeitanforderungen, sondern auch die Gewährleistung einer hohen Datenintegrität, insbesondere in zeit- und sicherheitskritischen Anwendungen.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276601956.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276601956.png" alt="CAN-Netzwerk" style="max-width:70%; display: block; margin: 0 auto;" />
 <h2 id="elektromagnetische-verträglichkeit-emv"><a class="header" href="#elektromagnetische-verträglichkeit-emv">Elektromagnetische Verträglichkeit (EMV)</a></h2>
 <p>Die elektromagnetische Verträglichkeit (EMV) ist ein zentraler Aspekt bei der Sicherstellung der Datenintegrität in Kfz-Netzwerken. EMV bezieht sich auf die Fähigkeit eines elektronischen Systems, in einer elektromagnetischen Umgebung zu funktionieren, ohne durch diese gestört zu werden oder selbst Störungen zu verursachen. Die physikalische Systemauslegung spielt hierbei eine entscheidende Rolle. Durch geeignete Maßnahmen wie die Verwendung von abgeschirmten Kabeln und der Einhaltung von EMV-Richtlinien kann die Störanfälligkeit des CAN-Busses verringert werden.</p>
 <h2 id="mögliche-fehlerquellen"><a class="header" href="#mögliche-fehlerquellen">Mögliche Fehlerquellen</a></h2>
@@ -773,11 +940,11 @@
 <li><strong>Physikalische Maßnahmen</strong>: Diese umfassen die Wahl geeigneter Kabel, Steckverbinder und die korrekte Verlegung der Leitungen im Fahrzeug. Besonderes Augenmerk liegt auf der Vermeidung von Störquellen und der Minimierung von Störungen durch geeignete Abschirmungen und Erdungen.</li>
 <li><strong>Logische Maßnahmen</strong>: Hierzu gehören Protokolle und Algorithmen zur Fehlererkennung und -korrektur, die innerhalb der CAN-Controller implementiert sind. Diese Mechanismen überwachen kontinuierlich den Datenverkehr und greifen bei Erkennung von Fehlern ein, um die Integrität der Daten zu gewährleisten.</li>
 </ul>
-<h2 id="fazit-9"><a class="header" href="#fazit-9">Fazit</a></h2>
+<h2 id="fazit-2"><a class="header" href="#fazit-2">Fazit</a></h2>
 <p>Die Sicherstellung der Datenintegrität im Kfz-Bereich ist eine komplexe Aufgabe, die sowohl physikalische als auch logische Maßnahmen erfordert. Der CAN-Bus muss nicht nur den hohen Echtzeitanforderungen gerecht werden, sondern auch eine sichere und zuverlässige Datenübertragung gewährleisten. Durch eine sorgfältige Systemauslegung, Einhaltung von EMV-Richtlinien und den Einsatz fortschrittlicher Fehlererkennungs- und -korrekturmechanismen kann die Restfehlerwahrscheinlichkeit minimiert und die Datenintegrität maximiert werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bitcodierung-im-can-bus"><a class="header" href="#bitcodierung-im-can-bus">Bitcodierung im CAN-Bus</a></h1>
-<p>In diesem Tutorial werden wir die Grundlagen der Bitcodierung im CAN-Bus (Controller Area Network) untersuchen, insbesondere die NRZ-Bitcodierung und deren Bedeutung für die Störfestigkeit und die Synchronisation.</p>
-<h2 id="einleitung-5"><a class="header" href="#einleitung-5">Einleitung</a></h2>
+<p>In diesem Teil werden wir die Grundlagen der Bitcodierung im CAN-Bus (Controller Area Network) untersuchen, insbesondere die NRZ-Bitcodierung und deren Bedeutung für die Störfestigkeit und die Synchronisation.</p>
+<h2 id="einleitung-7"><a class="header" href="#einleitung-7">Einleitung</a></h2>
 <p>Die Bitcodierung spielt eine zentrale Rolle bei der Kommunikation in Fahrzeugnetzwerken, da sie sowohl die Übertragungseffizienz als auch die Störfestigkeit beeinflusst. Im Kontext des CAN-Bus, der in der Automobilindustrie weit verbreitet ist, wurde die NRZ-Bitcodierung (Non Return to Zero) gewählt. Wir werden die Gründe für diese Wahl und die damit verbundenen Herausforderungen im Detail beleuchten.</p>
 <h2 id="nrz-bitcodierung"><a class="header" href="#nrz-bitcodierung">NRZ-Bitcodierung</a></h2>
 <h3 id="grundlagen-der-nrz-codierung"><a class="header" href="#grundlagen-der-nrz-codierung">Grundlagen der NRZ-Codierung</a></h3>
@@ -801,16 +968,15 @@
 <li>Nach Bitstuffing: <code>111110</code></li>
 </ul>
 <p>Hier wurde nach fünf aufeinanderfolgenden „1“-Bits eine „0“ eingefügt. Dieser Mechanismus stellt sicher, dass der Empfänger die Synchronisation beibehält, auch wenn die ursprüngliche Bitfolge keine Pegeländerung aufweist.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276628306.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276628306.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="vergleich-mit-manchester-codierung"><a class="header" href="#vergleich-mit-manchester-codierung">Vergleich mit Manchester-Codierung</a></h3>
 <p>Im Gegensatz zur NRZ-Codierung ist die Manchester-Codierung selbsttaktend. Bei der Manchester-Codierung wird jedes Bit durch eine Pegeländerung dargestellt, was eine inhärente Synchronisation gewährleistet. Allerdings verdoppelt sich dadurch die Bandbreite, da für jedes Datenbit zwei Pegeländerungen erforderlich sind. Dies führt zu höheren Emissionen und geringerer Übertragungseffizienz im Vergleich zur NRZ-Codierung.</p>
-<h2 id="fazit-10"><a class="header" href="#fazit-10">Fazit</a></h2>
+<h2 id="fazit-3"><a class="header" href="#fazit-3">Fazit</a></h2>
 <p>Die Wahl der NRZ-Bitcodierung für den CAN-Bus bietet klare Vorteile in Bezug auf hohe Datenraten und reduzierte Emissionen. Allerdings erfordert sie zusätzliche Synchronisationsmechanismen wie das Bitstuffing, um die zuverlässige Datenübertragung zu gewährleisten. Durch das Verständnis dieser Techniken können Ingenieure und Entwickler die Leistungsfähigkeit und Störfestigkeit von Fahrzeugnetzwerken optimieren.</p>
-<p>Das Wissen um die Feinheiten der Bitcodierung ist entscheidend für die Entwicklung robuster und effizienter Kommunikationssysteme im Automobilbereich. Durch die sorgfältige Implementierung und Überwachung dieser Systeme kann die Zuverlässigkeit und Sicherheit moderner Fahrzeuge weiter gesteigert werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="symmetrische-signalübertragung"><a class="header" href="#symmetrische-signalübertragung">Symmetrische Signalübertragung</a></h1>
 <h2 id="einführung-in-die-symmetrische-signalübertragung"><a class="header" href="#einführung-in-die-symmetrische-signalübertragung">Einführung in die symmetrische Signalübertragung</a></h2>
 <p>Symmetrische Signalübertragung ist eine Methode, die häufig im Automobilbereich verwendet wird, um die Übertragung von Daten robust gegenüber elektromagnetischen Störungen zu machen. Diese Methode ist besonders wichtig in Systemen wie dem Controller Area Network (CAN), das als Rückgrat für die Kommunikation zwischen verschiedenen Steuergeräten in modernen Fahrzeugen dient.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276652085.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276652085.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="prinzip-der-symmetrischen-signalübertragung"><a class="header" href="#prinzip-der-symmetrischen-signalübertragung">Prinzip der symmetrischen Signalübertragung</a></h2>
 <p>Bei der symmetrischen Signalübertragung werden die Daten auf zwei Leitungen übertragen: der CAN-High-Leitung (CANH) und der CAN-Low-Leitung (CANL). Diese beiden Leitungen sind so konzipiert, dass sie gleiche und entgegengesetzte Signale tragen. Störungen, die von externen Quellen wie Motoren, Zündanlagen oder Schaltkontakten induziert werden, wirken sich auf beide Leitungen gleichermaßen aus.</p>
 <h2 id="differenzbildung-zur-störunterdrückung"><a class="header" href="#differenzbildung-zur-störunterdrückung">Differenzbildung zur Störunterdrückung</a></h2>
@@ -823,7 +989,7 @@
 <p>Um die beschriebenen Vorteile zu maximieren, werden die beiden Leitungen des CAN-Bus verdrillt. Diese Technik wird als Verwendung von "Twisted Pairs" bezeichnet. Durch das Verdrillen der Leitungen wird die Induktionswirkung weiter reduziert. Die Verdrillung sorgt dafür, dass die induzierten Spannungen in den einzelnen Schleifenabschnitten sich gegenseitig aufheben.</p>
 <h2 id="effektivität-der-verdrillung"><a class="header" href="#effektivität-der-verdrillung">Effektivität der Verdrillung</a></h2>
 <p>Die Wirksamkeit der Verdrillung hängt von der Anzahl der Umschlingungen ab. Mehr Umschlingungen pro Längeneinheit führen zu einer besseren Unterdrückung der induzierten Störungen. Im Allgemeinen wird eine Verdrillungsrate von mindestens 30 Umschlingungen pro Meter empfohlen, um eine ausreichende Reduktion der magnetischen Einflüsse zu gewährleisten.</p>
-<h2 id="zusammenfassung"><a class="header" href="#zusammenfassung">Zusammenfassung</a></h2>
+<h2 id="zusammenfassung-1"><a class="header" href="#zusammenfassung-1">Zusammenfassung</a></h2>
 <p>Die symmetrische Signalübertragung ist ein entscheidendes Konzept im Automotivebereich, das durch die Differenzbildung und die Verwendung von verdrillten Leitungspaaren eine hohe Störsicherheit gewährleistet. Diese Techniken minimieren die elektromagnetische Abstrahlung und verbessern die Zuverlässigkeit und Leistungsfähigkeit des CAN-Bus-Systems.</p>
 <h2 id="weiterführende-themen"><a class="header" href="#weiterführende-themen">Weiterführende Themen</a></h2>
 <p>Für ein tieferes Verständnis könnten folgende Themen weiter untersucht werden:</p>
@@ -832,11 +998,10 @@
 <li>Vergleich der symmetrischen Signalübertragung mit anderen Signalübertragungstechniken.</li>
 <li>Auswirkungen unterschiedlicher Verdrillungsraten auf die Signalqualität in verschiedenen Betriebsumgebungen.</li>
 </ul>
-<p>Diese fundierten Techniken sind essenziell für die Entwicklung und Wartung moderner Fahrzeuge, die auf zuverlässige und störungsfreie Kommunikation zwischen ihren elektronischen Systemen angewiesen sind.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="terminierung"><a class="header" href="#terminierung">Terminierung</a></h1>
-<h2 id="einführung-2"><a class="header" href="#einführung-2">Einführung</a></h2>
+<h2 id="einführung-3"><a class="header" href="#einführung-3">Einführung</a></h2>
 <p>In modernen Automobilen sind zuverlässige Kommunikationsnetzwerke entscheidend für die Funktionalität und Effizienz von elektronischen Steuergeräten. Neben dem bekannten CAN-Bus (Controller Area Network) hat sich der LIN-Bus (Local Interconnect Network) als kostengünstige Alternative etabliert, insbesondere für Anwendungen, die keine hohen Datenübertragungsraten erfordern. Im Folgenden wird ein detailliertes und wissenschaftlich fundiertes Tutorial zur Bedeutung des Wellenwiderstands und des Abschlusswiderstands im CAN-Bus präsentiert, mit speziellen Hinweisen auf die Relevanz dieser Konzepte für den LIN-Bus.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276671360.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276671360.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="wellenwiderstand"><a class="header" href="#wellenwiderstand">Wellenwiderstand</a></h2>
 <p>Der Wellenwiderstand (charakteristische Impedanz) eines Übertragungsmediums ist eine fundamentale Eigenschaft, die die Ausbreitung von elektrischen Signalen entlang des Mediums beschreibt. Im Kontext von Hochgeschwindigkeits-Datenübertragungen, wie sie im CAN-Bus üblich sind, spielt der Wellenwiderstand eine entscheidende Rolle.</p>
 <h2 id="definition-und-bedeutung"><a class="header" href="#definition-und-bedeutung">Definition und Bedeutung</a></h2>
@@ -849,7 +1014,7 @@
 <p>Ein typischer Abschlusswiderstand im CAN-Bus hat einen Wert von 120 Ohm und wird an beiden Enden des Buskabels angebracht. Diese Abschlusswiderstände sorgen dafür, dass das Signal vollständig absorbiert wird und keine Reflexionen entstehen, die die Signalübertragung stören könnten.</p>
 <h2 id="geteilter-abschlusswiderstand"><a class="header" href="#geteilter-abschlusswiderstand">Geteilter Abschlusswiderstand</a></h2>
 <p>Eine alternative Methode zur Terminierung ist die Verwendung eines geteilten Abschlusswiderstands. Diese Technik verwendet zwei identische Widerstände von jeweils 60 Ohm und eine Kapazität, typischerweise 4,7 nF, die zwischen den beiden Widerständen und der Masse geschaltet wird.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276687614.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276687614.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="funktionsweise-und-vorteile"><a class="header" href="#funktionsweise-und-vorteile">Funktionsweise und Vorteile</a></h3>
 <p>Der geteilte Abschlusswiderstand wirkt als Tiefpassfilter. Hochfrequente Signalanteile werden gegen Masse kurzgeschlossen, während die Gleichspannungsverhältnisse nicht beeinflusst werden. Diese Konfiguration hat mehrere Vorteile:</p>
 <ul>
@@ -863,10 +1028,9 @@
 <li><strong>Datenrate</strong>: LIN-Bus-Netzwerke operieren bei niedrigeren Datenraten, wodurch die Anforderungen an den Wellenwiderstand weniger kritisch sind als im CAN-Bus. Dennoch bleibt eine ordnungsgemäße Terminierung wichtig.</li>
 <li><strong>Terminierung</strong>: Im LIN-Bus wird typischerweise nur ein Ende des Busses mit einem Abschlusswiderstand versehen, da der Master-Knoten häufig einen eingebauten Abschlusswiderstand hat. Die Verwendung geteilter Abschlusswiderstände ist weniger verbreitet, aber dennoch eine mögliche Methode zur Verbesserung der Signalqualität in speziellen Anwendungen.</li>
 </ul>
-<h2 id="schlussfolgerung-2"><a class="header" href="#schlussfolgerung-2">Schlussfolgerung</a></h2>
+<h2 id="schlussfolgerung-13"><a class="header" href="#schlussfolgerung-13">Schlussfolgerung</a></h2>
 <p>Die korrekte Terminierung von Kommunikationsbussen wie CAN und LIN ist entscheidend für die Sicherstellung einer zuverlässigen und störungsfreien Datenübertragung. Der Wellenwiderstand muss sorgfältig beachtet und die Enden des Busses entsprechend terminiert werden, um Reflexionen zu minimieren. Die Anwendung geteilter Abschlusswiderstände bietet zusätzliche Vorteile in Bezug auf Störfestigkeit und Emissionsreduktion und kann daher in anspruchsvollen Anwendungen eine sinnvolle Ergänzung darstellen.</p>
-<p>Dieses Tutorial hat die theoretischen Grundlagen und praktischen Anwendungen des Wellenwiderstands und der Abschlusswiderstände im Automobilbereich detailliert erläutert. Eine fundierte Kenntnis dieser Konzepte ist für Ingenieure und Techniker im Bereich der Fahrzeugkommunikation unerlässlich, um robuste und zuverlässige Netzwerke zu entwickeln.</p>
-<div style="break-before: page; page-break-before: always;"></div><h3 id="fehlererkennungsmechanismen"><a class="header" href="#fehlererkennungsmechanismen">Fehlererkennungsmechanismen</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fehlererkennungsmechanismen"><a class="header" href="#fehlererkennungsmechanismen">Fehlererkennungsmechanismen</a></h1>
 <p>Das CAN-Protokoll (Controller Area Network) ist ein robustes Kommunikationssystem, das speziell für die Automobilindustrie entwickelt wurde, um den Austausch von Daten zwischen verschiedenen elektronischen Steuergeräten zu ermöglichen. Ein wesentlicher Bestandteil des CAN-Protokolls ist die Fähigkeit, Fehler in der Datenübertragung zu erkennen und zu behandeln. Hierfür definiert das Protokoll fünf wesentliche Fehlererkennungsmechanismen:</p>
 <ol>
 <li><strong>Bitmonitoring</strong></li>
@@ -875,7 +1039,7 @@
 <li><strong>Auswertung des Acknowledgements (ACK-Check)</strong></li>
 <li><strong>Auswertung der Prüfsumme (Cyclic Redundancy Check, CRC)</strong></li>
 </ol>
-<img src="05_CAN-Datensicherung/./image/README/1712276705185.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276705185.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h3 id="aufgabenverteilung-zwischen-sender-und-empfänger"><a class="header" href="#aufgabenverteilung-zwischen-sender-und-empfänger">Aufgabenverteilung zwischen Sender und Empfänger</a></h3>
 <ul>
 <li><strong>Sender</strong>: Zuständig für Bitmonitoring und ACK-Check.</li>
@@ -892,17 +1056,16 @@
 <p>Der CRC ist ein wesentliches Werkzeug zur Erkennung von Übertragungsfehlern. Dabei wird das ankommende Daten- oder Remote-Frame durch ein Polynom R(x) dargestellt, welches ein Vielfaches des durch die ISO 11898-1 spezifizierten Generatorpolynoms G(x) sein sollte. Wenn dies nicht der Fall ist, wurde das Frame während der Übertragung verfälscht, was zu einem CRC-Fehler führt.</p>
 <h4 id="5-ack-check-sender"><a class="header" href="#5-ack-check-sender">5. ACK-Check (Sender)</a></h4>
 <p>Das CAN-Protokoll beinhaltet einen Bestätigungsmechanismus, bei dem alle Empfänger einer CAN-Botschaft diese nach dem CRC prüfen und bestätigen müssen. Eine positive Bestätigung reicht aus, um dem Sender mitzuteilen, dass die Botschaft korrekt empfangen wurde. Bleibt diese Bestätigung aus, tritt ein ACK-Fehler auf.</p>
-<h3 id="zusammenfassung-1"><a class="header" href="#zusammenfassung-1">Zusammenfassung</a></h3>
+<h3 id="zusammenfassung-2"><a class="header" href="#zusammenfassung-2">Zusammenfassung</a></h3>
 <p>Die Kombination dieser fünf Mechanismen stellt sicher, dass das CAN-Protokoll eine hohe Zuverlässigkeit und Integrität der Datenübertragung bietet. Jeder Mechanismus deckt unterschiedliche Fehlerarten ab und trägt somit zu einem umfassenden Fehlererkennungssystem bei. Die Implementierung und das Verständnis dieser Mechanismen sind für die Entwicklung und Wartung von CAN-basierten Netzwerken von entscheidender Bedeutung, insbesondere in sicherheitskritischen Anwendungen wie der Automobilindustrie.</p>
 <h3 id="kritische-bewertung"><a class="header" href="#kritische-bewertung">Kritische Bewertung</a></h3>
 <p>Während das CAN-Protokoll eine robuste Fehlererkennung bietet, ist es nicht frei von Einschränkungen. Ein hohes Maß an Redundanz und die strikte Überwachung der Bitübertragung können zu einer erhöhten Latenz führen. Zudem sind die Mechanismen darauf ausgelegt, zufällige Fehler zu erkennen und nicht notwendigerweise absichtliche Manipulationen oder Angriffe abzuwehren. Daher ist es in sicherheitskritischen Anwendungen ratsam, ergänzende Schutzmechanismen, wie zum Beispiel kryptografische Sicherungen, in Betracht zu ziehen.</p>
-<p>Durch das Verständnis und die richtige Implementierung dieser Fehlererkennungsmechanismen kann die Zuverlässigkeit und Sicherheit von CAN-basierten Netzwerken signifikant erhöht werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fehlerbehandlung"><a class="header" href="#fehlerbehandlung">Fehlerbehandlung</a></h1>
 <h2 id="netzwerkweite-datenkonsistenz-im-can-bus"><a class="header" href="#netzwerkweite-datenkonsistenz-im-can-bus">Netzwerkweite Datenkonsistenz im CAN-Bus</a></h2>
 <p>Das Controller Area Network (CAN) Protokoll ist ein robustes Kommunikationsprotokoll, das in Fahrzeugnetzwerken weit verbreitet ist. Ein wesentliches Merkmal des CAN-Protokolls ist seine Fähigkeit, netzwerkweite Datenkonsistenz aufrechtzuerhalten, selbst wenn lokale Störungen auftreten. Dies wird durch die Implementierung spezifischer Fehlererkennungs- und Fehlerbehandlungsmechanismen erreicht.</p>
 <h2 id="fehlererkennung-und-fehlersignalisierung"><a class="header" href="#fehlererkennung-und-fehlersignalisierung">Fehlererkennung und Fehlersignalisierung</a></h2>
 <p>Wenn ein CAN-Knoten einen Fehler erkennt, ist es seine Pflicht, alle anderen Knoten im Netzwerk darüber zu informieren. Dies geschieht durch die Übertragung eines Fehlersignals, auch Error Flag genannt. Ein Error Flag besteht aus sechs dominanten Bits, die bewusst die Bitstuffingregel verletzen, um einen Bitstuffing-Fehler zu verursachen. Diese bewusste Regelverletzung dient dazu, sicherzustellen, dass alle Knoten im Netzwerk den Fehler erkennen.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276741129.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276741129.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="primäres-und-sekundäres-error-flag"><a class="header" href="#primäres-und-sekundäres-error-flag">Primäres und Sekundäres Error Flag</a></h2>
 <p>Die Übertragung eines Error Flags durch den fehlererkennenden Knoten (primäres Error Flag) löst bei allen anderen Knoten ebenfalls die Übertragung eines Error Flags (sekundäres Error Flag) aus. Dadurch wird die reguläre Datenübertragung abgebrochen und das Netzwerk in einen Fehlerbehandlungsmodus versetzt. In manchen Situationen können sich primäre und sekundäre Error Flags überlagern, was die Gesamtdauer der Fehlerbehandlung beeinflusst.</p>
 <h2 id="error-delimiter-und-bus-idle-kennung"><a class="header" href="#error-delimiter-und-bus-idle-kennung">Error Delimiter und Bus-Idle-Kennung</a></h2>
@@ -916,18 +1079,15 @@
 <li><strong>23 Bitzeiten:</strong> Wenn sich primäres und sekundäres Error Flag nicht überlagern.</li>
 <li><strong>31 Bitzeiten:</strong> Wenn der fehlerhafte Knoten sich im fehlerpassiven Zustand befindet. In diesem Zustand muss der Knoten eine sogenannte Suspend Transmission Time abwarten, bevor er erneut auf den CAN-Bus zugreifen darf. Diese Sendepause beträgt 8 Bits.</li>
 </ul>
-<img src="05_CAN-Datensicherung/./image/README/1712276756119.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276756119.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="fehlerpassiver-zustand-und-suspend-transmission-time"><a class="header" href="#fehlerpassiver-zustand-und-suspend-transmission-time">Fehlerpassiver Zustand und Suspend Transmission Time</a></h2>
 <p>Ein Knoten im fehlerpassiven Zustand hat eine verminderte Priorität beim Buszugriff und muss nach einem Fehler eine zusätzliche Pause von 8 Bitzeiten (Suspend Transmission Time) einhalten. Dieser Mechanismus verhindert, dass fehlerhafte Knoten den Bus übermäßig belasten und ermöglicht eine stabilere Netzwerkkonfiguration.</p>
-<h2 id="zusammenfassung-2"><a class="header" href="#zusammenfassung-2">Zusammenfassung</a></h2>
+<h2 id="schlussfolgerung-14"><a class="header" href="#schlussfolgerung-14">Schlussfolgerung</a></h2>
 <p>Das CAN-Protokoll stellt durch seine ausgeklügelten Fehlererkennungs- und Fehlerbehandlungsmechanismen sicher, dass die Datenkonsistenz im Netzwerk aufrechterhalten wird. Die Übertragung von Error Flags, gefolgt von Error Delimiters und einer definierten Sendepause, sorgt dafür, dass alle Knoten synchronisiert bleiben und Fehler effizient behandelt werden können. Die prioritätengesteuerte Natur des CAN-Bus bedeutet jedoch, dass keine sofortige Wiederholung einer abgebrochenen Botschaft garantiert werden kann. Insbesondere im fehlerpassiven Zustand müssen zusätzliche Wartezeiten eingehalten werden, um die Netzwerksicherheit und -stabilität zu gewährleisten.</p>
-<h2 id="kritische-betrachtung"><a class="header" href="#kritische-betrachtung">Kritische Betrachtung</a></h2>
-<p>Einige Aspekte des CAN-Protokolls könnten in spezifischen Anwendungsszenarien Herausforderungen darstellen. Die zusätzliche Latenz durch die Suspend Transmission Time im fehlerpassiven Zustand kann in hochkritischen Echtzeitsystemen problematisch sein. Hier könnten alternative Protokolle oder zusätzliche Fehlerbehandlungsstrategien notwendig sein, um die Systemanforderungen zu erfüllen. Zudem ist die Abhängigkeit von der Priorität beim Buszugriff ein zweischneidiges Schwert, da sie zwar eine effiziente Kommunikation ermöglicht, aber auch zu Verzögerungen bei weniger prioritären Nachrichten führen kann.</p>
-<p>Dieses Tutorial bietet eine detaillierte Betrachtung der Fehlerbehandlungsmechanismen im CAN-Bus und zeigt, wie sie zur Aufrechterhaltung der Netzwerkstabilität beitragen. Durch das Verständnis dieser Mechanismen können Entwickler und Ingenieure robustere und zuverlässigere Fahrzeugsysteme entwerfen.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fehlerbehandlung-1"><a class="header" href="#fehlerbehandlung-1">Fehlerbehandlung</a></h1>
-<h2 id="einleitung-6"><a class="header" href="#einleitung-6">Einleitung</a></h2>
+<h2 id="einleitung-8"><a class="header" href="#einleitung-8">Einleitung</a></h2>
 <p>Das Controller Area Network (CAN) ist ein robustes Fahrzeugbussystem, das hauptsächlich in der Automobilindustrie verwendet wird, um Mikrocontroller und Geräte ohne Host-Computer miteinander zu verbinden. Um die Netzwerkkonsistenz und -stabilität zu gewährleisten, ist es wichtig, Mechanismen zu haben, die Fehler erkennen und behandeln. Dieses Tutorial erklärt die Fehlerbehandlungsmechanismen des CAN-Protokolls im Detail und zeigt auf, wie Fehlerzähler (Transmit Error Counter, TEC, und Receive Error Counter, REC) dazu beitragen, Busblockaden zu vermeiden.</p>
-<img src="05_CAN-Datensicherung/./image/README/1712276783501.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="05_CAN-Datensicherung/./image/1712276783501.png" alt="CAN-Netzwerk" style="max-width:70%; display: block; margin: 0 auto;" />
 <h2 id="fehlererkennung-und-fehlerverfolgung-im-can-netzwerk"><a class="header" href="#fehlererkennung-und-fehlerverfolgung-im-can-netzwerk">Fehlererkennung und Fehlerverfolgung im CAN-Netzwerk</a></h2>
 <h3 id="busblockade-vermeiden"><a class="header" href="#busblockade-vermeiden">Busblockade vermeiden</a></h3>
 <p>Im CAN-Netzwerk hat jeder Knoten die Möglichkeit, eine als fehlerhaft interpretierte CAN-Nachricht abzubrechen. Dies gilt auch für Fälle, in denen ein Knoten irrtümlich eine korrekte Nachricht als fehlerhaft erkennt. Um zu verhindern, dass solche Fehlinterpretationen zu einer Blockierung des Übertragungsmediums führen, verwendet das CAN-Protokoll eine Fehlerverfolgung. Diese Fehlerverfolgung unterscheidet zwischen gelegentlich auftretenden und anhaltenden Störungen.</p>
@@ -955,10 +1115,8 @@
 <p>Wenn der Fehlerzähler einen bestimmten Schwellenwert überschreitet (TEC &gt; 127 oder REC &gt; 127), wechselt der CAN-Controller in den Zustand <strong>Error Passive</strong>. In diesem Zustand kann der Controller nur noch ein passives Fehler-Flag senden, das aus sechs rezessiven Bits besteht. Dadurch wird die Fähigkeit des Controllers eingeschränkt, Fehler global im Netzwerk zu signalisieren. Zusätzlich muss ein Controller im Zustand Error Passive beim Senden von zwei aufeinanderfolgenden Daten- oder Fernanforderungsnachrichten eine zusätzliche "Suspend Transmission Time" von 8 Bits einhalten.</p>
 <h4 id="bus-off"><a class="header" href="#bus-off">Bus Off</a></h4>
 <p>Bei extremer Fehlerhäufung oder einem Ausfall wechselt der CAN-Controller in den Zustand <strong>Bus Off</strong>. In diesem Zustand trennt sich der Controller vom CAN-Bus, um zu verhindern, dass der fehlerhafte Knoten das Netzwerk weiter stört. Der Zustand Bus Off kann nur durch einen Eingriff des Hosts (mit einer erzwungenen Wartezeit von 128 x 11 Bits) oder durch einen Hardware-Reset verlassen werden.</p>
-<h2 id="fazit-11"><a class="header" href="#fazit-11">Fazit</a></h2>
+<h2 id="fazit-4"><a class="header" href="#fazit-4">Fazit</a></h2>
 <p>Das CAN-Protokoll stellt mit seinen Mechanismen zur Fehlererkennung und -behandlung sicher, dass die Integrität und Stabilität des Netzwerks auch bei fehlerhaften Nachrichten erhalten bleibt. Durch die Verwendung von Fehlerzählern (TEC und REC) und verschiedenen Fehlerzuständen (Error Active, Error Passive und Bus Off) wird die Wahrscheinlichkeit einer Busblockade minimiert und die Zuverlässigkeit des Netzwerks maximiert. Es ist wichtig, diese Mechanismen zu verstehen und korrekt zu implementieren, um eine effiziente und störungsfreie Kommunikation im CAN-Netzwerk zu gewährleisten.</p>
-<h2 id="weitere-Überlegungen"><a class="header" href="#weitere-Überlegungen">Weitere Überlegungen</a></h2>
-<p>Für eine umfassende Implementierung und Fehlerbehandlung im CAN-Netzwerk ist es notwendig, die Spezifikationen und Anforderungen des jeweiligen Anwendungsbereichs zu berücksichtigen. Die korrekte Konfiguration und Handhabung der Fehlerzustände kann entscheidend für die Funktionalität und Zuverlässigkeit des gesamten Systems sein.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-fd"><a class="header" href="#can-fd">CAN-FD</a></h1>
 <ul>
 <li><a href="06_CAN-FD/./01_motivation.html">Motivation</a></li>
@@ -974,7 +1132,7 @@
 <li><a href="06_CAN-FD/./11_geaendertes-bitstuffing.html">Geändertes Bitstuffing</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-fd-1"><a class="header" href="#can-fd-1">CAN-FD</a></h1>
-<h2 id="einleitung-7"><a class="header" href="#einleitung-7">Einleitung</a></h2>
+<h2 id="einleitung-9"><a class="header" href="#einleitung-9">Einleitung</a></h2>
 <p>Der Controller Area Network (CAN) ist seit Jahrzehnten ein grundlegendes Kommunikationsprotokoll in der Automobilindustrie. Ursprünglich eingeführt, um einige hundert Signale innerhalb eines Fahrzeugs zu verarbeiten, hat sich die Anzahl der Signale mit der Evolution eingebetteter Systeme im Automobilbereich erheblich erhöht und erreicht nun fünfstellige Bereiche. Dieses Tutorial behandelt die Feinheiten von CAN mit einem Fokus auf CAN-FD (Flexible Data-Rate), geht auf die Einschränkungen des klassischen CAN ein und erläutert, wie CAN-FD diese Herausforderungen zu überwinden versucht.</p>
 <h2 id="die-entwicklung-eingebetteter-systeme-in-fahrzeugen"><a class="header" href="#die-entwicklung-eingebetteter-systeme-in-fahrzeugen">Die Entwicklung eingebetteter Systeme in Fahrzeugen</a></h2>
 <h3 id="zunahme-der-signalübertragung"><a class="header" href="#zunahme-der-signalübertragung">Zunahme der Signalübertragung</a></h3>
@@ -1013,7 +1171,7 @@
 <p>CAN-FD ist abwärtskompatibel zum klassischen CAN ausgelegt und ermöglicht so einen reibungslosen Übergang und die Integration in bestehende CAN-basierte Netzwerke. Diese Skalierbarkeit macht es zu einer idealen Lösung für moderne Automobilanwendungen, die höhere Datenraten erfordern, ohne eine vollständige Überholung der Netzwerkinfrastruktur.</p>
 <h3 id="deterministisches-verhalten"><a class="header" href="#deterministisches-verhalten">Deterministisches Verhalten</a></h3>
 <p>Trotz der höheren Datenraten bewahrt CAN-FD das deterministische Verhalten, das für Automobilanwendungen entscheidend ist, und gewährleistet eine zuverlässige und vorhersehbare Kommunikation zwischen kritischen Systemen.</p>
-<h2 id="schlussfolgerung-3"><a class="header" href="#schlussfolgerung-3">Schlussfolgerung</a></h2>
+<h2 id="schlussfolgerung-15"><a class="header" href="#schlussfolgerung-15">Schlussfolgerung</a></h2>
 <p>CAN-FD stellt einen bedeutenden Fortschritt im CAN-Protokoll dar und adressiert die wachsenden Anforderungen an höhere Bandbreiten und effiziente Datenübertragung in modernen Fahrzeugen. Durch die Integration variabler Bitraten und erweiterter Datenlängen bietet CAN-FD eine robuste Lösung, die die Leistung von Automobilnetzwerken verbessert und gleichzeitig die Kompatibilität mit bestehenden Systemen aufrechterhält. Angesichts der fortschreitenden Entwicklung der Automobiltechnologie ist CAN-FD eine entscheidende Innovation, die sicherstellt, dass die Kommunikation innerhalb von Fahrzeugen effizient, zuverlässig und skalierbar bleibt.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vorteile-und-konsequenzen"><a class="header" href="#vorteile-und-konsequenzen">Vorteile und Konsequenzen</a></h1>
 <h2 id="verbesserung-der-datenübertragungseffizienz"><a class="header" href="#verbesserung-der-datenübertragungseffizienz">Verbesserung der Datenübertragungseffizienz</a></h2>
@@ -1044,7 +1202,7 @@
 <p>Das Missverständnis, dass höhere Übertragungsraten nur möglich sind, wenn alle Steuergeräte an einem CAN-Bus mit CAN-FD-Controllern ausgestattet sind, muss angesprochen werden. Partial Networking bietet eine Option, bei der Steuergeräte mit klassischen CAN-Controllern in den Schlafmodus versetzt werden können, wodurch die verbleibenden CAN-FD-fähigen Steuergeräte mit höheren Geschwindigkeiten kommunizieren können. Diese Methode ist besonders nützlich bei Fahrzeugservice-Diagnosen oder beim Aufspielen neuer Software auf Steuergeräte, da höhere Datenraten die für solche Prozesse erforderliche Zeit erheblich verkürzen können.</p>
 <h2 id="nutzung-des-vorhandenen-can-wissens"><a class="header" href="#nutzung-des-vorhandenen-can-wissens">Nutzung des vorhandenen CAN-Wissens</a></h2>
 <p>Ein weiterer Vorteil von CAN-FD ist, dass es sich um eine Erweiterung des klassischen CAN-Protokolls handelt und nicht um eine völlig neue Technologie. Daher bleibt das bestehende Wissen, die Fähigkeiten und Erfahrungen mit CAN weiterhin relevant und anwendbar. Dieser Kontinuität gewährleistet, dass der Übergang von CAN zu CAN-FD ohne umfangreiche Schulungen oder den Verlust bisheriger Errungenschaften erfolgen kann.</p>
-<h2 id="fazit-12"><a class="header" href="#fazit-12">Fazit</a></h2>
+<h2 id="schlussfolgerung-16"><a class="header" href="#schlussfolgerung-16">Schlussfolgerung</a></h2>
 <p>CAN-FD stellt eine bedeutende Weiterentwicklung im Bereich der Automobilnetzwerke dar, indem es höhere Datenraten und effizientere Kommunikation bietet und gleichzeitig die Kompatibilität mit bestehenden Systemen beibehält. Seine Implementierung kann Entwicklungsprozesse vereinfachen, die Anzahl der erforderlichen Busse reduzieren und die Gesamtleistung des Netzwerks verbessern. Durch die Nutzung des vorhandenen Wissens über das klassische CAN-Protokoll kann der Übergang zu CAN-FD reibungslos und kosteneffektiv gestaltet werden, wodurch die Vorteile dieser fortschrittlichen Technologie leicht zugänglich sind.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="botschaftsformate"><a class="header" href="#botschaftsformate">Botschaftsformate</a></h1>
 <h2 id="rahmenformate-in-can-fd"><a class="header" href="#rahmenformate-in-can-fd">Rahmenformate in CAN FD</a></h2>
@@ -1095,9 +1253,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="zusammenfassung-3"><a class="header" href="#zusammenfassung-3">Zusammenfassung</a></h2>
+<h2 id="schlussfolgerung-17"><a class="header" href="#schlussfolgerung-17">Schlussfolgerung</a></h2>
 <p>CAN FD stellt einen bedeutenden Fortschritt gegenüber dem klassischen CAN-Protokoll dar, indem es schnellere Datenübertragungsraten und die Möglichkeit zur Handhabung größerer Datenmengen bietet. Durch die Beibehaltung der Standard- und erweiterten Rahmenformate stellt CAN FD die Kompatibilität mit bestehenden Automobilprotokollen wie CANopen und SAE J1939 sicher. Die Entscheidung, kein spezifisches Remote Frame Format für CAN FD einzuführen, ist eine bewusste Wahl, die den Leistungszielen des Protokolls entspricht, während klassische CAN Remote Frames weiterhin zur Anforderung von CAN FD Datenrahmen verwendet werden können.</p>
-<p>Dieses Tutorial unterstreicht die wesentlichen Verbesserungen und Designentscheidungen in CAN FD, wodurch es eine robuste und zukunftssichere Lösung für moderne Anforderungen im Automobilnetzwerkbereich darstellt.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="details-der-can-fd-botschaft"><a class="header" href="#details-der-can-fd-botschaft">Details der CAN-FD Botschaft</a></h1>
 <h2 id="aufbau-eines-can-fd-rahmens"><a class="header" href="#aufbau-eines-can-fd-rahmens">Aufbau eines CAN FD Rahmens</a></h2>
 <p>Ein CAN FD Rahmen besteht aus mehreren Feldern, die die Struktur und den Inhalt der Nachricht definieren. Die grundlegenden Änderungen von CAN zu CAN FD betreffen vor allem den Bereich zwischen dem Identifier Extension Bit (IDE) und dem Acknowledge Bit (ACK).</p>
@@ -1154,21 +1311,21 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <li><strong>Erweiterte Fehlererkennung:</strong> Die erweiterte CRC ermöglicht eine verbesserte Fehlererkennung bei größeren Datenmengen.</li>
 <li><strong>Flexibilität:</strong> CAN FD bietet durch die flexible Datenrate und die größere Datenfeldlänge eine bessere Anpassung an unterschiedliche Anwendungen und Anforderungen.</li>
 </ol>
-<h2 id="schlussfolgerung-4"><a class="header" href="#schlussfolgerung-4">Schlussfolgerung</a></h2>
+<h2 id="schlussfolgerung-18"><a class="header" href="#schlussfolgerung-18">Schlussfolgerung</a></h2>
 <p>CAN FD stellt eine bedeutende Weiterentwicklung des klassischen CAN-Protokolls dar, um den gestiegenen Anforderungen moderner Fahrzeugsysteme gerecht zu werden. Die wesentlichen Änderungen im Bereich zwischen dem IDE- und dem ACK-Bit bieten erweiterte Funktionalitäten und höhere Effizienz, was CAN FD zu einem unverzichtbaren Standard in der Automobilindustrie macht. Die genaue Implementierung und Nutzung von CAN FD erfordert ein tiefes Verständnis der Protokollspezifikationen und der entsprechenden Hardwareunterstützung, um die Vorteile vollständig ausschöpfen zu können.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-vs-can-fd"><a class="header" href="#can-vs-can-fd">CAN vs. CAN-FD</a></h1>
 <h2 id="wichtige-unterschiede-zwischen-klassischem-can-und-can-fd"><a class="header" href="#wichtige-unterschiede-zwischen-klassischem-can-und-can-fd">Wichtige Unterschiede zwischen klassischem CAN und CAN-FD</a></h2>
-<h3 id="1-rahmenformat"><a class="header" href="#1-rahmenformat">1. Rahmenformat</a></h3>
+<h3 id="rahmenformat"><a class="header" href="#rahmenformat">Rahmenformat</a></h3>
 <p>Einer der Hauptunterschiede zwischen klassischem CAN und CAN-FD liegt im Rahmenformat. Im klassischen CAN ist die Rahmenstruktur starr und erlaubt eine maximale Nutzlast von 8 Bytes. Im Gegensatz dazu unterstützt CAN-FD Nutzlasten von bis zu 64 Bytes, was die Datenübertragungseffizienz erheblich erhöht.</p>
-<h3 id="2-reservebit-vs-flexible-data-rate-format-fdf"><a class="header" href="#2-reservebit-vs-flexible-data-rate-format-fdf">2. Reservebit vs. Flexible Data Rate Format (FDF)</a></h3>
+<h3 id="reservebit-vs-flexible-data-rate-format-fdf"><a class="header" href="#reservebit-vs-flexible-data-rate-format-fdf">Reservebit vs. Flexible Data Rate Format (FDF)</a></h3>
 <p>Im klassischen CAN gibt es ein Reservebit innerhalb der Rahmenstruktur. Dieses Bit wird als Indikator verwendet, um zwischen klassischen CAN-Rahmen und CAN-FD-Rahmen zu unterscheiden:</p>
 <ul>
 <li><strong>Reservebit im klassischen CAN</strong>: Dieses Bit zeigt bei dominantem Zustand (0) an, dass der folgende Rahmen ein klassischer CAN-Rahmen ist.</li>
 <li><strong>Flexible Data Rate Format (FDF) in CAN-FD</strong>: Dieses Bit wird in CAN-FD als FDF umbenannt. Wenn das FDF-Bit rezessiv (1) ist, zeigt es an, dass der Rahmen ein CAN-FD-Rahmen ist. Dieses Bit signalisiert im Wesentlichen den Übergang vom klassischen CAN zu CAN-FD und ermöglicht die Nutzung des flexiblen Datenratenformats.</li>
 </ul>
-<h3 id="3-datenrate"><a class="header" href="#3-datenrate">3. Datenrate</a></h3>
+<h3 id="datenrate"><a class="header" href="#datenrate">Datenrate</a></h3>
 <p>CAN-FD ermöglicht die Umschaltung auf eine höhere Datenrate während der Übertragung des Datenfelds und des CRC-Felds. Diese höhere Datenrate wird während der Initialisierung des CAN-FD-Knotens konfiguriert und ist typischerweise um ein Vielfaches höher als die nominale Bitrate, die für die Arbitrierung verwendet wird.</p>
-<h3 id="4-rahmenstruktur"><a class="header" href="#4-rahmenstruktur">4. Rahmenstruktur</a></h3>
+<h3 id="rahmenstruktur"><a class="header" href="#rahmenstruktur">Rahmenstruktur</a></h3>
 <p>Die Rahmenstruktur von CAN-FD umfasst folgende Schlüsselbereiche:</p>
 <ul>
 <li><strong>Arbitrationsfeld</strong>: Ähnlich wie beim klassischen CAN, wird zur Priorisierung von Nachrichten verwendet.</li>
@@ -1194,9 +1351,8 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <li><strong>Konfiguration</strong>: Konfigurieren Sie die Bit-Timing-Einstellungen richtig, um höhere Datenraten zu unterstützen. Dies umfasst das Einrichten der nominalen Bitrate und der Datenphasen-Bitrate.</li>
 <li><strong>Fehlerbehandlung</strong>: Implementieren Sie robuste Fehlerbehandlungs- und Wiederherstellungsmechanismen, angesichts der höheren Datenraten und größeren Nutzlasten.</li>
 </ul>
-<h2 id="fazit-13"><a class="header" href="#fazit-13">Fazit</a></h2>
+<h2 id="schlussfolgerung-19"><a class="header" href="#schlussfolgerung-19">Schlussfolgerung</a></h2>
 <p>CAN-FD bietet signifikante Verbesserungen gegenüber dem klassischen CAN, indem es höhere Datendurchsätze und größere Effizienz ermöglicht. Die Einführung des FDF-Bits, erweiterte Datenfelder und die Bitratenumschaltung sind Schlüsselmerkmale, die CAN-FD in die Lage versetzen, den Anforderungen moderner Automobilanwendungen gerecht zu werden. Das Verständnis dieser Elemente und ihrer Auswirkungen ist entscheidend, um CAN-FD im automobilen Netzwerk effektiv nutzen zu können.</p>
-<p>Durch ein gründliches Verständnis der technischen Aspekte und Betriebsprinzipien von CAN-FD können Automobilingenieure robuste, leistungsfähige Kommunikationsnetzwerke entwerfen und implementieren, die die zunehmend anspruchsvollen Funktionen zeitgemäßer Fahrzeuge unterstützen.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kompatibilität"><a class="header" href="#kompatibilität">Kompatibilität</a></h1>
 <h2 id="grundlegende-konzepte-von-can-und-can-fd"><a class="header" href="#grundlegende-konzepte-von-can-und-can-fd">Grundlegende Konzepte von CAN und CAN-FD</a></h2>
 <h3 id="klassisches-can"><a class="header" href="#klassisches-can">Klassisches CAN</a></h3>
@@ -1209,11 +1365,17 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 </ol>
 <p>Diese Erweiterungen sind besonders nützlich in modernen Fahrzeugen, die zunehmend mehr Daten zwischen verschiedenen Systemen austauschen müssen.</p>
 <h2 id="unterschiede-zwischen-klassischem-can-und-can-fd"><a class="header" href="#unterschiede-zwischen-klassischem-can-und-can-fd">Unterschiede zwischen klassischem CAN und CAN-FD</a></h2>
-<h3 id="datenrate"><a class="header" href="#datenrate">Datenrate</a></h3>
-<p>Im klassischen CAN ist die Datenrate auf maximal 1 Mbit/s beschränkt. CAN-FD erlaubt es, die Datenrate im Datenfeld zu erhöhen, was die Übertragung von größeren Datenmengen in kürzerer Zeit ermöglicht.</p>
+<h3 id="datenrate-1"><a class="header" href="#datenrate-1">Datenrate</a></h3>
+<ul>
+<li>Im klassischen CAN ist die Datenrate auf maximal 1 Mbit/s beschränkt.</li>
+<li>CAN-FD erlaubt es, die Datenrate im Datenfeld zu erhöhen, was die Übertragung von größeren Datenmengen in kürzerer Zeit ermöglicht.</li>
+</ul>
 <h3 id="datenfeldgröße"><a class="header" href="#datenfeldgröße">Datenfeldgröße</a></h3>
-<p>Während das klassische CAN nur Datenfelder bis zu 8 Byte unterstützt, kann CAN-FD Datenfelder bis zu 64 Byte handhaben. Dies reduziert die Anzahl der benötigten Nachrichten und erhöht die Effizienz des Netzwerks.</p>
-<h3 id="kompatibilität-1"><a class="header" href="#kompatibilität-1">Kompatibilität</a></h3>
+<ul>
+<li>Während das klassische CAN nur Datenfelder bis zu 8 Byte unterstützt, kann CAN-FD Datenfelder bis zu 64 Byte handhaben.</li>
+<li>Dies reduziert die Anzahl der benötigten Nachrichten und erhöht die Effizienz des Netzwerks.</li>
+</ul>
+<h3 id="kompatibilität-zwischen-can-und-can-fd"><a class="header" href="#kompatibilität-zwischen-can-und-can-fd">Kompatibilität zwischen CAN und CAN-FD</a></h3>
 <p>Ein wesentlicher Punkt ist die Kompatibilität zwischen klassischem CAN und CAN-FD. CAN-FD Controller sind abwärtskompatibel und können klassische CAN-Botschaften empfangen und senden. Klassische CAN Controller hingegen können CAN-FD-Botschaften nicht interpretieren und würden beim Empfang einer solchen Botschaft einen Fehler signalisieren. Dies liegt daran, dass die zusätzlichen Bits und die erhöhte Datenrate im CAN-FD-Protokoll von klassischen CAN Controllern als Regelverstöße interpretiert werden.</p>
 <h2 id="fehlerbehandlung-2"><a class="header" href="#fehlerbehandlung-2">Fehlerbehandlung</a></h2>
 <p>In einem gemischten Netzwerk, in dem sowohl klassische CAN als auch CAN-FD Controller existieren, ist die Fehlerbehandlung ein kritischer Aspekt. Wenn ein klassischer CAN Controller eine CAN-FD-Botschaft empfängt, erkennt er die zusätzlichen Bits als ungültig und sendet einen Error Frame. Dies signalisiert den anderen Geräten im Netzwerk, dass ein Kommunikationsfehler aufgetreten ist.</p>
@@ -1228,10 +1390,10 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <p>Die Implementierung von CAN-FD erfordert Hardware, die CAN-FD unterstützt, sowie eine entsprechende Konfiguration der Software. Viele moderne Mikrocontroller und CAN-Transceiver unterstützen bereits CAN-FD.</p>
 <h3 id="anwendungsfälle"><a class="header" href="#anwendungsfälle">Anwendungsfälle</a></h3>
 <p>CAN-FD findet Anwendung in Bereichen, in denen eine hohe Datenrate und große Datenmengen erforderlich sind, z.B. in ADAS (Advanced Driver Assistance Systems), Infotainment-Systemen und der Kommunikation zwischen Sensoren und Aktuatoren.</p>
-<h2 id="schlussfolgerung-5"><a class="header" href="#schlussfolgerung-5">Schlussfolgerung</a></h2>
+<h2 id="schlussfolgerung-20"><a class="header" href="#schlussfolgerung-20">Schlussfolgerung</a></h2>
 <p>CAN-FD stellt eine bedeutende Weiterentwicklung des klassischen CAN-Protokolls dar, die den gestiegenen Anforderungen an Datenkommunikation in modernen Fahrzeugen gerecht wird. Während klassische CAN Controller nicht mit CAN-FD-Botschaften kompatibel sind, können CAN-FD Controller beide Protokolle unterstützen, was eine schrittweise Einführung in bestehende Systeme ermöglicht. Die Vorteile von CAN-FD, wie erhöhte Datenrate und größere Datenfelder, machen es zu einer zukunftssicheren Lösung für die Automobilindustrie.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bitratenumschaltung-und-Übertragungsraten"><a class="header" href="#bitratenumschaltung-und-Übertragungsraten">Bitratenumschaltung und Übertragungsraten</a></h1>
-<h2 id="einleitung-8"><a class="header" href="#einleitung-8">Einleitung</a></h2>
+<h2 id="einleitung-10"><a class="header" href="#einleitung-10">Einleitung</a></h2>
 <p>Das Controller Area Network mit flexibler Datenrate (CAN-FD) ist eine Weiterentwicklung des klassischen CAN-Protokolls und bietet höhere Datenraten sowie größere Datenpakete. Dieses Tutorial zielt darauf ab, ein detailliertes Verständnis von CAN-FD zu vermitteln, wobei der Fokus auf der Bitratenumschaltung (BRS) und den Übertragungsraten liegt. Dabei werden wichtige Aspekte wie Synchronisation und Implementierungsherausforderungen in Automobilumgebungen kritisch behandelt.</p>
 <h2 id="bitratenumschaltung-brs"><a class="header" href="#bitratenumschaltung-brs">Bitratenumschaltung (BRS)</a></h2>
 <p>Das CAN-FD-Protokoll führt mehrere neue Funktionen im Vergleich zum klassischen CAN ein. Eine der wichtigsten Funktionen ist die Bitratenumschaltung (BRS).</p>
@@ -1260,7 +1422,7 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 </ul>
 <p><strong>Synchronisation:</strong></p>
 <p>Um sicherzustellen, dass die Empfänger die Hochgeschwindigkeits-Datenphase effektiv verarbeiten können, wird unmittelbar vor der Bitratenumschaltung eine zweite, harte Synchronisation durchgeführt. Diese harte Synchronisation stellt sicher, dass die Zeitabstimmung zwischen Sender und Empfänger perfekt aufeinander abgestimmt ist, um das Risiko von Datenkorruption oder -verlust zu minimieren.</p>
-<h2 id="fazit-14"><a class="header" href="#fazit-14">Fazit</a></h2>
+<h2 id="schlussfolgerung-21"><a class="header" href="#schlussfolgerung-21">Schlussfolgerung</a></h2>
 <p>CAN-FD, mit seiner Bitratenumschaltung und den erhöhten Datenraten, bietet erhebliche Verbesserungen gegenüber dem klassischen CAN und ist somit geeignet für moderne Automobilanwendungen, die höhere Bandbreiten und Effizienz erfordern. Das Verständnis und die korrekte Implementierung von Funktionen wie BRS und das Management der Übertragungsraten sind entscheidend, um das volle Potenzial von CAN-FD in Automobilnetzwerken auszuschöpfen. Zukünftige Entwicklungen und Tests in realen Umgebungen werden diese Implementierungen weiter verfeinern und eine robuste und zuverlässige Kommunikation in zunehmend komplexeren Fahrzeugumgebungen sicherstellen.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="selbsanzeige-bei-zu-häufigen-fehlern"><a class="header" href="#selbsanzeige-bei-zu-häufigen-fehlern">Selbsanzeige bei zu häufigen Fehlern</a></h1>
 <h2 id="error-state-indicator-esi"><a class="header" href="#error-state-indicator-esi">Error State Indicator (ESI)</a></h2>
@@ -1324,7 +1486,7 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <li><strong>Verbesserte Effizienz</strong>: Mehr Daten können in weniger Frames übertragen werden, wodurch der Overhead reduziert und die Bandbreitenausnutzung verbessert wird.</li>
 <li><strong>Erhöhte Flexibilität</strong>: Die flexible Datenrate ermöglicht eine dynamische Anpassung der Datenraten an verschiedene Anwendungen.</li>
 </ul>
-<h2 id="fazit-15"><a class="header" href="#fazit-15">Fazit</a></h2>
+<h2 id="schlussfolgerung-22"><a class="header" href="#schlussfolgerung-22">Schlussfolgerung</a></h2>
 <p>CAN-FD stellt einen bedeutenden Fortschritt in der Automobilnetzwerktechnologie dar, indem es höhere Datenraten, erhöhte Nutzlastkapazität und verbesserte Netzwerkmanagementfähigkeiten bietet. Der Error State Indicator (ESI) spielt eine entscheidende Rolle bei der Verbesserung der Fehlerverfolgung und des Managements, wodurch CAN-FD eine robuste Wahl für moderne fahrzeuginterne Kommunikationssysteme ist. Durch das Verständnis und die Implementierung von CAN-FD können Automobilingenieure effizientere, zuverlässigere und skalierbarere Netzwerke entwerfen, die den Anforderungen moderner Fahrzeuge gerecht werden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="länge-des-datenfeldes"><a class="header" href="#länge-des-datenfeldes">Länge des Datenfeldes</a></h1>
 <h2 id="verständnis-von-can"><a class="header" href="#verständnis-von-can">Verständnis von CAN</a></h2>
@@ -1393,9 +1555,8 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <li><strong>Skalierbarkeit:</strong> Die flexiblen Datenfeldlängen von CAN-FD machen es für eine breite Palette von Anwendungen geeignet, von einfachen Sensordatenübertragungen bis hin zu komplexen Datenaustauschen in fortschrittlichen Fahrerassistenzsystemen (ADAS).</li>
 <li><strong>Zukunftssicherheit:</strong> Die höheren Datenraten und die erhöhte Nutzlastkapazität stellen sicher, dass CAN-FD den wachsenden Datenkommunikationsanforderungen zukünftiger Automobiltechnologien, einschließlich autonomem Fahren und vernetzten Fahrzeugsystemen, gerecht wird.</li>
 </ol>
-<h2 id="fazit-16"><a class="header" href="#fazit-16">Fazit</a></h2>
+<h2 id="schlussfolgerung-23"><a class="header" href="#schlussfolgerung-23">Schlussfolgerung</a></h2>
 <p>CAN und CAN-FD sind wesentliche Komponenten moderner Fahrzeugkommunikationsnetzwerke. Das Verständnis der Unterschiede in DLC und Datenfeldgrößen zwischen den beiden Protokollen ist entscheidend, um ihre Fähigkeiten effektiv zu nutzen. Die Verbesserungen von CAN-FD, insbesondere die Unterstützung größerer Datenfeldgrößen und höherer Datenraten, machen es zu einem leistungsstarken Upgrade vom klassischen CAN und adressieren die sich entwickelnden Anforderungen der Automobilindustrie.</p>
-<p>Durch ein umfassendes Verständnis und die effektive Nutzung der Funktionen von CAN-FD können Automobilingenieure und Netzwerkdesigner die Leistung, Effizienz und Skalierbarkeit von Fahrzeugkommunikationssystemen erheblich verbessern.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mehr-daten-bei-gleichbleibender-sicherheit"><a class="header" href="#mehr-daten-bei-gleichbleibender-sicherheit">Mehr Daten bei gleichbleibender Sicherheit</a></h1>
 <h2 id="einführung-in-can-fd-1"><a class="header" href="#einführung-in-can-fd-1">Einführung in CAN-FD</a></h2>
 <p>CAN-FD (Controller Area Network with Flexible Data-Rate) ist eine Erweiterung des klassischen CAN-Protokolls, das in den 1980er Jahren von Bosch entwickelt wurde. Es bietet höhere Datenraten und größere Nutzlasten, wodurch es besser für moderne Anforderungen im Automotive-Bereich geeignet ist. Während klassisches CAN auf 1 Mbit/s und 8 Byte Daten pro Frame limitiert ist, ermöglicht CAN-FD Datenraten von bis zu 5 Mbit/s und Nutzlasten bis zu 64 Byte pro Frame.</p>
@@ -1440,10 +1601,48 @@ Beinhaltet eine Ruhepause zwischen den Nachrichten, um die Synchronisation der N
 <li><strong>CAN-FD-fähige Transceiver und Controller:</strong> Diese müssen die höheren Datenraten und die neuen Frame-Formate unterstützen.</li>
 <li><strong>Angepasste Software-Stacks:</strong> Die Software muss in der Lage sein, die neuen CRC-Berechnungen und die flexiblen Datenraten zu handhaben.</li>
 </ul>
-<h2 id="fazit-17"><a class="header" href="#fazit-17">Fazit</a></h2>
+<h2 id="schlussfolgerung-24"><a class="header" href="#schlussfolgerung-24">Schlussfolgerung</a></h2>
 <p>CAN-FD stellt einen wichtigen Fortschritt im Bereich der automobilen Netzwerke dar, indem es höhere Datenraten und größere Nutzlasten ermöglicht. Die Erweiterung der CRC-Felder und die Einführung von robusteren Fehlererkennungsmechanismen tragen dazu bei, die Zuverlässigkeit der Datenübertragung in modernen Fahrzeugen zu erhöhen. Bei der Implementierung von CAN-FD müssen jedoch sorgfältig die erhöhten Anforderungen an Hardware und Software berücksichtigt werden, um die Vorteile vollständig auszuschöpfen.</p>
 <p>Dieses Tutorial bietet einen Überblick über die wesentlichen Aspekte von CAN-FD und dessen Vorteile gegenüber dem klassischen CAN-Protokoll. Durch die detaillierte Beschreibung der CRC-Berechnung und die Hervorhebung der technischen Vorteile wird die Bedeutung von CAN-FD für moderne Automobile verdeutlicht.</p>
-<div style="break-before: page; page-break-before: always;"></div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bitstuffing-bei-can-und-can-fd-ein-umfassendes-tutorial"><a class="header" href="#bitstuffing-bei-can-und-can-fd-ein-umfassendes-tutorial">Bitstuffing bei CAN und CAN FD: Ein umfassendes Tutorial</a></h1>
+<h2 id="einführung-4"><a class="header" href="#einführung-4">Einführung</a></h2>
+<p>Das Bitstuffing ist eine zentrale Technik im Controller Area Network (CAN), die dazu dient, Synchronisationsprobleme zu vermeiden und eine zuverlässige Datenübertragung sicherzustellen. Sowohl im klassischen CAN-Protokoll als auch im CAN Flexible Data-Rate (CAN FD) Protokoll wird das Bitstuffing angewendet, jedoch mit unterschiedlichen Regeln und Bereichen. Dieser Teil bietet eine detaillierte Erklärung der Bitstuffing-Mechanismen bei CAN und CAN FD, einschließlich der Behandlung von Stuffbits im CRC-Feld.</p>
+<h2 id="bitstuffing-im-klassischen-can"><a class="header" href="#bitstuffing-im-klassischen-can">Bitstuffing im klassischen CAN</a></h2>
+<p>Im klassischen CAN-Protokoll wird Bitstuffing angewendet, um die Takt-Synchronisation zwischen Sender und Empfänger aufrechtzuerhalten. Die Grundregel des Bitstuffings lautet: Nach jeweils fünf aufeinanderfolgenden Bits mit gleichem Wert (entweder 0 oder 1) wird ein komplementäres Bit eingefügt. Dieses eingefügte Bit wird als "Stuffbit" bezeichnet.</p>
+<p><strong>Beispiel:</strong></p>
+<ul>
+<li>Wenn eine Nachricht die Bitfolge <code>111110</code> enthält, wird ein Stuffbit eingefügt, wodurch die Folge <code>1111101</code> entsteht.</li>
+<li>Wichtig ist, dass die Stuffbits nicht in die Berechnung der Prüfsumme (CRC) einfließen.</li>
+<li>Dies bedeutet, dass beim Empfangen der Nachricht die Stuffbits entfernt werden, bevor die CRC-Prüfung durchgeführt wird.</li>
+</ul>
+<h2 id="bitstuffing-bei-can-fd"><a class="header" href="#bitstuffing-bei-can-fd">Bitstuffing bei CAN FD</a></h2>
+<p>Das CAN FD-Protokoll erweitert das klassische CAN-Protokoll um höhere Datenraten und größere Datenfelder. Daher sind die Regeln für das Bitstuffing bei CAN FD etwas anders und spezifischer.</p>
+<p><strong>Bitstuffing-Regel:</strong></p>
+<ul>
+<li>Stuffbits werden ab dem Start of Frame (SOF) eingefügt.</li>
+<li>Das Bitstuffing endet mit dem Ende des Datenfeldes.</li>
+<li>Nach dem Ende des Datenfeldes wird die Anzahl der eingefügten Stuffbits (Modulo 8) berechnet und ein zusätzliches Paritätsbit eingefügt.</li>
+</ul>
+<p><strong>CRC-Berechnung bei CAN FD:</strong></p>
+<p>Der sendende Knoten berechnet die Prüfsumme (CRC), einschließlich der bis zu diesem Punkt eingefügten Stuffbits. Dies unterscheidet sich vom klassischen CAN, wo die Stuffbits nicht in die CRC-Berechnung einfließen.</p>
+<h2 id="bitstuffing-im-crc-feld-bei-can-fd"><a class="header" href="#bitstuffing-im-crc-feld-bei-can-fd">Bitstuffing im CRC-Feld bei CAN FD</a></h2>
+<p>Zusätzlich zur allgemeinen Bitstuffing-Regel bei CAN FD gibt es spezielle Regeln für das CRC-Feld:</p>
+<ol>
+<li>Das CRC-Feld beginnt immer mit einem Stuffbit.</li>
+<li>Nach jeweils vier weiteren CRC-Feld-Bits wird ein weiteres Stuffbit eingefügt, unabhängig davon, ob die Bits gleichnamig sind oder nicht.</li>
+<li>Der Wert eines CRC-Stuffbits ist komplementär zu seinem Vorgängerbit.</li>
+</ol>
+<p><strong>Beispiel:</strong></p>
+<ul>
+<li>Angenommen, das CRC-Feld beginnt mit der Bitfolge <code>1101</code>.</li>
+<li>Es wird ein Stuffbit eingefügt, wodurch die Folge <code>11011</code> entsteht.</li>
+<li>Nach vier weiteren Bits, z.B. <code>1000</code>, wird ein weiteres Stuffbit eingefügt, was <code>10001</code> ergibt.</li>
+</ul>
+<h2 id="keine-stuffbits-nach-dem-crc-feld"><a class="header" href="#keine-stuffbits-nach-dem-crc-feld">Keine Stuffbits nach dem CRC-Feld</a></h2>
+<p>Nach dem CRC-Feld werden, wie beim klassischen CAN, keine weiteren Stuffbits mehr eingefügt. Das bedeutet, dass der Rest des Frames (Acknowledge Slot, End of Frame, etc.) ohne zusätzliche Stuffbits gesendet wird.</p>
+<h3 id="schlussfolgerung-25"><a class="header" href="#schlussfolgerung-25">Schlussfolgerung</a></h3>
+<p>Bitstuffing ist ein wesentlicher Bestandteil der CAN-Kommunikation, um die Synchronisation zwischen Sender und Empfänger zu gewährleisten und Fehler zu minimieren. Im klassischen CAN-Protokoll werden Stuffbits nach jeweils fünf gleichnamigen Bits eingefügt, jedoch nicht in die CRC-Berechnung einbezogen. Bei CAN FD erstreckt sich das Bitstuffing bis zum Ende des Datenfeldes, und die Stuffbits werden in die CRC-Berechnung einbezogen. Zusätzlich gibt es im CRC-Feld von CAN FD spezielle Bitstuffing-Regeln, die unabhängig von der Bitfolge angewendet werden.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

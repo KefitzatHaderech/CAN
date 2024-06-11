@@ -173,7 +173,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="fehlererkennung-und--behandlung-im-can-netzwerk"><a class="header" href="#fehlererkennung-und--behandlung-im-can-netzwerk">Fehlererkennung und -behandlung im CAN-Netzwerk</a></h1>
+<p>Das Controller Area Network (CAN) ist ein weit verbreitetes serielles Kommunikationsprotokoll, das in Automobilen und vielen anderen Anwendungen eingesetzt wird. Eine der größten Herausforderungen bei der seriellen Kommunikation in Kraftfahrzeugen besteht darin, eine äußerst hohe Übertragungssicherheit zu garantieren. Ein zentraler Mechanismus zur Fehlererkennung im CAN-Netzwerk ist das CRC-Verfahren (Cyclic Redundancy Check). Dieses Tutorial bietet eine detaillierte und wissenschaftlich fundierte Beschreibung des CRC-Verfahrens und der Acknowledgement-Mechanismen im CAN-Protokoll gemäß der ISO 11898-1 Norm.</p>
+<h2 id="cyclic-redundancy-check-crc"><a class="header" href="#cyclic-redundancy-check-crc">Cyclic Redundancy Check (CRC)</a></h2>
+<h3 id="funktionsweise-des-crc-verfahrens"><a class="header" href="#funktionsweise-des-crc-verfahrens">Funktionsweise des CRC-Verfahrens</a></h3>
+<p>Das CRC-Verfahren dient zur Erkennung von Übertragungsfehlern in Datenpaketen. Hierbei wird eine CRC-Sequenz auf Basis der zu übertragenden Bits berechnet. Diese Bits umfassen den Start-of-Frame (SOF) bis einschließlich des Data Fields. Zur Berechnung der CRC-Sequenz wird ein Generatorpolynom G(x) verwendet, das in der ISO 11898-1 Norm definiert ist.</p>
+<p>Die CRC-Sequenz wird wie folgt berechnet:</p>
+<ol>
+<li><strong>Polynomdarstellung der Datenbits:</strong> Die zu übertragenden Bits werden als Polynom interpretiert.</li>
+<li><strong>Division durch das Generatorpolynom:</strong> Dieses Datenpolynom wird durch das Generatorpolynom G(x) dividiert. Der Rest dieser Division stellt die CRC-Sequenz dar.</li>
+<li><strong>Anfügen der CRC-Sequenz:</strong> Die CRC-Sequenz wird an die ursprünglichen Datenbits angehängt und zusammen mit diesen übertragen.</li>
+</ol>
+<h3 id="fehlererkennung-durch-den-empfänger"><a class="header" href="#fehlererkennung-durch-den-empfänger">Fehlererkennung durch den Empfänger</a></h3>
+<p>Der Empfänger erhält das Gesamtpolynom (Originaldaten + CRC-Sequenz) und führt erneut eine Division durch das gleiche Generatorpolynom G(x) durch. Ergibt diese Division einen Rest von Null, so ist die Übertragung fehlerfrei. Andernfalls wurde ein Übertragungsfehler erkannt.</p>
+<h2 id="acknowledgement-ack"><a class="header" href="#acknowledgement-ack">Acknowledgement (ACK)</a></h2>
+<h3 id="quittierungsmechanismus"><a class="header" href="#quittierungsmechanismus">Quittierungsmechanismus</a></h3>
+<p>Nach der Berechnung und Überprüfung der CRC-Sequenz durch den Empfänger erfolgt die Quittierung der empfangenen Nachricht im Acknowledgement-Slot (ACK-Slot). Jeder Empfänger steuert das Acknowledgement unabhängig von der Akzeptanzfilterung:</p>
+<ul>
+<li><strong>Dominanter Pegel:</strong> Ein dominanter Pegel im ACK-Slot signalisiert eine positive Quittung (korrekte Datenübertragung).</li>
+<li><strong>Rezessiver Pegel:</strong> Ein rezessiver Pegel im ACK-Slot signalisiert eine negative Quittung (fehlerhafte Datenübertragung).</li>
+</ul>
+<h3 id="ack-delimiter"><a class="header" href="#ack-delimiter">ACK-Delimiter</a></h3>
+<p>Der ACK-Delimiter folgt unmittelbar auf den ACK-Slot und wird immer rezessiv übertragen. Dieser Mechanismus stellt sicher, dass der ACK-Slot eindeutig interpretierbar ist.</p>
+<h3 id="knotenneutrales-positives-acknowledgement"><a class="header" href="#knotenneutrales-positives-acknowledgement">Knotenneutrales positives Acknowledgement</a></h3>
+<p>Da der Sender sowohl den ACK-Slot als auch den ACK-Delimiter rezessiv überträgt, reicht eine einzige positive Quittung (dominanter Pegel) eines beliebigen Empfängers aus, um die Korrektheit der Botschaft zu bestätigen. Dies wird als knotenneutrales positives Acknowledgement bezeichnet, da es unabhängig von der Anzahl der Empfänger funktioniert.</p>
+<h2 id="fehlerbehandlung-ack-fehler-und-error-flag"><a class="header" href="#fehlerbehandlung-ack-fehler-und-error-flag">Fehlerbehandlung: ACK-Fehler und Error Flag</a></h2>
+<h3 id="ack-fehler"><a class="header" href="#ack-fehler">ACK-Fehler</a></h3>
+<p>Ein ACK-Fehler tritt auf, wenn keine einzige positive Quittung von den Empfängern erfolgt. Das bedeutet, dass der rezessive Pegel im ACK-Slot nicht überschrieben wird. Ein ACK-Fehler kann auf folgende Ursachen hinweisen:</p>
+<ul>
+<li><strong>Fehlerhafte Übertragung durch den Sender:</strong> Der Sender hat möglicherweise einen Fehler bei der Übertragung der Nachricht verursacht.</li>
+<li><strong>Nicht vorhandene Empfänger:</strong> Es gibt keine Empfänger, die die Nachricht erfolgreich empfangen und positiv quittieren konnten.</li>
+</ul>
+<h3 id="error-flag"><a class="header" href="#error-flag">Error Flag</a></h3>
+<p>Wenn ein ACK-Fehler erkannt wird, bricht der Sender die laufende Nachrichtenübertragung sofort ab und sendet ein Error Flag. Dieses Error Flag signalisiert allen Knoten im Netzwerk, dass ein Fehler aufgetreten ist und stellt sicher, dass keine fehlerhaften Daten im Netzwerk verbleiben.</p>
+<h2 id="schlussbemerkungen"><a class="header" href="#schlussbemerkungen">Schlussbemerkungen</a></h2>
+<p>Die beschriebenen Mechanismen zur Fehlererkennung und -behandlung im CAN-Netzwerk sind von zentraler Bedeutung, um eine hohe Übertragungssicherheit zu gewährleisten. Das CRC-Verfahren ermöglicht eine zuverlässige Erkennung von Übertragungsfehlern, während der Acknowledgement-Mechanismus sicherstellt, dass nur korrekte Nachrichten im Netzwerk akzeptiert werden. Bei Erkennung eines Fehlers erfolgt sofort eine Fehlerbehandlung, um die Datenkonsistenz im gesamten Netzwerk zu wahren. Diese Mechanismen tragen maßgeblich zur Robustheit und Zuverlässigkeit des CAN-Netzwerks bei.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

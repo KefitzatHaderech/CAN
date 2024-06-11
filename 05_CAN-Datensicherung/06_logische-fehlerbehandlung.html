@@ -178,7 +178,7 @@
 <p>Das Controller Area Network (CAN) Protokoll ist ein robustes Kommunikationsprotokoll, das in Fahrzeugnetzwerken weit verbreitet ist. Ein wesentliches Merkmal des CAN-Protokolls ist seine Fähigkeit, netzwerkweite Datenkonsistenz aufrechtzuerhalten, selbst wenn lokale Störungen auftreten. Dies wird durch die Implementierung spezifischer Fehlererkennungs- und Fehlerbehandlungsmechanismen erreicht.</p>
 <h2 id="fehlererkennung-und-fehlersignalisierung"><a class="header" href="#fehlererkennung-und-fehlersignalisierung">Fehlererkennung und Fehlersignalisierung</a></h2>
 <p>Wenn ein CAN-Knoten einen Fehler erkennt, ist es seine Pflicht, alle anderen Knoten im Netzwerk darüber zu informieren. Dies geschieht durch die Übertragung eines Fehlersignals, auch Error Flag genannt. Ein Error Flag besteht aus sechs dominanten Bits, die bewusst die Bitstuffingregel verletzen, um einen Bitstuffing-Fehler zu verursachen. Diese bewusste Regelverletzung dient dazu, sicherzustellen, dass alle Knoten im Netzwerk den Fehler erkennen.</p>
-<img src="./image/README/1712276741129.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276741129.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="primäres-und-sekundäres-error-flag"><a class="header" href="#primäres-und-sekundäres-error-flag">Primäres und Sekundäres Error Flag</a></h2>
 <p>Die Übertragung eines Error Flags durch den fehlererkennenden Knoten (primäres Error Flag) löst bei allen anderen Knoten ebenfalls die Übertragung eines Error Flags (sekundäres Error Flag) aus. Dadurch wird die reguläre Datenübertragung abgebrochen und das Netzwerk in einen Fehlerbehandlungsmodus versetzt. In manchen Situationen können sich primäre und sekundäre Error Flags überlagern, was die Gesamtdauer der Fehlerbehandlung beeinflusst.</p>
 <h2 id="error-delimiter-und-bus-idle-kennung"><a class="header" href="#error-delimiter-und-bus-idle-kennung">Error Delimiter und Bus-Idle-Kennung</a></h2>
@@ -192,14 +192,11 @@
 <li><strong>23 Bitzeiten:</strong> Wenn sich primäres und sekundäres Error Flag nicht überlagern.</li>
 <li><strong>31 Bitzeiten:</strong> Wenn der fehlerhafte Knoten sich im fehlerpassiven Zustand befindet. In diesem Zustand muss der Knoten eine sogenannte Suspend Transmission Time abwarten, bevor er erneut auf den CAN-Bus zugreifen darf. Diese Sendepause beträgt 8 Bits.</li>
 </ul>
-<img src="./image/README/1712276756119.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276756119.png" alt="CAN-Netzwerk" style="max-width:90%; display: block; margin: 0 auto;" />
 <h2 id="fehlerpassiver-zustand-und-suspend-transmission-time"><a class="header" href="#fehlerpassiver-zustand-und-suspend-transmission-time">Fehlerpassiver Zustand und Suspend Transmission Time</a></h2>
 <p>Ein Knoten im fehlerpassiven Zustand hat eine verminderte Priorität beim Buszugriff und muss nach einem Fehler eine zusätzliche Pause von 8 Bitzeiten (Suspend Transmission Time) einhalten. Dieser Mechanismus verhindert, dass fehlerhafte Knoten den Bus übermäßig belasten und ermöglicht eine stabilere Netzwerkkonfiguration.</p>
-<h2 id="zusammenfassung"><a class="header" href="#zusammenfassung">Zusammenfassung</a></h2>
+<h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
 <p>Das CAN-Protokoll stellt durch seine ausgeklügelten Fehlererkennungs- und Fehlerbehandlungsmechanismen sicher, dass die Datenkonsistenz im Netzwerk aufrechterhalten wird. Die Übertragung von Error Flags, gefolgt von Error Delimiters und einer definierten Sendepause, sorgt dafür, dass alle Knoten synchronisiert bleiben und Fehler effizient behandelt werden können. Die prioritätengesteuerte Natur des CAN-Bus bedeutet jedoch, dass keine sofortige Wiederholung einer abgebrochenen Botschaft garantiert werden kann. Insbesondere im fehlerpassiven Zustand müssen zusätzliche Wartezeiten eingehalten werden, um die Netzwerksicherheit und -stabilität zu gewährleisten.</p>
-<h2 id="kritische-betrachtung"><a class="header" href="#kritische-betrachtung">Kritische Betrachtung</a></h2>
-<p>Einige Aspekte des CAN-Protokolls könnten in spezifischen Anwendungsszenarien Herausforderungen darstellen. Die zusätzliche Latenz durch die Suspend Transmission Time im fehlerpassiven Zustand kann in hochkritischen Echtzeitsystemen problematisch sein. Hier könnten alternative Protokolle oder zusätzliche Fehlerbehandlungsstrategien notwendig sein, um die Systemanforderungen zu erfüllen. Zudem ist die Abhängigkeit von der Priorität beim Buszugriff ein zweischneidiges Schwert, da sie zwar eine effiziente Kommunikation ermöglicht, aber auch zu Verzögerungen bei weniger prioritären Nachrichten führen kann.</p>
-<p>Dieses Tutorial bietet eine detaillierte Betrachtung der Fehlerbehandlungsmechanismen im CAN-Bus und zeigt, wie sie zur Aufrechterhaltung der Netzwerkstabilität beitragen. Durch das Verständnis dieser Mechanismen können Entwickler und Ingenieure robustere und zuverlässigere Fahrzeugsysteme entwerfen.</p>
 
                     </main>
 

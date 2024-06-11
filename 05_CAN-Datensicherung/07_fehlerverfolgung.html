@@ -176,7 +176,7 @@
                         <h1 id="fehlerbehandlung"><a class="header" href="#fehlerbehandlung">Fehlerbehandlung</a></h1>
 <h2 id="einleitung"><a class="header" href="#einleitung">Einleitung</a></h2>
 <p>Das Controller Area Network (CAN) ist ein robustes Fahrzeugbussystem, das hauptsächlich in der Automobilindustrie verwendet wird, um Mikrocontroller und Geräte ohne Host-Computer miteinander zu verbinden. Um die Netzwerkkonsistenz und -stabilität zu gewährleisten, ist es wichtig, Mechanismen zu haben, die Fehler erkennen und behandeln. Dieses Tutorial erklärt die Fehlerbehandlungsmechanismen des CAN-Protokolls im Detail und zeigt auf, wie Fehlerzähler (Transmit Error Counter, TEC, und Receive Error Counter, REC) dazu beitragen, Busblockaden zu vermeiden.</p>
-<img src="./image/README/1712276783501.png" alt="CAN-Netzwerk" style="max-width:50%; display: block; margin: 0 auto;" />
+<img src="./image/1712276783501.png" alt="CAN-Netzwerk" style="max-width:70%; display: block; margin: 0 auto;" />
 <h2 id="fehlererkennung-und-fehlerverfolgung-im-can-netzwerk"><a class="header" href="#fehlererkennung-und-fehlerverfolgung-im-can-netzwerk">Fehlererkennung und Fehlerverfolgung im CAN-Netzwerk</a></h2>
 <h3 id="busblockade-vermeiden"><a class="header" href="#busblockade-vermeiden">Busblockade vermeiden</a></h3>
 <p>Im CAN-Netzwerk hat jeder Knoten die Möglichkeit, eine als fehlerhaft interpretierte CAN-Nachricht abzubrechen. Dies gilt auch für Fälle, in denen ein Knoten irrtümlich eine korrekte Nachricht als fehlerhaft erkennt. Um zu verhindern, dass solche Fehlinterpretationen zu einer Blockierung des Übertragungsmediums führen, verwendet das CAN-Protokoll eine Fehlerverfolgung. Diese Fehlerverfolgung unterscheidet zwischen gelegentlich auftretenden und anhaltenden Störungen.</p>
@@ -206,8 +206,6 @@
 <p>Bei extremer Fehlerhäufung oder einem Ausfall wechselt der CAN-Controller in den Zustand <strong>Bus Off</strong>. In diesem Zustand trennt sich der Controller vom CAN-Bus, um zu verhindern, dass der fehlerhafte Knoten das Netzwerk weiter stört. Der Zustand Bus Off kann nur durch einen Eingriff des Hosts (mit einer erzwungenen Wartezeit von 128 x 11 Bits) oder durch einen Hardware-Reset verlassen werden.</p>
 <h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
 <p>Das CAN-Protokoll stellt mit seinen Mechanismen zur Fehlererkennung und -behandlung sicher, dass die Integrität und Stabilität des Netzwerks auch bei fehlerhaften Nachrichten erhalten bleibt. Durch die Verwendung von Fehlerzählern (TEC und REC) und verschiedenen Fehlerzuständen (Error Active, Error Passive und Bus Off) wird die Wahrscheinlichkeit einer Busblockade minimiert und die Zuverlässigkeit des Netzwerks maximiert. Es ist wichtig, diese Mechanismen zu verstehen und korrekt zu implementieren, um eine effiziente und störungsfreie Kommunikation im CAN-Netzwerk zu gewährleisten.</p>
-<h2 id="weitere-Überlegungen"><a class="header" href="#weitere-Überlegungen">Weitere Überlegungen</a></h2>
-<p>Für eine umfassende Implementierung und Fehlerbehandlung im CAN-Netzwerk ist es notwendig, die Spezifikationen und Anforderungen des jeweiligen Anwendungsbereichs zu berücksichtigen. Die korrekte Konfiguration und Handhabung der Fehlerzustände kann entscheidend für die Funktionalität und Zuverlässigkeit des gesamten Systems sein.</p>
 
                     </main>
 

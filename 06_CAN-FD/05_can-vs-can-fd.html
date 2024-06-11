@@ -175,17 +175,17 @@
                     <main>
                         <h1 id="can-vs-can-fd"><a class="header" href="#can-vs-can-fd">CAN vs. CAN-FD</a></h1>
 <h2 id="wichtige-unterschiede-zwischen-klassischem-can-und-can-fd"><a class="header" href="#wichtige-unterschiede-zwischen-klassischem-can-und-can-fd">Wichtige Unterschiede zwischen klassischem CAN und CAN-FD</a></h2>
-<h3 id="1-rahmenformat"><a class="header" href="#1-rahmenformat">1. Rahmenformat</a></h3>
+<h3 id="rahmenformat"><a class="header" href="#rahmenformat">Rahmenformat</a></h3>
 <p>Einer der Hauptunterschiede zwischen klassischem CAN und CAN-FD liegt im Rahmenformat. Im klassischen CAN ist die Rahmenstruktur starr und erlaubt eine maximale Nutzlast von 8 Bytes. Im Gegensatz dazu unterstützt CAN-FD Nutzlasten von bis zu 64 Bytes, was die Datenübertragungseffizienz erheblich erhöht.</p>
-<h3 id="2-reservebit-vs-flexible-data-rate-format-fdf"><a class="header" href="#2-reservebit-vs-flexible-data-rate-format-fdf">2. Reservebit vs. Flexible Data Rate Format (FDF)</a></h3>
+<h3 id="reservebit-vs-flexible-data-rate-format-fdf"><a class="header" href="#reservebit-vs-flexible-data-rate-format-fdf">Reservebit vs. Flexible Data Rate Format (FDF)</a></h3>
 <p>Im klassischen CAN gibt es ein Reservebit innerhalb der Rahmenstruktur. Dieses Bit wird als Indikator verwendet, um zwischen klassischen CAN-Rahmen und CAN-FD-Rahmen zu unterscheiden:</p>
 <ul>
 <li><strong>Reservebit im klassischen CAN</strong>: Dieses Bit zeigt bei dominantem Zustand (0) an, dass der folgende Rahmen ein klassischer CAN-Rahmen ist.</li>
 <li><strong>Flexible Data Rate Format (FDF) in CAN-FD</strong>: Dieses Bit wird in CAN-FD als FDF umbenannt. Wenn das FDF-Bit rezessiv (1) ist, zeigt es an, dass der Rahmen ein CAN-FD-Rahmen ist. Dieses Bit signalisiert im Wesentlichen den Übergang vom klassischen CAN zu CAN-FD und ermöglicht die Nutzung des flexiblen Datenratenformats.</li>
 </ul>
-<h3 id="3-datenrate"><a class="header" href="#3-datenrate">3. Datenrate</a></h3>
+<h3 id="datenrate"><a class="header" href="#datenrate">Datenrate</a></h3>
 <p>CAN-FD ermöglicht die Umschaltung auf eine höhere Datenrate während der Übertragung des Datenfelds und des CRC-Felds. Diese höhere Datenrate wird während der Initialisierung des CAN-FD-Knotens konfiguriert und ist typischerweise um ein Vielfaches höher als die nominale Bitrate, die für die Arbitrierung verwendet wird.</p>
-<h3 id="4-rahmenstruktur"><a class="header" href="#4-rahmenstruktur">4. Rahmenstruktur</a></h3>
+<h3 id="rahmenstruktur"><a class="header" href="#rahmenstruktur">Rahmenstruktur</a></h3>
 <p>Die Rahmenstruktur von CAN-FD umfasst folgende Schlüsselbereiche:</p>
 <ul>
 <li><strong>Arbitrationsfeld</strong>: Ähnlich wie beim klassischen CAN, wird zur Priorisierung von Nachrichten verwendet.</li>
@@ -211,9 +211,8 @@
 <li><strong>Konfiguration</strong>: Konfigurieren Sie die Bit-Timing-Einstellungen richtig, um höhere Datenraten zu unterstützen. Dies umfasst das Einrichten der nominalen Bitrate und der Datenphasen-Bitrate.</li>
 <li><strong>Fehlerbehandlung</strong>: Implementieren Sie robuste Fehlerbehandlungs- und Wiederherstellungsmechanismen, angesichts der höheren Datenraten und größeren Nutzlasten.</li>
 </ul>
-<h2 id="fazit"><a class="header" href="#fazit">Fazit</a></h2>
+<h2 id="schlussfolgerung"><a class="header" href="#schlussfolgerung">Schlussfolgerung</a></h2>
 <p>CAN-FD bietet signifikante Verbesserungen gegenüber dem klassischen CAN, indem es höhere Datendurchsätze und größere Effizienz ermöglicht. Die Einführung des FDF-Bits, erweiterte Datenfelder und die Bitratenumschaltung sind Schlüsselmerkmale, die CAN-FD in die Lage versetzen, den Anforderungen moderner Automobilanwendungen gerecht zu werden. Das Verständnis dieser Elemente und ihrer Auswirkungen ist entscheidend, um CAN-FD im automobilen Netzwerk effektiv nutzen zu können.</p>
-<p>Durch ein gründliches Verständnis der technischen Aspekte und Betriebsprinzipien von CAN-FD können Automobilingenieure robuste, leistungsfähige Kommunikationsnetzwerke entwerfen und implementieren, die die zunehmend anspruchsvollen Funktionen zeitgemäßer Fahrzeuge unterstützen.</p>
 
                     </main>
 
